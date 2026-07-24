@@ -1,0 +1,57 @@
+BATCH: 004
+VERSION: 0.4.0
+BASELINE COMMIT: 71b46da
+DATE: 2026-07-24
+
+PURPOSE:
+  Normalize the source-specific uppercase A to an exact assembled height
+  before rectangular sectioning.
+
+NORMALIZATION METHODS:
+  resize:
+    Portable default. OpenSCAD resize() fits the actual rendered profile
+    to the target height while preserving aspect ratio.
+  manual:
+    Uses explicit source-profile bounds measured at the configured probe
+    size. Reports scale and final width numerically.
+  textmetrics:
+    Optional development-snapshot route using textmetrics(). Reports the
+    resolved profile bounds, scale, and final width automatically.
+
+FONT INVENTORY:
+  - Reports OpenSCAD version and version number.
+  - Reports Help > Font List as the complete machine-font-list location.
+  - Reports the three configured source records.
+  - Reports the bundled portable font families.
+  - Optionally calls fontmetrics() for each configured source.
+  - Does not claim that OpenSCAD scripts can enumerate every installed
+    machine font.
+
+SECTIONING:
+  - Uppercase A only.
+  - Grid is applied after normalization.
+  - Exact target assembled height.
+  - Whole normalized profile preview.
+  - Normalized section plan.
+  - Normalized exploded layout.
+  - One normalized section at local print coordinates.
+  - Console manifest for every configured cell.
+  - No occupied-cell claim; empty intersections render nothing.
+
+EXPLICITLY ABSENT:
+  - connectors;
+  - attachment methods;
+  - inter-character spacing;
+  - mounting;
+  - automatic cut relocation;
+  - sectioning of glyphs other than uppercase A.
+
+TEST:
+  1. Copy this delta over commit 71b46da.
+  2. Run tests/font_inventory_contract.scad with F5.
+  3. Run tests/normalization_math_contract.scad with F5.
+  4. Run tests/normalized_a_render_contract.scad with F5.
+  5. Run the complete prior test set.
+  6. Inspect workbenches/font_inventory.scad.
+  7. Inspect workbenches/a_normalized_profile.scad.
+  8. Inspect the three updated a_section_* workbenches.

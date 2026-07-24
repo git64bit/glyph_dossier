@@ -1,0 +1,4 @@
+BASELINE COMMIT: 71b46da
+Copy all included complete files over the repository working tree.
+This delta adds font inventory and exact-height uppercase-A normalization.
+Connectors, spacing, mounting, and other sectional glyphs remain absent.

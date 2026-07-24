@@ -201,3 +201,31 @@ wb_a_crossbar_y_ratio = is_undef(a_crossbar_y_ratio)
     ? 0.34 : a_crossbar_y_ratio;
 wb_a_counter_half_width_ratio = is_undef(a_counter_half_width_ratio)
     ? 0.17 : a_counter_half_width_ratio;
+
+// Batch 004 font inventory and exact-height normalization.
+wb_runtime_fontmetrics_enabled =
+    is_undef(runtime_fontmetrics_enabled)
+    ? false : runtime_fontmetrics_enabled;
+wb_font_metrics_size = is_undef(font_metrics_size)
+    ? 20 : font_metrics_size;
+
+wb_normalization_method = is_undef(normalization_method)
+    ? "resize" : normalization_method;
+wb_target_assembled_height = is_undef(target_assembled_height)
+    ? 600 : target_assembled_height;
+wb_normalization_probe_size = is_undef(normalization_probe_size)
+    ? 100 : normalization_probe_size;
+wb_manual_profile_left = is_undef(manual_profile_left)
+    ? -999999 : manual_profile_left;
+wb_manual_profile_right = is_undef(manual_profile_right)
+    ? -999999 : manual_profile_right;
+wb_manual_profile_bottom = is_undef(manual_profile_bottom)
+    ? -999999 : manual_profile_bottom;
+wb_manual_profile_top = is_undef(manual_profile_top)
+    ? -999999 : manual_profile_top;
+
+wb_show_normalized_bounds = is_undef(show_normalized_bounds)
+    ? true : show_normalized_bounds;
+wb_normalized_bounds_line_width =
+    is_undef(normalized_bounds_line_width)
+    ? 1.5 : normalized_bounds_line_width;

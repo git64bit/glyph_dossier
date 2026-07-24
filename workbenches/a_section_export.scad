@@ -2,7 +2,7 @@
 // LibFile: a_section_export.scad
 // Project: Glyph Dossier
 // FileGroup: Executable Workbench
-// FileSummary: One uppercase-A section at local print coordinates.
+// FileSummary: One normalized uppercase-A section for STL export.
 //////////////////////////////////////////////////////////////////////
 
 /* [Selected source] */
@@ -30,13 +30,24 @@ source_3_url = "";
 source_3_revision = "";
 
 
-/* [Large A] */
-nominal_size = 600;
+/* [Exact assembled height] */
+normalization_method = "resize"; // [resize,manual,textmetrics]
+target_assembled_height = 600;
+normalization_probe_size = 100;
+
+/* [Manual source-profile bounds] */
+manual_profile_left = -999999;
+manual_profile_right = -999999;
+manual_profile_bottom = -999999;
+manual_profile_top = -999999;
+
+/* [Profile] */
 extrusion_depth = 6;
 
-/* [Section grid] */
+
+/* [Section grid after normalization] */
 section_origin_x = -300;
-section_origin_y = -20;
+section_origin_y = 0;
 section_cell_width = 200;
 section_cell_height = 200;
 section_columns = 3;
@@ -48,14 +59,16 @@ bed_y = 220;
 /* [Plan appearance] */
 show_section_grid = true;
 show_hazard_guides = true;
+show_normalized_bounds = true;
 grid_line_width = 1.2;
 hazard_line_width = 5;
+normalized_bounds_line_width = 1.5;
 
-/* [Nominal A hazard guides] */
-a_apex_y_ratio = 0.72;
-a_counter_bottom_ratio = 0.22;
-a_counter_top_ratio = 0.55;
-a_crossbar_y_ratio = 0.34;
+/* [Normalized A hazard guides] */
+a_apex_y_ratio = 0.96;
+a_counter_bottom_ratio = 0.28;
+a_counter_top_ratio = 0.62;
+a_crossbar_y_ratio = 0.40;
 a_counter_half_width_ratio = 0.17;
 
 

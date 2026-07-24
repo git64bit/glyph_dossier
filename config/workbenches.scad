@@ -11,9 +11,11 @@ VALID_WORKBENCHES = [
     "profile",
     "contact_sheet",
     "font_source",
+    "font_inventory",
     "glyph_observation",
     "glyph_comparison",
     "source_contact_sheet",
+    "a_normalized_profile",
     "a_section_plan",
     "a_section_layout",
     "a_section_export",
@@ -26,9 +28,11 @@ VALID_RENDER_MODES = [
     "profile_3d",
     "contact_sheet",
     "source_sample",
+    "font_inventory",
     "observation",
     "comparison",
     "source_contact_sheet",
+    "a_normalized_profile",
     "a_section_plan",
     "a_section_layout",
     "a_section_export",
@@ -42,6 +46,12 @@ VALID_SOURCE_KINDS = [
 VALID_PROBE_ORIENTATIONS = [
     "horizontal",
     "vertical"
+];
+
+VALID_NORMALIZATION_METHODS = [
+    "resize",
+    "manual",
+    "textmetrics"
 ];
 
 function value_in_list(values, value) =

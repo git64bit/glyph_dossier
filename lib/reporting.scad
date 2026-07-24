@@ -174,4 +174,195 @@ module report_selected_section(
         section_y1(origin_y, cell_height, row)
     ]);
 }
+module report_environment() {
+    echo("OPENSCAD_VERSION", version());
+    echo("OPENSCAD_VERSION_NUM", version_num());
+    echo("OPENSCAD_COMPLETE_FONT_LIST_UI", "Help > Font List");
+    echo(
+        "OPENSCAD_SCRIPT_FONT_ENUMERATION",
+        "Not available; configured sources are reported below."
+    );
+    echo("OPENSCAD_BUNDLED_PORTABLE_FONTS", [
+        "Liberation Mono",
+        "Liberation Sans",
+        "Liberation Serif"
+    ]);
+}
+
+module report_configured_font_sources(
+    sources,
+    report_level = "full"
+) {
+    echo("CONFIGURED_FONT_SOURCE_COUNT", len(sources));
+    echo(
+        "CONFIGURED_FONT_SOURCE_IDS",
+        [for (source = sources) source[FS_ID]]
+    );
+    echo(
+        "CONFIGURED_FONT_STRINGS",
+        [
+            for (source = sources)
+                source[FS_FONT_NAME] == ""
+                ? "<OpenSCAD default>"
+                : source[FS_FONT_NAME]
+        ]
+    );
+
+    if (report_level == "full")
+        for (source = sources)
+            report_font_source(source, "full");
+}
+
+module report_runtime_fontmetrics(
+    sources,
+    enabled,
+    metric_size
+) {
+    echo("RUNTIME_FONTMETRICS_ENABLED", enabled);
+    echo("RUNTIME_FONTMETRICS_SIZE", metric_size);
+
+    if (enabled) {
+        assert(
+            version_num() >= 20240000,
+            str(
+                "fontmetrics() requires a compatible development snapshot; version_num() is ",
+                version_num()
+            )
+        );
+
+        for (source = sources)
+            if (source[FS_FONT_NAME] == "")
+                echo(
+                    str(
+                        "FONTMETRICS_",
+                        source[FS_ID]
+                    ),
+                    fontmetrics(size = metric_size)
+                );
+            else
+                echo(
+                    str(
+                        "FONTMETRICS_",
+                        source[FS_ID]
+                    ),
+                    fontmetrics(
+                        size = metric_size,
+                        font = source[FS_FONT_NAME]
+                    )
+                );
+    } else
+        echo(
+            "RUNTIME_FONTMETRICS_STATUS",
+            "Disabled. Enable only in a development snapshot providing fontmetrics()."
+        );
+}
+
+module report_manual_normalization(
+    target_height,
+    probe_size,
+    left,
+    right,
+    bottom,
+    top
+) {
+    scale_factor = exact_height_scale(
+        target_height,
+        bottom,
+        top
+    );
+    final_width = normalized_profile_width(
+        target_height,
+        left,
+        right,
+        bottom,
+        top
+    );
+
+    echo("NORMALIZATION_METHOD", "manual");
+    echo("NORMALIZATION_PROBE_SIZE", probe_size);
+    echo("NORMALIZATION_INPUT_BOUNDS", [
+        left,
+        right,
+        bottom,
+        top
+    ]);
+    echo("NORMALIZATION_SCALE", scale_factor);
+    echo("NORMALIZED_PROFILE_WIDTH_MM", final_width);
+    echo("NORMALIZED_PROFILE_HEIGHT_MM", target_height);
+    echo("NORMALIZED_PROFILE_ANCHOR", "center-bottom");
+}
+
+module report_resize_normalization(
+    target_height,
+    probe_size
+) {
+    echo("NORMALIZATION_METHOD", "resize");
+    echo("NORMALIZATION_PROBE_SIZE", probe_size);
+    echo("NORMALIZED_PROFILE_HEIGHT_MM", target_height);
+    echo(
+        "NORMALIZED_PROFILE_WIDTH_MM",
+        "Runtime geometry value; use manual or textmetrics mode for numeric reporting."
+    );
+    echo("NORMALIZED_PROFILE_ANCHOR", "center-bottom");
+}
+
+module report_textmetrics_notice(
+    target_height,
+    probe_size
+) {
+    echo("NORMALIZATION_METHOD", "textmetrics");
+    echo("NORMALIZATION_PROBE_SIZE", probe_size);
+    echo("NORMALIZED_PROFILE_HEIGHT_MM", target_height);
+    echo(
+        "NORMALIZATION_METRICS_STATUS",
+        "Exact textmetrics values are reported by normalized_glyph.scad."
+    );
+    echo("NORMALIZED_PROFILE_ANCHOR", "center-bottom");
+}
+
+module report_section_manifest(
+    origin_x,
+    origin_y,
+    cell_width,
+    cell_height,
+    columns,
+    rows
+) {
+    echo("SECTION_MANIFEST_COUNT", section_count(columns, rows));
+
+    for (row = [0 : rows - 1])
+        for (column = [0 : columns - 1])
+            echo("SECTION_MANIFEST_ENTRY", [
+                section_id(column, row),
+                "index", [column, row],
+                "global_bounds", [
+                    section_x0(
+                        origin_x,
+                        cell_width,
+                        column
+                    ),
+                    section_x1(
+                        origin_x,
+                        cell_width,
+                        column
+                    ),
+                    section_y0(
+                        origin_y,
+                        cell_height,
+                        row
+                    ),
+                    section_y1(
+                        origin_y,
+                        cell_height,
+                        row
+                    )
+                ],
+                "local_bounds", [
+                    0,
+                    cell_width,
+                    0,
+                    cell_height
+                ]
+            ]);
+}
 

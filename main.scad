@@ -2,7 +2,7 @@
 // LibFile: main.scad
 // Project: Glyph Dossier
 // FileGroup: Shared Workbench Orchestrator
-// FileSummary: Dispatches anatomy, observation, and A sectioning.
+// FileSummary: Dispatches anatomy, observation, and normalized A work.
 //////////////////////////////////////////////////////////////////////
 
 include <lib/schema.scad>
@@ -27,6 +27,7 @@ include <config/observations.scad>
 include <config/workbenches.scad>
 include <lib/lookup.scad>
 include <lib/sectioning.scad>
+include <lib/normalization.scad>
 include <lib/validation.scad>
 include <lib/reporting.scad>
 
@@ -41,7 +42,197 @@ include <geometry/source_comparison.scad>
 include <geometry/source_contact_sheet.scad>
 include <geometry/section_grid.scad>
 include <geometry/a_hazard_map.scad>
+include <geometry/normalized_glyph.scad>
+include <geometry/normalized_profile_scene.scad>
 include <geometry/section_scene.scad>
+
+module report_active_normalization() {
+    if (wb_normalization_method == "manual")
+        report_manual_normalization(
+            wb_target_assembled_height,
+            wb_normalization_probe_size,
+            wb_manual_profile_left,
+            wb_manual_profile_right,
+            wb_manual_profile_bottom,
+            wb_manual_profile_top
+        );
+    else if (wb_normalization_method == "textmetrics")
+        report_textmetrics_notice(
+            wb_target_assembled_height,
+            wb_normalization_probe_size
+        );
+    else
+        report_resize_normalization(
+            wb_target_assembled_height,
+            wb_normalization_probe_size
+        );
+}
+
+module validate_active_normalized_a(dossier) {
+    validate_normalization(
+        dossier,
+        wb_normalization_method,
+        wb_target_assembled_height,
+        wb_normalization_probe_size,
+        wb_manual_profile_left,
+        wb_manual_profile_right,
+        wb_manual_profile_bottom,
+        wb_manual_profile_top
+    );
+}
+
+module render_active_normalized_a(
+    dossier,
+    source
+) {
+    render_normalized_profile(
+        dossier,
+        source,
+        wb_normalization_method,
+        wb_target_assembled_height,
+        wb_normalization_probe_size,
+        wb_extrusion_depth,
+        wb_manual_profile_left,
+        wb_manual_profile_right,
+        wb_manual_profile_bottom,
+        wb_manual_profile_top,
+        wb_show_normalized_bounds,
+        wb_normalized_bounds_line_width,
+        section_plan_width(
+            wb_section_cell_width,
+            wb_section_columns
+        ) / 2
+    );
+}
+
+module render_active_a_sections(
+    dossier,
+    source
+) {
+    validate_active_normalized_a(dossier);
+
+    validate_a_section_plan(
+        dossier,
+        wb_section_cell_width,
+        wb_section_cell_height,
+        wb_section_columns,
+        wb_section_rows,
+        wb_selected_section_column,
+        wb_selected_section_row,
+        wb_section_epsilon,
+        wb_bed_x,
+        wb_bed_y,
+        wb_a_apex_y_ratio,
+        wb_a_counter_bottom_ratio,
+        wb_a_counter_top_ratio,
+        wb_a_crossbar_y_ratio,
+        wb_a_counter_half_width_ratio
+    );
+
+    report_active_normalization();
+
+    report_section_plan(
+        wb_section_origin_x,
+        wb_section_origin_y,
+        wb_section_cell_width,
+        wb_section_cell_height,
+        wb_section_columns,
+        wb_section_rows,
+        wb_bed_x,
+        wb_bed_y
+    );
+
+    report_section_manifest(
+        wb_section_origin_x,
+        wb_section_origin_y,
+        wb_section_cell_width,
+        wb_section_cell_height,
+        wb_section_columns,
+        wb_section_rows
+    );
+
+    if (wb_render_mode == "a_section_plan")
+        render_a_section_plan(
+            dossier,
+            source,
+            wb_normalization_method,
+            wb_target_assembled_height,
+            wb_normalization_probe_size,
+            wb_extrusion_depth,
+            wb_manual_profile_left,
+            wb_manual_profile_right,
+            wb_manual_profile_bottom,
+            wb_manual_profile_top,
+            wb_section_origin_x,
+            wb_section_origin_y,
+            wb_section_cell_width,
+            wb_section_cell_height,
+            wb_section_columns,
+            wb_section_rows,
+            wb_show_section_grid,
+            wb_show_hazard_guides,
+            wb_show_normalized_bounds,
+            wb_grid_line_width,
+            wb_hazard_line_width,
+            wb_normalized_bounds_line_width,
+            wb_a_apex_y_ratio,
+            wb_a_counter_bottom_ratio,
+            wb_a_counter_top_ratio,
+            wb_a_crossbar_y_ratio,
+            wb_a_counter_half_width_ratio
+        );
+    else if (wb_render_mode == "a_section_layout")
+        render_a_section_layout(
+            dossier,
+            source,
+            wb_normalization_method,
+            wb_target_assembled_height,
+            wb_normalization_probe_size,
+            wb_extrusion_depth,
+            wb_manual_profile_left,
+            wb_manual_profile_right,
+            wb_manual_profile_bottom,
+            wb_manual_profile_top,
+            wb_section_origin_x,
+            wb_section_origin_y,
+            wb_section_cell_width,
+            wb_section_cell_height,
+            wb_section_columns,
+            wb_section_rows,
+            wb_section_epsilon,
+            wb_layout_gap
+        );
+    else {
+        report_selected_section(
+            wb_section_origin_x,
+            wb_section_origin_y,
+            wb_section_cell_width,
+            wb_section_cell_height,
+            wb_selected_section_column,
+            wb_selected_section_row
+        );
+
+        render_a_section_export(
+            dossier,
+            source,
+            wb_normalization_method,
+            wb_target_assembled_height,
+            wb_normalization_probe_size,
+            wb_extrusion_depth,
+            wb_manual_profile_left,
+            wb_manual_profile_right,
+            wb_manual_profile_bottom,
+            wb_manual_profile_top,
+            wb_section_origin_x,
+            wb_section_origin_y,
+            wb_section_cell_width,
+            wb_section_cell_height,
+            wb_selected_section_column,
+            wb_selected_section_row,
+            wb_section_epsilon
+        );
+    }
+}
 
 module run_glyph_dossier() {
     validate_workbench_selection(
@@ -73,11 +264,28 @@ module run_glyph_dossier() {
         ALL_GLYPHS
     );
 
+    report_environment();
     report_project(project, wb_report_level);
     report_font_source(source, wb_report_level);
 
     if (project[PR_KIND] == "catalog_notice") {
         report_catalog_notice(project);
+    } else if (wb_render_mode == "font_inventory") {
+        report_configured_font_sources(
+            FONT_SOURCES,
+            wb_report_level
+        );
+        report_runtime_fontmetrics(
+            FONT_SOURCES,
+            wb_runtime_fontmetrics_enabled,
+            wb_font_metrics_size
+        );
+        render_source_sample(
+            source,
+            wb_source_sample_size,
+            wb_source_sample_depth,
+            wb_source_sample_line_gap
+        );
     } else if (wb_render_mode == "source_sample") {
         render_source_sample(
             source,
@@ -117,101 +325,16 @@ module run_glyph_dossier() {
         validate_glyph_dossier(dossier);
         report_glyph_dossier(dossier, wb_report_level);
 
-        if (
+        if (wb_render_mode == "a_normalized_profile") {
+            validate_active_normalized_a(dossier);
+            report_active_normalization();
+            render_active_normalized_a(dossier, source);
+        } else if (
             wb_render_mode == "a_section_plan"
             || wb_render_mode == "a_section_layout"
             || wb_render_mode == "a_section_export"
         ) {
-            validate_a_section_plan(
-                dossier,
-                wb_section_cell_width,
-                wb_section_cell_height,
-                wb_section_columns,
-                wb_section_rows,
-                wb_selected_section_column,
-                wb_selected_section_row,
-                wb_section_epsilon,
-                wb_bed_x,
-                wb_bed_y,
-                wb_a_apex_y_ratio,
-                wb_a_counter_bottom_ratio,
-                wb_a_counter_top_ratio,
-                wb_a_crossbar_y_ratio,
-                wb_a_counter_half_width_ratio
-            );
-
-            report_section_plan(
-                wb_section_origin_x,
-                wb_section_origin_y,
-                wb_section_cell_width,
-                wb_section_cell_height,
-                wb_section_columns,
-                wb_section_rows,
-                wb_bed_x,
-                wb_bed_y
-            );
-
-            if (wb_render_mode == "a_section_plan")
-                render_a_section_plan(
-                    dossier,
-                    source,
-                    wb_nominal_size,
-                    wb_extrusion_depth,
-                    wb_section_origin_x,
-                    wb_section_origin_y,
-                    wb_section_cell_width,
-                    wb_section_cell_height,
-                    wb_section_columns,
-                    wb_section_rows,
-                    wb_show_section_grid,
-                    wb_show_hazard_guides,
-                    wb_grid_line_width,
-                    wb_hazard_line_width,
-                    wb_a_apex_y_ratio,
-                    wb_a_counter_bottom_ratio,
-                    wb_a_counter_top_ratio,
-                    wb_a_crossbar_y_ratio,
-                    wb_a_counter_half_width_ratio
-                );
-            else if (wb_render_mode == "a_section_layout")
-                render_a_section_layout(
-                    dossier,
-                    source,
-                    wb_nominal_size,
-                    wb_extrusion_depth,
-                    wb_section_origin_x,
-                    wb_section_origin_y,
-                    wb_section_cell_width,
-                    wb_section_cell_height,
-                    wb_section_columns,
-                    wb_section_rows,
-                    wb_section_epsilon,
-                    wb_layout_gap
-                );
-            else {
-                report_selected_section(
-                    wb_section_origin_x,
-                    wb_section_origin_y,
-                    wb_section_cell_width,
-                    wb_section_cell_height,
-                    wb_selected_section_column,
-                    wb_selected_section_row
-                );
-
-                render_a_section_export(
-                    dossier,
-                    source,
-                    wb_nominal_size,
-                    wb_extrusion_depth,
-                    wb_section_origin_x,
-                    wb_section_origin_y,
-                    wb_section_cell_width,
-                    wb_section_cell_height,
-                    wb_selected_section_column,
-                    wb_selected_section_row,
-                    wb_section_epsilon
-                );
-            }
+            render_active_a_sections(dossier, source);
         } else if (wb_render_mode == "comparison") {
             comparison_ids = [
                 wb_compare_source_1_id,

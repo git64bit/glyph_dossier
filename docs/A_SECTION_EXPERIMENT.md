@@ -1,59 +1,41 @@
 # Uppercase A section experiment
 
-## Why A is first
+## Batch 004 change
 
-Uppercase `A` combines:
+The `A` is normalized to an exact assembled height before any section
+cell is applied.
 
-- two long diagonal strokes;
-- an acute apex;
-- an enclosed counter;
-- a horizontal crossbar;
-- narrow internal transitions.
-
-It exposes more sectioning failures than a simple rectilinear glyph.
-
-## Default plan
+The default is:
 
 ```text
-nominal font size: 600 mm
-extrusion depth: 6 mm
-grid origin: [-300, -20]
+normalization method: resize
+target height: 600 mm
+profile anchor: center-bottom
+grid origin: [-300, 0]
 cell size: [200, 200]
 grid: 3 × 3
 ```
 
-The nominal font size is passed directly to OpenSCAD `text()`. It is not
-a claim that the physical cap height is exactly 600 mm.
+## Evaluation sequence
+
+1. Configure and identify the font source.
+2. Inspect `font_inventory.scad`.
+3. Inspect `a_normalized_profile.scad`.
+4. Confirm the target-height reference.
+5. Inspect `a_section_plan.scad`.
+6. Adjust grid origin or dimensions if a cut crosses an unwanted region.
+7. Inspect `a_section_layout.scad`.
+8. Export occupied-looking cells through `a_section_export.scad`.
+9. Slice, print, and place the plain sections together.
 
 ## Hazard guides
 
-The plan may show three nominal design regions:
-
-1. apex line;
-2. counter rectangle;
-3. crossbar line.
-
-Their ratios are manually adjustable. They do not measure the selected
-font and do not automatically reposition the clipping grid.
-
-The purpose is to make conflicts visible. A grid line crossing one of
-these regions can be corrected by changing the grid origin, cell
-dimensions, or grid count.
-
-## Evaluation sequence
-
-1. Select and identify a source.
-2. Inspect the full plan.
-3. Adjust the grid until the cut pattern is acceptable.
-4. Inspect the exploded layout.
-5. Export several occupied cells.
-6. Slice and print the sections.
-7. Place the plain cut faces together and inspect the reconstructed A.
-
-Attachment methods remain outside this experiment.
+The apex, counter, and crossbar guides are normalized-height ratios.
+They remain adjustable visual aids. They are not measured glyph
+geometry and do not move the section grid.
 
 ## Success criterion
 
-Batch 003 succeeds when a source-specific uppercase A can be rendered,
-divided into bed-sized cells, exported one cell at a time, printed, and
-placed together as a recognizable larger glyph.
+A source-specific uppercase A can be normalized to a requested physical
+height, divided into bed-sized sections, exported one cell at a time,
+printed, and placed together as a recognizable larger glyph.

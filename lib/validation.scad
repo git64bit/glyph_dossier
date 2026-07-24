@@ -289,6 +289,60 @@ module validate_observation_registry(
     }
 }
 
+module validate_normalization(
+    dossier,
+    method,
+    target_height,
+    probe_size,
+    manual_left,
+    manual_right,
+    manual_bottom,
+    manual_top
+) {
+    assert(
+        dossier[GD_ID] == "U_A",
+        str(
+            "Batch 004 normalizes uppercase A only; selected ",
+            dossier[GD_ID]
+        )
+    );
+    assert(
+        value_in_list(
+            VALID_NORMALIZATION_METHODS,
+            method
+        ),
+        str("Unknown normalization method: ", method)
+    );
+    assert(
+        target_height > 0,
+        "Target assembled height must be positive."
+    );
+    assert(
+        probe_size > 0,
+        "Normalization probe size must be positive."
+    );
+
+    if (method == "manual")
+        assert(
+            profile_bounds_valid(
+                manual_left,
+                manual_right,
+                manual_bottom,
+                manual_top
+            ),
+            "Manual normalization requires valid left, right, bottom, and top bounds."
+        );
+
+    if (method == "textmetrics")
+        assert(
+            version_num() >= 20240000,
+            str(
+                "textmetrics normalization requires a compatible development snapshot; version_num() is ",
+                version_num()
+            )
+        );
+}
+
 module validate_a_section_plan(
     dossier,
     cell_width,

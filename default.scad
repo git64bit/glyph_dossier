@@ -9,7 +9,7 @@ workbench_name = "development";
 project_name_selected = "GLYPH_DOSSIER_LAB";
 glyph_id_selected = "U_A";
 source_id_selected = "SRC_1";
-render_mode = "a_section_plan";
+render_mode = "a_normalized_profile";
 report_level = "full";
 
 source_1_label = "Source 1";
@@ -29,6 +29,9 @@ source_3_font_name = "";
 source_3_license = "unrecorded";
 source_3_url = "";
 source_3_revision = "";
+
+runtime_fontmetrics_enabled = false;
+font_metrics_size = 20;
 
 compare_source_1_id = "SRC_1";
 compare_source_2_id = "SRC_2";
@@ -55,7 +58,7 @@ gap_probe_y = 25;
 gap_probe_orientation = "horizontal";
 gap_probe_length = 30;
 
-nominal_size = 600;
+nominal_size = 120;
 extrusion_depth = 6;
 guide_depth = 0.8;
 show_guides = false;
@@ -77,8 +80,16 @@ source_sample_depth = 2;
 source_sample_line_gap = 1.35;
 comparison_spacing = 170;
 
+normalization_method = "resize";
+target_assembled_height = 600;
+normalization_probe_size = 100;
+manual_profile_left = -999999;
+manual_profile_right = -999999;
+manual_profile_bottom = -999999;
+manual_profile_top = -999999;
+
 section_origin_x = -300;
-section_origin_y = -20;
+section_origin_y = 0;
 section_cell_width = 200;
 section_cell_height = 200;
 section_columns = 3;
@@ -92,13 +103,15 @@ bed_y = 220;
 
 show_section_grid = true;
 show_hazard_guides = true;
+show_normalized_bounds = true;
 grid_line_width = 1.2;
 hazard_line_width = 5;
+normalized_bounds_line_width = 1.5;
 
-a_apex_y_ratio = 0.72;
-a_counter_bottom_ratio = 0.22;
-a_counter_top_ratio = 0.55;
-a_crossbar_y_ratio = 0.34;
+a_apex_y_ratio = 0.96;
+a_counter_bottom_ratio = 0.28;
+a_counter_top_ratio = 0.62;
+a_crossbar_y_ratio = 0.40;
 a_counter_half_width_ratio = 0.17;
 
 include <main.scad>

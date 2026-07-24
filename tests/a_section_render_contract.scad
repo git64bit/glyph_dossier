@@ -2,7 +2,7 @@
 // LibFile: a_section_render_contract.scad
 // Project: Glyph Dossier
 // FileGroup: Contract Tests
-// FileSummary: Direct plan, layout, and selected-section rendering.
+// FileSummary: Normalized plan, layout, and section rendering.
 //////////////////////////////////////////////////////////////////////
 
 include <../lib/schema.scad>
@@ -20,11 +20,14 @@ include <../config/sources.scad>
 include <../config/workbenches.scad>
 include <../lib/lookup.scad>
 include <../lib/sectioning.scad>
+include <../lib/normalization.scad>
 include <../lib/validation.scad>
 
 include <../geometry/glyph_profile.scad>
 include <../geometry/section_grid.scad>
 include <../geometry/a_hazard_map.scad>
+include <../geometry/normalized_glyph.scad>
+include <../geometry/normalized_profile_scene.scad>
 include <../geometry/section_scene.scad>
 
 dossier = named_record(
@@ -39,6 +42,17 @@ source = named_record(
     "A section render source"
 );
 
+validate_normalization(
+    dossier,
+    "resize",
+    600,
+    100,
+    OBS_UNKNOWN,
+    OBS_UNKNOWN,
+    OBS_UNKNOWN,
+    OBS_UNKNOWN
+);
+
 validate_a_section_plan(
     dossier,
     200,
@@ -50,10 +64,10 @@ validate_a_section_plan(
     0.05,
     220,
     220,
-    0.72,
-    0.22,
-    0.55,
-    0.34,
+    0.96,
+    0.28,
+    0.62,
+    0.40,
     0.17
 );
 
@@ -61,22 +75,30 @@ translate([-700, 0, 0])
     render_a_section_plan(
         dossier,
         source,
+        "resize",
         600,
+        100,
         6,
+        OBS_UNKNOWN,
+        OBS_UNKNOWN,
+        OBS_UNKNOWN,
+        OBS_UNKNOWN,
         -300,
-        -20,
+        0,
         200,
         200,
         3,
         3,
+        true,
         true,
         true,
         1.2,
         5,
-        0.72,
-        0.22,
-        0.55,
-        0.34,
+        1.5,
+        0.96,
+        0.28,
+        0.62,
+        0.40,
         0.17
     );
 
@@ -84,10 +106,16 @@ translate([100, 0, 0])
     render_a_section_layout(
         dossier,
         source,
+        "resize",
         600,
+        100,
         6,
+        OBS_UNKNOWN,
+        OBS_UNKNOWN,
+        OBS_UNKNOWN,
+        OBS_UNKNOWN,
         -300,
-        -20,
+        0,
         200,
         200,
         3,
@@ -100,10 +128,16 @@ translate([850, 0, 0])
     render_a_section_export(
         dossier,
         source,
+        "resize",
         600,
+        100,
         6,
+        OBS_UNKNOWN,
+        OBS_UNKNOWN,
+        OBS_UNKNOWN,
+        OBS_UNKNOWN,
         -300,
-        -20,
+        0,
         200,
         200,
         1,

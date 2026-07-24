@@ -2,14 +2,20 @@
 // LibFile: section_scene.scad
 // Project: Glyph Dossier
 // FileGroup: Section Rendering
-// FileSummary: Uppercase-A plan, layout, and selected-cell export.
+// FileSummary: Normalized uppercase-A plan, layout, and export.
 //////////////////////////////////////////////////////////////////////
 
-module glyph_section_3d(
+module normalized_glyph_section_3d(
     dossier,
     source,
-    nominal_size,
+    method,
+    target_height,
+    probe_size,
     depth,
+    manual_left,
+    manual_right,
+    manual_bottom,
+    manual_top,
     origin_x,
     origin_y,
     cell_width,
@@ -19,11 +25,17 @@ module glyph_section_3d(
     epsilon
 ) {
     intersection() {
-        glyph_source_record_3d(
+        normalized_glyph_3d(
             dossier,
             source,
-            nominal_size,
-            depth
+            method,
+            target_height,
+            probe_size,
+            depth,
+            manual_left,
+            manual_right,
+            manual_bottom,
+            manual_top
         );
 
         section_cell_clip_3d(
@@ -42,8 +54,14 @@ module glyph_section_3d(
 module render_a_section_plan(
     dossier,
     source,
-    nominal_size,
+    method,
+    target_height,
+    probe_size,
     depth,
+    manual_left,
+    manual_right,
+    manual_bottom,
+    manual_top,
     origin_x,
     origin_y,
     cell_width,
@@ -52,8 +70,10 @@ module render_a_section_plan(
     rows,
     show_grid,
     show_hazards,
+    show_bounds,
     grid_line_width,
     hazard_line_width,
+    bounds_line_width,
     apex_y_ratio,
     counter_bottom_ratio,
     counter_top_ratio,
@@ -61,11 +81,17 @@ module render_a_section_plan(
     counter_half_width_ratio
 ) {
     color([0.88, 0.68, 0.24])
-        glyph_source_record_3d(
+        normalized_glyph_3d(
             dossier,
             source,
-            nominal_size,
-            depth
+            method,
+            target_height,
+            probe_size,
+            depth,
+            manual_left,
+            manual_right,
+            manual_bottom,
+            manual_top
         );
 
     if (show_grid)
@@ -82,11 +108,24 @@ module render_a_section_plan(
                     0.8
                 );
 
+    if (show_bounds)
+        color([0.15, 0.70, 0.42, 0.55])
+            translate([0, 0, depth + 1.3])
+                linear_extrude(height = 0.8)
+                    normalized_reference_bounds_2d(
+                        target_height,
+                        section_plan_width(
+                            cell_width,
+                            columns
+                        ) / 2,
+                        bounds_line_width
+                    );
+
     if (show_hazards)
         color([0.88, 0.22, 0.18, 0.70])
-            translate([0, 0, depth + 1.3])
+            translate([0, 0, depth + 2.3])
                 a_hazard_guides_3d(
-                    nominal_size,
+                    target_height,
                     apex_y_ratio,
                     counter_bottom_ratio,
                     counter_top_ratio,
@@ -100,8 +139,14 @@ module render_a_section_plan(
 module render_a_section_layout(
     dossier,
     source,
-    nominal_size,
+    method,
+    target_height,
+    probe_size,
     depth,
+    manual_left,
+    manual_right,
+    manual_bottom,
+    manual_top,
     origin_x,
     origin_y,
     cell_width,
@@ -114,13 +159,21 @@ module render_a_section_layout(
     for (row = [0 : rows - 1])
         for (column = [0 : columns - 1])
             translate([
-                section_layout_x(column, cell_width, gap)
+                section_layout_x(
+                    column,
+                    cell_width,
+                    gap
+                )
                     - section_x0(
                         origin_x,
                         cell_width,
                         column
                     ),
-                section_layout_y(row, cell_height, gap)
+                section_layout_y(
+                    row,
+                    cell_height,
+                    gap
+                )
                     - section_y0(
                         origin_y,
                         cell_height,
@@ -129,11 +182,17 @@ module render_a_section_layout(
                 0
             ])
                 color([0.88, 0.68, 0.24])
-                    glyph_section_3d(
+                    normalized_glyph_section_3d(
                         dossier,
                         source,
-                        nominal_size,
+                        method,
+                        target_height,
+                        probe_size,
                         depth,
+                        manual_left,
+                        manual_right,
+                        manual_bottom,
+                        manual_top,
                         origin_x,
                         origin_y,
                         cell_width,
@@ -147,8 +206,14 @@ module render_a_section_layout(
 module render_a_section_export(
     dossier,
     source,
-    nominal_size,
+    method,
+    target_height,
+    probe_size,
     depth,
+    manual_left,
+    manual_right,
+    manual_bottom,
+    manual_top,
     origin_x,
     origin_y,
     cell_width,
@@ -158,15 +223,29 @@ module render_a_section_export(
     epsilon
 ) {
     translate([
-        -section_x0(origin_x, cell_width, column),
-        -section_y0(origin_y, cell_height, row),
+        -section_x0(
+            origin_x,
+            cell_width,
+            column
+        ),
+        -section_y0(
+            origin_y,
+            cell_height,
+            row
+        ),
         0
     ])
-        glyph_section_3d(
+        normalized_glyph_section_3d(
             dossier,
             source,
-            nominal_size,
+            method,
+            target_height,
+            probe_size,
             depth,
+            manual_left,
+            manual_right,
+            manual_bottom,
+            manual_top,
             origin_x,
             origin_y,
             cell_width,
