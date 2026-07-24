@@ -60,8 +60,8 @@ module validate_portable_glyph(glyph) {
 
 module validate_portable_glyph_set(records) {
     assert(
-        len(records) == 20,
-        str("Expected 20 captured glyphs; found ", len(records))
+        len(records) == 66,
+        str("Expected 66 captured glyphs; found ", len(records))
     );
 
     for (glyph = records) {

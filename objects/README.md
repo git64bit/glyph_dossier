@@ -1,17 +1,10 @@
 # Accepted glyph objects
 
-The catalog remains empty in Batch 006.
+The catalog contains 66 captured source records but no accepted physical
+glyph objects.
 
-The authoritative laboratory route is now the captured portable
-Liberation Sans `U_A`, normalized and sectioned without `text()`.
+Portable source completion is not physical acceptance.
 
-Promotion still requires:
-
-1. confirmation that the portable profile renders correctly;
-2. confirmation of exact normalized dimensions;
-3. an acceptable section grid;
-4. verified local section exports;
-5. later physical reconstruction;
-6. explicit acceptance.
-
-No connectors, attachments, or accepted physical glyph object exist.
+The authoritative sectional experiment remains portable `U_A`.
+Connectors, attachment methods, generic sectioning, and printing remain
+outside Batch 007.

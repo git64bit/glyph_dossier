@@ -1,0 +1,408 @@
+{
+  "set_id": "LIBERATION_SANS_REGULAR_R1",
+  "family": "Liberation Sans",
+  "style": "Regular",
+  "font_version": "2.1.5",
+  "license": "SIL Open Font License 1.1",
+  "source_url": "https://github.com/liberationfonts/liberation-fonts",
+  "flatten_tolerance_font_units": 2.0,
+  "contact_sheet_columns": 8,
+  "glyphs": [
+    {
+      "id": "U_A",
+      "character": "A",
+      "group": "uppercase",
+      "representative": true
+    },
+    {
+      "id": "U_B",
+      "character": "B",
+      "group": "uppercase",
+      "representative": true
+    },
+    {
+      "id": "U_C",
+      "character": "C",
+      "group": "uppercase",
+      "representative": false
+    },
+    {
+      "id": "U_D",
+      "character": "D",
+      "group": "uppercase",
+      "representative": false
+    },
+    {
+      "id": "U_E",
+      "character": "E",
+      "group": "uppercase",
+      "representative": false
+    },
+    {
+      "id": "U_F",
+      "character": "F",
+      "group": "uppercase",
+      "representative": false
+    },
+    {
+      "id": "U_G",
+      "character": "G",
+      "group": "uppercase",
+      "representative": false
+    },
+    {
+      "id": "U_H",
+      "character": "H",
+      "group": "uppercase",
+      "representative": false
+    },
+    {
+      "id": "U_I",
+      "character": "I",
+      "group": "uppercase",
+      "representative": false
+    },
+    {
+      "id": "U_J",
+      "character": "J",
+      "group": "uppercase",
+      "representative": false
+    },
+    {
+      "id": "U_K",
+      "character": "K",
+      "group": "uppercase",
+      "representative": false
+    },
+    {
+      "id": "U_L",
+      "character": "L",
+      "group": "uppercase",
+      "representative": false
+    },
+    {
+      "id": "U_M",
+      "character": "M",
+      "group": "uppercase",
+      "representative": false
+    },
+    {
+      "id": "U_N",
+      "character": "N",
+      "group": "uppercase",
+      "representative": false
+    },
+    {
+      "id": "U_O",
+      "character": "O",
+      "group": "uppercase",
+      "representative": true
+    },
+    {
+      "id": "U_P",
+      "character": "P",
+      "group": "uppercase",
+      "representative": false
+    },
+    {
+      "id": "U_Q",
+      "character": "Q",
+      "group": "uppercase",
+      "representative": false
+    },
+    {
+      "id": "U_R",
+      "character": "R",
+      "group": "uppercase",
+      "representative": false
+    },
+    {
+      "id": "U_S",
+      "character": "S",
+      "group": "uppercase",
+      "representative": true
+    },
+    {
+      "id": "U_T",
+      "character": "T",
+      "group": "uppercase",
+      "representative": false
+    },
+    {
+      "id": "U_U",
+      "character": "U",
+      "group": "uppercase",
+      "representative": false
+    },
+    {
+      "id": "U_V",
+      "character": "V",
+      "group": "uppercase",
+      "representative": false
+    },
+    {
+      "id": "U_W",
+      "character": "W",
+      "group": "uppercase",
+      "representative": false
+    },
+    {
+      "id": "U_X",
+      "character": "X",
+      "group": "uppercase",
+      "representative": false
+    },
+    {
+      "id": "U_Y",
+      "character": "Y",
+      "group": "uppercase",
+      "representative": false
+    },
+    {
+      "id": "U_Z",
+      "character": "Z",
+      "group": "uppercase",
+      "representative": true
+    },
+    {
+      "id": "L_a",
+      "character": "a",
+      "group": "lowercase",
+      "representative": true
+    },
+    {
+      "id": "L_b",
+      "character": "b",
+      "group": "lowercase",
+      "representative": false
+    },
+    {
+      "id": "L_c",
+      "character": "c",
+      "group": "lowercase",
+      "representative": false
+    },
+    {
+      "id": "L_d",
+      "character": "d",
+      "group": "lowercase",
+      "representative": false
+    },
+    {
+      "id": "L_e",
+      "character": "e",
+      "group": "lowercase",
+      "representative": false
+    },
+    {
+      "id": "L_f",
+      "character": "f",
+      "group": "lowercase",
+      "representative": false
+    },
+    {
+      "id": "L_g",
+      "character": "g",
+      "group": "lowercase",
+      "representative": true
+    },
+    {
+      "id": "L_h",
+      "character": "h",
+      "group": "lowercase",
+      "representative": false
+    },
+    {
+      "id": "L_i",
+      "character": "i",
+      "group": "lowercase",
+      "representative": true
+    },
+    {
+      "id": "L_j",
+      "character": "j",
+      "group": "lowercase",
+      "representative": true
+    },
+    {
+      "id": "L_k",
+      "character": "k",
+      "group": "lowercase",
+      "representative": false
+    },
+    {
+      "id": "L_l",
+      "character": "l",
+      "group": "lowercase",
+      "representative": false
+    },
+    {
+      "id": "L_m",
+      "character": "m",
+      "group": "lowercase",
+      "representative": true
+    },
+    {
+      "id": "L_n",
+      "character": "n",
+      "group": "lowercase",
+      "representative": false
+    },
+    {
+      "id": "L_o",
+      "character": "o",
+      "group": "lowercase",
+      "representative": false
+    },
+    {
+      "id": "L_p",
+      "character": "p",
+      "group": "lowercase",
+      "representative": false
+    },
+    {
+      "id": "L_q",
+      "character": "q",
+      "group": "lowercase",
+      "representative": false
+    },
+    {
+      "id": "L_r",
+      "character": "r",
+      "group": "lowercase",
+      "representative": false
+    },
+    {
+      "id": "L_s",
+      "character": "s",
+      "group": "lowercase",
+      "representative": true
+    },
+    {
+      "id": "L_t",
+      "character": "t",
+      "group": "lowercase",
+      "representative": false
+    },
+    {
+      "id": "L_u",
+      "character": "u",
+      "group": "lowercase",
+      "representative": false
+    },
+    {
+      "id": "L_v",
+      "character": "v",
+      "group": "lowercase",
+      "representative": false
+    },
+    {
+      "id": "L_w",
+      "character": "w",
+      "group": "lowercase",
+      "representative": false
+    },
+    {
+      "id": "L_x",
+      "character": "x",
+      "group": "lowercase",
+      "representative": false
+    },
+    {
+      "id": "L_y",
+      "character": "y",
+      "group": "lowercase",
+      "representative": false
+    },
+    {
+      "id": "L_z",
+      "character": "z",
+      "group": "lowercase",
+      "representative": false
+    },
+    {
+      "id": "D_0",
+      "character": "0",
+      "group": "digit",
+      "representative": true
+    },
+    {
+      "id": "D_1",
+      "character": "1",
+      "group": "digit",
+      "representative": true
+    },
+    {
+      "id": "D_2",
+      "character": "2",
+      "group": "digit",
+      "representative": true
+    },
+    {
+      "id": "D_3",
+      "character": "3",
+      "group": "digit",
+      "representative": false
+    },
+    {
+      "id": "D_4",
+      "character": "4",
+      "group": "digit",
+      "representative": true
+    },
+    {
+      "id": "D_5",
+      "character": "5",
+      "group": "digit",
+      "representative": false
+    },
+    {
+      "id": "D_6",
+      "character": "6",
+      "group": "digit",
+      "representative": false
+    },
+    {
+      "id": "D_7",
+      "character": "7",
+      "group": "digit",
+      "representative": false
+    },
+    {
+      "id": "D_8",
+      "character": "8",
+      "group": "digit",
+      "representative": true
+    },
+    {
+      "id": "D_9",
+      "character": "9",
+      "group": "digit",
+      "representative": false
+    },
+    {
+      "id": "P_question",
+      "character": "?",
+      "group": "punctuation",
+      "representative": true
+    },
+    {
+      "id": "P_exclamation",
+      "character": "!",
+      "group": "punctuation",
+      "representative": true
+    },
+    {
+      "id": "P_colon",
+      "character": ":",
+      "group": "punctuation",
+      "representative": true
+    },
+    {
+      "id": "P_semicolon",
+      "character": ";",
+      "group": "punctuation",
+      "representative": true
+    }
+  ]
+}

@@ -16,6 +16,7 @@ include <lib/sectioning.scad>
 include <lib/portable_glyph_lookup.scad>
 include <lib/portable_glyph_validation.scad>
 include <lib/portable_glyph_reporting.scad>
+include <lib/portable_catalog_groups.scad>
 include <lib/portable_section_validation.scad>
 include <lib/portable_section_reporting.scad>
 
@@ -24,13 +25,6 @@ include <geometry/a_hazard_map.scad>
 include <geometry/portable_glyph_region.scad>
 include <geometry/portable_glyph_scenes.scad>
 include <geometry/portable_section_scene.scad>
-
-REPRESENTATIVE_PORTABLE_IDS = [
-    "U_A", "U_B", "U_O", "U_S", "U_Z",
-    "L_a", "L_g", "L_i", "L_j", "L_m", "L_s",
-    "D_0", "D_1", "D_2", "D_4", "D_8",
-    "P_question", "P_exclamation", "P_colon", "P_semicolon"
-];
 
 module validate_active_portable_a(glyph) {
     validate_portable_a_section(
@@ -178,7 +172,7 @@ module run_portable_glyph_workbench() {
     } else if (pg_render_mode == "contact_sheet") {
         validate_portable_glyph_set(PORTABLE_GLYPHS);
         portable_contact_sheet(
-            REPRESENTATIVE_PORTABLE_IDS,
+            portable_sheet_ids(pg_sheet_group),
             PORTABLE_GLYPHS,
             pg_sheet_columns,
             pg_sheet_cell_size,

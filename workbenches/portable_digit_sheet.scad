@@ -1,13 +1,13 @@
 //////////////////////////////////////////////////////////////////////
-// LibFile: portable_contact_sheet.scad
+// LibFile: portable_digit_sheet.scad
 // Project: Glyph Dossier
 // FileGroup: Executable Portable Workbench
-// FileSummary: Original 20-glyph representative contact sheet.
+// FileSummary: Complete portable digit contact sheet.
 //////////////////////////////////////////////////////////////////////
 
 portable_glyph_id_selected = "U_A";
 portable_render_mode = "contact_sheet";
-portable_sheet_group = "representative";
+portable_sheet_group = "digits";
 portable_target_height = 120;
 portable_extrusion_depth = 2;
 portable_sheet_columns = 5;

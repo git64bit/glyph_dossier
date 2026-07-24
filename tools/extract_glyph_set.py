@@ -10,6 +10,8 @@ import argparse
 import hashlib
 import json
 import math
+import shutil
+import tempfile
 from pathlib import Path
 from typing import Iterable
 
@@ -179,17 +181,31 @@ def bounds_from_paths(paths):
     return [min(xs), min(ys), max(xs), max(ys)]
 
 
-def extract_glyph(font, glyph_set, cmap, glyph_id, character, tolerance, source_sha):
+
+def extract_glyph(
+    font,
+    glyph_set,
+    cmap,
+    item,
+    tolerance,
+    source_sha,
+):
+    glyph_id = item['id']
+    character = item['character']
     codepoint = ord(character)
     if codepoint not in cmap:
-        raise ValueError(f'Font has no glyph for U+{codepoint:04X} {character!r}')
+        raise ValueError(
+            f'Font has no glyph for U+{codepoint:04X} {character!r}'
+        )
     glyph_name = cmap[codepoint]
     glyph = glyph_set[glyph_name]
 
     flatten_pen = FlattenPen(glyph_set, tolerance)
     glyph.draw(flatten_pen)
     flatten_pen._endPath()
-    paths, components, counters = normalize_winding(flatten_pen.paths)
+    paths, components, counters = normalize_winding(
+        flatten_pen.paths
+    )
 
     bounds_pen = BoundsPen(glyph_set)
     glyph.draw(bounds_pen)
@@ -206,6 +222,8 @@ def extract_glyph(font, glyph_set, cmap, glyph_id, character, tolerance, source_
     return {
         'id': glyph_id,
         'character': character,
+        'group': item['group'],
+        'representative': bool(item.get('representative', False)),
         'codepoint': codepoint,
         'glyph_name': glyph_name,
         'units_per_em': font['head'].unitsPerEm,
@@ -231,8 +249,12 @@ def write_glyph_scad(output, glyph):
         scad_string(glyph['glyph_name']),
         str(glyph['units_per_em']),
         str(glyph['advance_width']),
-        '[' + ', '.join(number(value) for value in glyph['exact_bounds']) + ']',
-        '[' + ', '.join(number(value) for value in glyph['region_bounds']) + ']',
+        '[' + ', '.join(
+            number(value) for value in glyph['exact_bounds']
+        ) + ']',
+        '[' + ', '.join(
+            number(value) for value in glyph['region_bounds']
+        ) + ']',
         str(glyph['contour_count']),
         str(glyph['component_count']),
         str(glyph['counter_count']),
@@ -254,11 +276,17 @@ def write_glyph_scad(output, glyph):
     for index, value in enumerate(record):
         suffix = ',' if index < len(record) - 1 else ''
         if '\n' in value:
-            lines.append('    ' + value.replace('\n', '\n    ') + suffix)
+            lines.append(
+                '    ' + value.replace('\n', '\n    ') + suffix
+            )
         else:
             lines.append('    ' + value + suffix)
     lines.extend(['];', ''])
-    output.write_text('\n'.join(lines), encoding='utf-8', newline='\n')
+    output.write_text(
+        '\n'.join(lines),
+        encoding='utf-8',
+        newline='\n',
+    )
 
 
 def write_svg(output, glyph):
@@ -275,30 +303,60 @@ def write_svg(output, glyph):
   <path d="{glyph['svg_path']}" transform="scale(1,-1)" fill="black" fill-rule="nonzero"/>
 </svg>
 """
-    output.write_text(svg, encoding='utf-8', newline='\n')
+    output.write_text(
+        svg,
+        encoding='utf-8',
+        newline='\n',
+    )
 
 
-def write_contact_sheet(output, glyphs, columns=5, cell=420, glyph_height=260):
+def write_contact_sheet(
+    output,
+    glyphs,
+    columns=5,
+    cell=420,
+    glyph_height=260,
+):
     rows = math.ceil(len(glyphs) / columns)
     fragments = [
-        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {columns*cell} {rows*cell}">',
+        (
+            '<svg xmlns="http://www.w3.org/2000/svg" '
+            f'viewBox="0 0 {columns * cell} {rows * cell}">'
+        ),
         '  <rect width="100%" height="100%" fill="white"/>',
     ]
     for index, glyph in enumerate(glyphs):
         col = index % columns
         row = index // columns
         x0, y0, x1, y1 = glyph['exact_bounds']
-        width = max(1, x1-x0)
-        height = max(1, y1-y0)
+        width = max(1, x1 - x0)
+        height = max(1, y1 - y0)
         scale = glyph_height / height
-        center_x = (x0+x1)/2
+        center_x = (x0 + x1) / 2
         bottom = y0
-        tx = col*cell + cell/2 - center_x*scale
-        ty = row*cell + (cell+glyph_height)/2 + bottom*scale
-        fragments.append(f'  <rect x="{col*cell}" y="{row*cell}" width="{cell}" height="{cell}" fill="none" stroke="#bbb"/>')
-        fragments.append(f'  <path d="{glyph["svg_path"]}" transform="translate({number(tx)} {number(ty)}) scale({number(scale)} {number(-scale)})" fill="black"/>')
+        tx = col * cell + cell / 2 - center_x * scale
+        ty = (
+            row * cell
+            + (cell + glyph_height) / 2
+            + bottom * scale
+        )
+        fragments.append(
+            f'  <rect x="{col * cell}" y="{row * cell}" '
+            f'width="{cell}" height="{cell}" '
+            'fill="none" stroke="#bbb"/>'
+        )
+        fragments.append(
+            f'  <path d="{glyph["svg_path"]}" '
+            f'transform="translate({number(tx)} {number(ty)}) '
+            f'scale({number(scale)} {number(-scale)})" '
+            'fill="black"/>'
+        )
     fragments.append('</svg>')
-    output.write_text('\n'.join(fragments)+'\n', encoding='utf-8', newline='\n')
+    output.write_text(
+        '\n'.join(fragments) + '\n',
+        encoding='utf-8',
+        newline='\n',
+    )
 
 
 def sha256(path):
@@ -311,8 +369,208 @@ def write_checksums(set_dir):
         path for path in set_dir.rglob('*')
         if path.is_file() and path != checksum_path
     )
-    lines = [f'{sha256(path)}  {path.relative_to(set_dir).as_posix()}' for path in files]
-    checksum_path.write_text('\n'.join(lines)+'\n', encoding='utf-8', newline='\n')
+    lines = [
+        f'{sha256(path)}  {path.relative_to(set_dir).as_posix()}'
+        for path in files
+    ]
+    checksum_path.write_text(
+        '\n'.join(lines) + '\n',
+        encoding='utf-8',
+        newline='\n',
+    )
+
+
+def public_glyph_record(glyph):
+    excluded = {'region', 'svg_path'}
+    return {
+        key: value
+        for key, value in glyph.items()
+        if key not in excluded
+    }
+
+
+def grouped_ids(glyphs, group):
+    return [
+        glyph['id']
+        for glyph in glyphs
+        if glyph['group'] == group
+    ]
+
+
+def write_id_array(lines, name, ids):
+    lines.append(f'{name} = [')
+    for index, glyph_id in enumerate(ids):
+        suffix = ',' if index < len(ids) - 1 else ''
+        lines.append(f'    {scad_string(glyph_id)}{suffix}')
+    lines.extend(['];', ''])
+
+
+def write_manifest(output, spec, glyphs, source_sha, tolerance):
+    lines = [
+        '//////////////////////////////////////////////////////////////////////',
+        '// LibFile: manifest.scad',
+        '// Project: Glyph Dossier',
+        '// FileGroup: Generated Portable Glyph Set',
+        '// FileSummary: Liberation Sans Regular complete dossier set.',
+        '//////////////////////////////////////////////////////////////////////',
+        '',
+    ]
+    for glyph in glyphs:
+        lines.append(
+            f'include <generated/scad/{glyph["id"]}.scad>'
+        )
+    lines.extend([
+        '',
+        f'PORTABLE_GLYPH_SET_ID = {scad_string(spec["set_id"])};',
+        f'PORTABLE_GLYPH_FAMILY = {scad_string(spec["family"])};',
+        f'PORTABLE_GLYPH_STYLE = {scad_string(spec["style"])};',
+        (
+            'PORTABLE_GLYPH_FONT_VERSION = '
+            f'{scad_string(spec["font_version"])};'
+        ),
+        f'PORTABLE_GLYPH_LICENSE = {scad_string(spec["license"])};',
+        (
+            'PORTABLE_GLYPH_SOURCE_URL = '
+            f'{scad_string(spec["source_url"])};'
+        ),
+        (
+            'PORTABLE_GLYPH_SOURCE_SHA256 = '
+            f'{scad_string(source_sha)};'
+        ),
+        (
+            'PORTABLE_GLYPH_FLATTEN_TOLERANCE = '
+            f'{number(tolerance)};'
+        ),
+        '',
+    ])
+
+    write_id_array(
+        lines,
+        'PORTABLE_UPPERCASE_IDS',
+        grouped_ids(glyphs, 'uppercase'),
+    )
+    write_id_array(
+        lines,
+        'PORTABLE_LOWERCASE_IDS',
+        grouped_ids(glyphs, 'lowercase'),
+    )
+    write_id_array(
+        lines,
+        'PORTABLE_DIGIT_IDS',
+        grouped_ids(glyphs, 'digit'),
+    )
+    write_id_array(
+        lines,
+        'PORTABLE_PUNCTUATION_IDS',
+        grouped_ids(glyphs, 'punctuation'),
+    )
+    write_id_array(
+        lines,
+        'PORTABLE_REPRESENTATIVE_IDS',
+        [
+            glyph['id']
+            for glyph in glyphs
+            if glyph['representative']
+        ],
+    )
+    write_id_array(
+        lines,
+        'PORTABLE_ALL_IDS',
+        [glyph['id'] for glyph in glyphs],
+    )
+
+    lines.append('PORTABLE_GLYPHS = [')
+    for index, glyph in enumerate(glyphs):
+        suffix = ',' if index < len(glyphs) - 1 else ''
+        lines.append(
+            f'    {glyph_constant(glyph["id"])}{suffix}'
+        )
+    lines.extend(['];', ''])
+
+    output.write_text(
+        '\n'.join(lines),
+        encoding='utf-8',
+        newline='\n',
+    )
+
+
+def verify_lock(lock_path, stage_dir, glyphs, source_sha, tolerance):
+    if lock_path is None:
+        return {'locked_glyphs': 0}
+
+    lock = json.loads(lock_path.read_text(encoding='utf-8'))
+    if lock['source_sha256'] != source_sha:
+        raise RuntimeError('Representative lock source checksum changed.')
+    if (
+        float(lock['flatten_tolerance_font_units'])
+        != float(tolerance)
+    ):
+        raise RuntimeError('Representative lock tolerance changed.')
+
+    by_id = {glyph['id']: glyph for glyph in glyphs}
+    checked = 0
+    for expected in lock['glyphs']:
+        glyph_id = expected['id']
+        if glyph_id not in by_id:
+            raise RuntimeError(
+                f'Locked glyph is absent from extraction: {glyph_id}'
+            )
+        actual = by_id[glyph_id]
+        fields = [
+            'character',
+            'exact_bounds',
+            'region_bounds',
+            'contour_count',
+            'component_count',
+            'counter_count',
+            'point_count',
+        ]
+        for field in fields:
+            if actual[field] != expected[field]:
+                raise RuntimeError(
+                    f'Locked field changed for {glyph_id}: '
+                    f'{field}: {actual[field]!r} != '
+                    f'{expected[field]!r}'
+                )
+
+        scad_path = stage_dir / f'generated/scad/{glyph_id}.scad'
+        svg_path = stage_dir / f'generated/svg/{glyph_id}.svg'
+        if sha256(scad_path) != expected['scad_sha256']:
+            raise RuntimeError(
+                f'Locked SCAD record changed: {glyph_id}'
+            )
+        if sha256(svg_path) != expected['svg_sha256']:
+            raise RuntimeError(
+                f'Locked SVG record changed: {glyph_id}'
+            )
+        checked += 1
+
+    if checked != lock['glyph_count']:
+        raise RuntimeError(
+            f'Expected {lock["glyph_count"]} locked glyphs; '
+            f'checked {checked}.'
+        )
+    return {
+        'lock_id': lock['lock_id'],
+        'locked_glyphs': checked,
+    }
+
+
+def install_stage(stage_dir, output_dir):
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    generated_target = output_dir / 'generated'
+    if generated_target.exists():
+        shutil.rmtree(generated_target)
+    shutil.copytree(stage_dir / 'generated', generated_target)
+
+    contact_target = output_dir / 'contact_sheets'
+    if contact_target.exists():
+        shutil.rmtree(contact_target)
+    shutil.copytree(stage_dir / 'contact_sheets', contact_target)
+
+    for name in ['manifest.scad', 'set.json', 'contact_sheet.svg']:
+        shutil.copy2(stage_dir / name, output_dir / name)
 
 
 def main():
@@ -320,72 +578,172 @@ def main():
     parser.add_argument('--font', required=True, type=Path)
     parser.add_argument('--spec', required=True, type=Path)
     parser.add_argument('--out', required=True, type=Path)
+    parser.add_argument('--lock', type=Path)
     args = parser.parse_args()
 
-    spec = json.loads(args.spec.read_text(encoding='utf-8'))
+    spec = json.loads(
+        args.spec.read_text(encoding='utf-8')
+    )
     font = TTFont(args.font)
     glyph_set = font.getGlyphSet()
     cmap = font.getBestCmap()
     source_sha = sha256(args.font)
-    tolerance = float(spec['flatten_tolerance_font_units'])
+    tolerance = float(
+        spec['flatten_tolerance_font_units']
+    )
 
-    svg_dir = args.out / 'generated/svg'
-    scad_dir = args.out / 'generated/scad'
-    svg_dir.mkdir(parents=True, exist_ok=True)
-    scad_dir.mkdir(parents=True, exist_ok=True)
+    args.out.parent.mkdir(parents=True, exist_ok=True)
 
-    glyphs = []
-    for item in spec['glyphs']:
-        glyph = extract_glyph(
-            font, glyph_set, cmap,
-            item['id'], item['character'], tolerance, source_sha,
+    with tempfile.TemporaryDirectory(
+        prefix='.glyph_dossier_extract_',
+        dir=args.out.parent,
+    ) as temporary:
+        stage = Path(temporary)
+        svg_dir = stage / 'generated/svg'
+        scad_dir = stage / 'generated/scad'
+        contact_dir = stage / 'contact_sheets'
+        svg_dir.mkdir(parents=True, exist_ok=True)
+        scad_dir.mkdir(parents=True, exist_ok=True)
+        contact_dir.mkdir(parents=True, exist_ok=True)
+
+        glyphs = []
+        for item in spec['glyphs']:
+            glyph = extract_glyph(
+                font,
+                glyph_set,
+                cmap,
+                item,
+                tolerance,
+                source_sha,
+            )
+            glyphs.append(glyph)
+            write_glyph_scad(
+                scad_dir / f'{item["id"]}.scad',
+                glyph,
+            )
+            write_svg(
+                svg_dir / f'{item["id"]}.svg',
+                glyph,
+            )
+
+        write_manifest(
+            stage / 'manifest.scad',
+            spec,
+            glyphs,
+            source_sha,
+            tolerance,
         )
-        glyphs.append(glyph)
-        write_glyph_scad(scad_dir / f'{item["id"]}.scad', glyph)
-        write_svg(svg_dir / f'{item["id"]}.svg', glyph)
 
-    manifest_lines = [
-        '//////////////////////////////////////////////////////////////////////',
-        '// LibFile: manifest.scad',
-        '// Project: Glyph Dossier',
-        '// FileGroup: Generated Portable Glyph Set',
-        '// FileSummary: Liberation Sans Regular representative set.',
-        '//////////////////////////////////////////////////////////////////////',
-        '',
-    ]
-    for glyph in glyphs:
-        manifest_lines.append(f'include <generated/scad/{glyph["id"]}.scad>')
-    manifest_lines.extend([
-        '',
-        f'PORTABLE_GLYPH_SET_ID = {scad_string(spec["set_id"])};',
-        f'PORTABLE_GLYPH_FAMILY = {scad_string(spec["family"])};',
-        f'PORTABLE_GLYPH_STYLE = {scad_string(spec["style"])};',
-        f'PORTABLE_GLYPH_FONT_VERSION = {scad_string(spec["font_version"])};',
-        f'PORTABLE_GLYPH_LICENSE = {scad_string(spec["license"])};',
-        f'PORTABLE_GLYPH_SOURCE_URL = {scad_string(spec["source_url"])};',
-        f'PORTABLE_GLYPH_SOURCE_SHA256 = {scad_string(source_sha)};',
-        f'PORTABLE_GLYPH_FLATTEN_TOLERANCE = {number(tolerance)};',
-        '',
-        'PORTABLE_GLYPHS = [',
-    ])
-    for index, glyph in enumerate(glyphs):
-        suffix = ',' if index < len(glyphs)-1 else ''
-        manifest_lines.append(f'    {glyph_constant(glyph["id"])}{suffix}')
-    manifest_lines.extend(['];', ''])
-    (args.out / 'manifest.scad').write_text('\n'.join(manifest_lines), encoding='utf-8', newline='\n')
+        public_glyphs = [
+            public_glyph_record(glyph)
+            for glyph in glyphs
+        ]
+        group_counts = {
+            group: len(grouped_ids(glyphs, group))
+            for group in [
+                'uppercase',
+                'lowercase',
+                'digit',
+                'punctuation',
+            ]
+        }
+        set_record = {
+            **spec,
+            'source_sha256': source_sha,
+            'glyph_count': len(glyphs),
+            'group_counts': group_counts,
+            'representative_glyph_count': len([
+                glyph
+                for glyph in glyphs
+                if glyph['representative']
+            ]),
+            'glyphs': public_glyphs,
+        }
+        (stage / 'set.json').write_text(
+            json.dumps(
+                set_record,
+                indent=2,
+                ensure_ascii=False,
+            ) + '\n',
+            encoding='utf-8',
+            newline='\n',
+        )
 
-    public_glyphs = [{key:value for key,value in glyph.items() if key not in {'region','svg_path'}} for glyph in glyphs]
-    set_record = {**spec, 'source_sha256': source_sha, 'glyph_count': len(glyphs), 'glyphs': public_glyphs}
-    (args.out / 'set.json').write_text(json.dumps(set_record, indent=2, ensure_ascii=False)+'\n', encoding='utf-8', newline='\n')
-    write_contact_sheet(args.out / 'contact_sheet.svg', glyphs)
-    write_checksums(args.out)
+        write_contact_sheet(
+            stage / 'contact_sheet.svg',
+            glyphs,
+            columns=int(
+                spec.get('contact_sheet_columns', 8)
+            ),
+        )
+
+        sheet_specs = [
+            (
+                'uppercase',
+                grouped_ids(glyphs, 'uppercase'),
+                7,
+            ),
+            (
+                'lowercase',
+                grouped_ids(glyphs, 'lowercase'),
+                7,
+            ),
+            (
+                'digits',
+                grouped_ids(glyphs, 'digit'),
+                5,
+            ),
+            (
+                'punctuation',
+                grouped_ids(glyphs, 'punctuation'),
+                4,
+            ),
+            (
+                'representative',
+                [
+                    glyph['id']
+                    for glyph in glyphs
+                    if glyph['representative']
+                ],
+                5,
+            ),
+        ]
+        by_id = {glyph['id']: glyph for glyph in glyphs}
+        for name, ids, columns in sheet_specs:
+            write_contact_sheet(
+                contact_dir / f'{name}.svg',
+                [by_id[glyph_id] for glyph_id in ids],
+                columns=columns,
+            )
+
+        lock_result = verify_lock(
+            args.lock,
+            stage,
+            glyphs,
+            source_sha,
+            tolerance,
+        )
+
+        install_stage(stage, args.out)
+        write_checksums(args.out)
 
     print(json.dumps({
         'set_id': spec['set_id'],
         'source_sha256': source_sha,
         'glyph_count': len(glyphs),
-        'contours': sum(g['contour_count'] for g in glyphs),
-        'points': sum(g['point_count'] for g in glyphs),
+        'group_counts': group_counts,
+        'representative_glyph_count': set_record[
+            'representative_glyph_count'
+        ],
+        'contours': sum(
+            glyph['contour_count']
+            for glyph in glyphs
+        ),
+        'points': sum(
+            glyph['point_count']
+            for glyph in glyphs
+        ),
+        **lock_result,
     }, indent=2))
 
 

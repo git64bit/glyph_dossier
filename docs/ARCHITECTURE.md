@@ -1,78 +1,56 @@
 # Architecture
 
-Glyph Dossier now has two deliberately separated pipelines.
+Glyph Dossier separates source capture from runtime geometry.
 
-## Portable authoritative pipeline
-
-```text
-TTF source retained with license and checksum
-        ↓
-external extractor
-        ↓
-captured contour records
-        ↓
-BOSL2 region validation
-        ↓
-exact numeric center-bottom normalization
-        ↓
-rectangular section plan
-        ↓
-exploded layout or local section export
-```
-
-Batch 006 implements this pipeline for `U_A`.
-
-The runtime portable route begins at:
+## Complete portable pipeline
 
 ```text
-portable_main.scad
+retained TTF + license + provenance
+        ↓
+transactional external extractor
+        ↓
+immutable representative lock
+        ↓
+66 captured contour records
+        ↓
+BOSL2 regions
+        ↓
+catalog, normalization, and later sectioning
 ```
 
-Its sectioning layers are:
+## Package authority
+
+The source package is:
 
 ```text
-config/portable_section_defaults.scad
-lib/portable_section_validation.scad
-lib/portable_section_reporting.scad
-geometry/portable_section_scene.scad
+glyph_sets/liberation_sans_regular/
 ```
 
-The pipeline does not call `text()`.
+`manifest.scad` is the OpenSCAD registry authority. It exposes complete,
+category, and representative ID arrays plus the 66 glyph records.
 
-## Live comparison pipeline
+`set.json` is the machine-readable extraction record.
 
-The earlier live-font route remains under:
+`checksums.sha256` protects every file in the package except itself.
 
-```text
-main.scad
-geometry/normalized_glyph.scad
-geometry/section_scene.scad
-workbenches/a_*.scad
-```
+## Stability contract
 
-It remains useful for comparing live font rendering against the captured
-portable geometry. It is no longer the authoritative portable export
-route.
+The original 20 records define revision `R1`. The extractor writes to a
+temporary staging directory, validates the lock, and only then replaces
+the generated package.
 
-## Shared grid mathematics
+This prevents a library update, platform change, extractor edit, or
+curve-flattening change from silently replacing previously accepted
+portable geometry.
 
-Both routes use:
+## Runtime catalog
 
-```text
-lib/sectioning.scad
-geometry/section_grid.scad
-geometry/a_hazard_map.scad
-```
+`portable_main.scad` routes contact sheets through generated category ID
+arrays. `portable_catalog.scad` selects any exact portable ID.
 
-This keeps cell identifiers, bounds, and layout coordinates consistent.
+## Sectioning boundary
 
-## Portable exact bounds
-
-The portable record contains its source-region bounds. Batch 006 derives
-the scale, normalized width, and normalized bounds numerically before
-rendering.
-
-## Deferred region booleans
-
-BOSL2 can operate on regions as data, but Batch 006 does not yet use
-region intersections to compute occupied cells or relocate cuts.
+Batch 007 does not generalize sectioning. Portable `U_A` remains the only
+authoritative sectional glyph. The next batch may generalize exact-bound
+normalization to every captured glyph without yet making sectioning
+generic.

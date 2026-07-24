@@ -13,6 +13,8 @@ pg_target_height = is_undef(portable_target_height)
     ? 120 : portable_target_height;
 pg_depth = is_undef(portable_extrusion_depth)
     ? 6 : portable_extrusion_depth;
+pg_sheet_group = is_undef(portable_sheet_group)
+    ? "representative" : portable_sheet_group;
 pg_sheet_columns = is_undef(portable_sheet_columns)
     ? 5 : portable_sheet_columns;
 pg_sheet_cell_size = is_undef(portable_sheet_cell_size)
@@ -44,5 +46,6 @@ module validate_portable_workbench() {
     );
     assert(pg_target_height > 0, "Portable target height must be positive.");
     assert(pg_depth > 0, "Portable extrusion depth must be positive.");
+    validate_portable_sheet_group(pg_sheet_group);
     assert(pg_sheet_columns >= 1, "Portable sheet columns must be positive.");
 }

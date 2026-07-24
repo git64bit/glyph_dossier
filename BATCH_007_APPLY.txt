@@ -1,0 +1,5 @@
+BASELINE COMMIT: 81d9559
+Copy all included complete files over the repository working tree.
+This delta completes the Liberation Sans R1 portable set at 66 glyphs.
+The original 20 generated SCAD and SVG artifacts remain byte-identical.
+Portable U_A normalization and sectioning are unchanged.

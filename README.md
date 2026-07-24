@@ -3,54 +3,116 @@
 Glyph Dossier develops portable, analyzable character geometry for
 large sectional construction.
 
-The project currently contains:
+## Current portable set
 
-- generic dossiers for 66 characters;
-- a source-observation framework;
-- a captured 20-character portable proof set;
-- an exact-height portable uppercase-A sectioning route.
-
-## Development history
-
-### Batch 001 — character anatomy
-
-Generic dossiers were created for uppercase, lowercase, digits, and
-selected punctuation.
-
-### Batch 002 — source-specific observation
-
-Three source slots and a manual observation ledger were added.
-
-### Batch 003 — first sectional A experiment
-
-A live OpenSCAD `text()` glyph was clipped with a rectangular grid.
-
-### Batch 004 — exact-height live-font normalization
-
-The live `text()` route gained exact-height normalization methods.
-
-### Batch 005 — portable captured glyph set
-
-Liberation Sans Regular was extracted directly from its TTF file into
-portable contour records. BOSL2 validates and renders those records.
-
-### Batch 006 — portable A sectioning
-
-The portable `U_A` record is now the authoritative source for:
+Batch 007 completes the Liberation Sans Regular package for every
+current dossier character:
 
 ```text
-exact-height normalization
-normalized width and bounds
-section-plan preview
-exploded section layout
-one-cell section export
-section manifest
+26 uppercase
+26 lowercase
+10 digits
+4 punctuation marks
+66 total glyphs
 ```
 
-The portable pipeline contains no `text()` call and requires no
-installed font.
+The package is stored under:
 
-## Authoritative portable A workbenches
+```text
+glyph_sets/liberation_sans_regular/
+```
+
+Every glyph contains:
+
+```text
+exact TTF bounds
+flattened region bounds
+advance width
+contour count
+component count
+counter count
+point count
+BOSL2 region paths
+diagnostic SVG
+source checksum
+```
+
+Normal portable rendering does not use `text()` and does not require an
+installed operating-system font.
+
+## Complete portable workbenches
+
+```text
+workbenches/portable_catalog.scad
+workbenches/portable_uppercase_sheet.scad
+workbenches/portable_lowercase_sheet.scad
+workbenches/portable_digit_sheet.scad
+workbenches/portable_punctuation_sheet.scad
+```
+
+The original representative sheet remains:
+
+```text
+workbenches/portable_contact_sheet.scad
+```
+
+`portable_catalog.scad` allows exact selection of any of the 66 captured
+IDs.
+
+## Immutable representative lock
+
+The original Batch 005 proof set remains immutable:
+
+```text
+A B O S Z
+a g i j m s
+0 1 2 4 8
+? ! : ;
+```
+
+The package contains:
+
+```text
+representative_lock.json
+representative_lock.scad
+```
+
+The lock preserves:
+
+```text
+character
+exact bounds
+region bounds
+contour count
+component count
+counter count
+point count
+generated SCAD checksum
+generated SVG checksum
+```
+
+The extractor builds into a staging directory and stops before replacing
+the package if any locked value or generated artifact changes.
+
+## Rebuilding the complete package
+
+From the repository root:
+
+```text
+python tools/extract_glyph_set.py   --font glyph_sets/liberation_sans_regular/source/LiberationSans-Regular.ttf   --spec tools/full_character_set.json   --out glyph_sets/liberation_sans_regular   --lock glyph_sets/liberation_sans_regular/representative_lock.json
+```
+
+Verify afterward:
+
+```text
+python tools/verify_glyph_set.py   glyph_sets/liberation_sans_regular
+```
+
+No system font query occurs.
+
+## Portable A sectioning
+
+The authoritative sectional route remains unchanged:
 
 ```text
 workbenches/portable_a_normalized_profile.scad
@@ -59,99 +121,29 @@ workbenches/portable_a_section_layout.scad
 workbenches/portable_a_section_export.scad
 ```
 
-The default experiment is:
+It continues to use the captured BOSL2 `U_A` record.
 
-```text
-portable set: LIBERATION_SANS_REGULAR_R1
-glyph: U_A
-target height: 600 mm
-extrusion depth: 6 mm
-normalized anchor: center-bottom
-grid origin: [-300, 0]
-cell size: [200, 200]
-grid: 3 × 3
-configured bed: [220, 220]
-```
-
-For the captured Liberation Sans `A`, the source region bounds are:
-
-```text
-[4, 0, 1362, 1409] font units
-```
-
-At 600 mm assembled height, the portable route reports the exact
-normalization scale and resulting width from those captured bounds.
-
-## Portable section manifest
-
-Every configured cell reports:
-
-```text
-section ID
-zero-based column and row
-global bounds
-local export bounds
-```
-
-The selected export is translated so the cell's lower-left corner is
-local `[0, 0]`.
-
-Batch 006 does not classify occupied and empty cells. The manifest is a
-deterministic grid inventory; an empty intersection renders no geometry.
-
-## Comparison-only live-font route
-
-These workbenches remain for comparison and regression testing:
-
-```text
-workbenches/a_normalized_profile.scad
-workbenches/a_section_plan.scad
-workbenches/a_section_layout.scad
-workbenches/a_section_export.scad
-workbenches/portable_vs_live.scad
-```
-
-They are no longer the authoritative portable object route.
-
-## Portable proof-set workbenches
-
-```text
-workbenches/portable_glyph.scad
-workbenches/portable_contact_sheet.scad
-workbenches/portable_region_diagnostics.scad
-workbenches/portable_vs_live.scad
-```
-
-## Batch 006 tests
-
-Open each directly and press F5:
-
-```text
-tests/portable_normalization_contract.scad
-tests/portable_a_section_render_contract.scad
-tests/portable_a_export_contract.scad
-```
-
-Then rerun:
+## Batch 007 tests
 
 ```text
 tests/portable_registry_contract.scad
+tests/portable_full_coverage_contract.scad
+tests/portable_category_sets_contract.scad
+tests/portable_representative_metadata_lock.scad
 tests/portable_bosl2_contract.scad
-tests/portable_component_color_contract.scad
 tests/portable_render_contract.scad
 ```
 
-## Still deferred
+## Deferred
 
 ```text
+generic normalization for all 66 glyphs
+generic sectioning
 occupied-cell computation
 automatic cut relocation
 connectors
 attachment methods
-inter-character spacing
-mounting
-portable sectioning of glyphs other than U_A
-expansion from 20 to 66 captured characters
+additional font families
 accepted physical objects
 ```
 

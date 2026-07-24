@@ -1,0 +1,54 @@
+BATCH: 007
+VERSION: 0.7.0
+BASELINE COMMIT: 81d9559
+DATE: 2026-07-24
+
+PURPOSE:
+  Complete the Liberation Sans Regular portable package for every
+  current Glyph Dossier character.
+
+CAPTURED SET:
+  - 26 uppercase letters.
+  - 26 lowercase letters.
+  - 10 digits.
+  - ?, !, :, and ;.
+  - 66 exact dossier-to-portable identities.
+
+STABILITY:
+  - The original 20 representative records are immutable.
+  - A package-specific JSON lock preserves source bounds, region bounds,
+    contour count, component count, counter count, point count, and the
+    generated SCAD and SVG checksums.
+  - Extraction occurs in a staging directory.
+  - The installed package is replaced only after every locked record
+    matches.
+  - Batch generation independently confirmed that all original 20 SCAD
+    and SVG files remain byte-identical to commit 81d9559.
+
+ADDED:
+  - 46 new generated SCAD glyph records.
+  - 46 new diagnostic SVG files.
+  - Complete and category ID arrays in manifest.scad.
+  - Uppercase, lowercase, digit, punctuation, representative, and full
+    SVG contact sheets.
+  - OpenSCAD category contact-sheet workbenches.
+  - A 66-glyph portable catalog workbench.
+  - Dossier coverage, category, BOSL2, and representative-lock tests.
+  - Lock-enforcing extractor and package verifier.
+
+UNCHANGED:
+  - Source TTF, license, and provenance.
+  - Flattening tolerance.
+  - Original 20 generated glyph records.
+  - Portable U_A normalization and sectioning.
+  - Connectors, attachment methods, and printing.
+
+TEST:
+  1. Copy this delta over commit 81d9559.
+  2. Run tools/verify_glyph_set.py against the package.
+  3. Run tests/portable_registry_contract.scad with F5.
+  4. Run tests/portable_full_coverage_contract.scad with F5.
+  5. Run tests/portable_category_sets_contract.scad with F5.
+  6. Run tests/portable_representative_metadata_lock.scad with F5.
+  7. Run tests/portable_bosl2_contract.scad with F5.
+  8. Inspect all five new portable catalog/contact-sheet workbenches.
