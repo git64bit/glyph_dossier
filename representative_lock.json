@@ -1,0 +1,448 @@
+{
+  "lock_id": "LIBERATION_SANS_REGULAR_R1_REPRESENTATIVE_LOCK",
+  "source_sha256": "bade59d822652f76e6941aa87b40a87c13d1cc70db98ededb5011127efafd1d3",
+  "flatten_tolerance_font_units": 2.0,
+  "glyph_count": 20,
+  "glyphs": [
+    {
+      "id": "U_A",
+      "character": "A",
+      "exact_bounds": [
+        4,
+        0,
+        1362,
+        1409
+      ],
+      "region_bounds": [
+        4.0,
+        0.0,
+        1362.0,
+        1409.0
+      ],
+      "contour_count": 2,
+      "component_count": 1,
+      "counter_count": 1,
+      "point_count": 17,
+      "scad_sha256": "608384226f37aefa2da4ee9bd569de15bac6680948f86b9be84adfba3c9879ed",
+      "svg_sha256": "36315ebbf4f7486ea1f398647914e519072919604535b1898a6883b65cd4aa16"
+    },
+    {
+      "id": "U_B",
+      "character": "B",
+      "exact_bounds": [
+        168,
+        0,
+        1258,
+        1409
+      ],
+      "region_bounds": [
+        168.0,
+        0.0,
+        1258.0,
+        1409.0
+      ],
+      "contour_count": 3,
+      "component_count": 1,
+      "counter_count": 2,
+      "point_count": 134,
+      "scad_sha256": "1948cb16402008551abc68331cc8e2ed45c7467e818cf396dde48ebe71f7badc",
+      "svg_sha256": "908f88d9bf3bec8d45935554386db5f9ba5afd70db9eed32af37a3891526248a"
+    },
+    {
+      "id": "U_O",
+      "character": "O",
+      "exact_bounds": [
+        97,
+        -20,
+        1495,
+        1430
+      ],
+      "region_bounds": [
+        97.0,
+        -20.0,
+        1495.0,
+        1430.0
+      ],
+      "contour_count": 2,
+      "component_count": 1,
+      "counter_count": 1,
+      "point_count": 152,
+      "scad_sha256": "f1d5a632202ddc52d92e5a9cf04a3ac4f546ff57e8f3740cb971777d6fd96b63",
+      "svg_sha256": "57032d413b6e2908cc3d4aac5d139d8008b6e4eb7a5b2f20e62f93f63f5c6c76"
+    },
+    {
+      "id": "U_S",
+      "character": "S",
+      "exact_bounds": [
+        93,
+        -20,
+        1272,
+        1430
+      ],
+      "region_bounds": [
+        93.0,
+        -20.0,
+        1272.0,
+        1430.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 183,
+      "scad_sha256": "babe156f1656f75c629b685c898167503120abdcc80763da946f442f5fb26d4f",
+      "svg_sha256": "20bea831d0fc6562f1efbf9a7e2991e9d10052f62fbdd1febf874a88ba3ff1fc"
+    },
+    {
+      "id": "U_Z",
+      "character": "Z",
+      "exact_bounds": [
+        65,
+        0,
+        1187,
+        1409
+      ],
+      "region_bounds": [
+        65.0,
+        0.0,
+        1187.0,
+        1409.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 10,
+      "scad_sha256": "890531dfc5ea0c1064aa1d6d0783c324785764290d559d69a583b260b1033366",
+      "svg_sha256": "0ff667077f1f975934d37cfce4f5108ccd3ec31a93cb1105337109eb58d4c085"
+    },
+    {
+      "id": "L_a",
+      "character": "a",
+      "exact_bounds": [
+        87,
+        -20,
+        1139,
+        1102
+      ],
+      "region_bounds": [
+        87.0,
+        -20.0,
+        1139.0,
+        1102.0
+      ],
+      "contour_count": 2,
+      "component_count": 1,
+      "counter_count": 1,
+      "point_count": 164,
+      "scad_sha256": "064eeaae82a4cfa7506d7f71fa41b9db7bed1500551a2f31b2455b4075873fa9",
+      "svg_sha256": "7f9de8be772e1927df8534d533561e3a9da1e0083613450d9d7ac605a7224067"
+    },
+    {
+      "id": "L_g",
+      "character": "g",
+      "exact_bounds": [
+        86,
+        -425,
+        1007,
+        1099
+      ],
+      "region_bounds": [
+        86.0,
+        -425.0,
+        1007.0,
+        1099.0
+      ],
+      "contour_count": 2,
+      "component_count": 1,
+      "counter_count": 1,
+      "point_count": 170,
+      "scad_sha256": "eda7599c455ff04b22f4343059ef5d9409a29f2a6fdfe525eda9feef25fd8b95",
+      "svg_sha256": "cc039c237204b2c375c886b0c6a86783eaa644dda3522f2fd6f24d5261e70e63"
+    },
+    {
+      "id": "L_i",
+      "character": "i",
+      "exact_bounds": [
+        137,
+        0,
+        317,
+        1484
+      ],
+      "region_bounds": [
+        137.0,
+        0.0,
+        317.0,
+        1484.0
+      ],
+      "contour_count": 2,
+      "component_count": 2,
+      "counter_count": 0,
+      "point_count": 8,
+      "scad_sha256": "84efc26767defe145269c18a36b3878ebefb05563200f1a74ecbfe22cb471209",
+      "svg_sha256": "f18a7ccbde73724ce4f0c198f10c12bbf9e264dab93ea3eab21affef0cca50d3"
+    },
+    {
+      "id": "L_j",
+      "character": "j",
+      "exact_bounds": [
+        -50,
+        -425,
+        317,
+        1484
+      ],
+      "region_bounds": [
+        -50.0,
+        -425.0,
+        317.0,
+        1484.0
+      ],
+      "contour_count": 2,
+      "component_count": 2,
+      "counter_count": 0,
+      "point_count": 35,
+      "scad_sha256": "7e3bd6316b2006bbbd5f391c4bd5644cdd546d78824ba82c1c7a44ebaa9f949f",
+      "svg_sha256": "df54b4d827b8870d4a4c05328673cd257287028ff49bbef237cac92a01d6e1d6"
+    },
+    {
+      "id": "L_m",
+      "character": "m",
+      "exact_bounds": [
+        136,
+        0,
+        1571,
+        1102
+      ],
+      "region_bounds": [
+        136.0,
+        0.0,
+        1571.0,
+        1102.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 122,
+      "scad_sha256": "a543ea1a2c65e03af1e06d253bcd578591b1345d090af6fdae9410400e5aa854",
+      "svg_sha256": "ff3d955d69e9bd8188832adc0080eb1e0f7e1d98fd5ecfdbbcc95ec3c732e7df"
+    },
+    {
+      "id": "L_s",
+      "character": "s",
+      "exact_bounds": [
+        57,
+        -20,
+        950,
+        1099
+      ],
+      "region_bounds": [
+        57.0,
+        -20.0,
+        950.0,
+        1099.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 157,
+      "scad_sha256": "1b4e569f9bf1841080f02cd3472524e2691c6a928d74e15adae1f0bba77025ad",
+      "svg_sha256": "e8ee0bae93c77d7d0fe762f6799f912fa522fa167d463dd0c44cbaf2dec321ff"
+    },
+    {
+      "id": "D_0",
+      "character": "0",
+      "exact_bounds": [
+        80,
+        -20,
+        1059,
+        1430
+      ],
+      "region_bounds": [
+        80.0,
+        -20.0,
+        1059.0,
+        1430.0
+      ],
+      "contour_count": 2,
+      "component_count": 1,
+      "counter_count": 1,
+      "point_count": 128,
+      "scad_sha256": "bd18003e3fb4effe6d42378523f80b59cac58a0995b4210d622265c36d008a4c",
+      "svg_sha256": "c3c580f143a10977fb3f1099322908da3c586ce8555cc9ad7b3c119f78ba26cb"
+    },
+    {
+      "id": "D_1",
+      "character": "1",
+      "exact_bounds": [
+        156,
+        0,
+        1039,
+        1409
+      ],
+      "region_bounds": [
+        156.0,
+        0.0,
+        1039.0,
+        1409.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 11,
+      "scad_sha256": "0ba1cf7c70cf2db64dfa6f42fdb2e21de97bed4854000f6a12a474b512ba5a0e",
+      "svg_sha256": "bb4434e5d5d21d37571ba53564cd7a5ae6305bbfe14a87420bbfbeb04b8148e1"
+    },
+    {
+      "id": "D_2",
+      "character": "2",
+      "exact_bounds": [
+        103,
+        0,
+        1036,
+        1430
+      ],
+      "region_bounds": [
+        103.0,
+        0.0,
+        1036.0,
+        1430.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 109,
+      "scad_sha256": "dff2005e9593db6a75ceb67772d171ef0884f4dbc987916f76d594ee73f3f08d",
+      "svg_sha256": "3636b31415575185b1108362ffe8967df70a1b6fe6d206fe4696b26a29d63394"
+    },
+    {
+      "id": "D_4",
+      "character": "4",
+      "exact_bounds": [
+        47,
+        0,
+        1079,
+        1409
+      ],
+      "region_bounds": [
+        47.0,
+        0.0,
+        1079.0,
+        1409.0
+      ],
+      "contour_count": 2,
+      "component_count": 1,
+      "counter_count": 1,
+      "point_count": 18,
+      "scad_sha256": "acdbe5f61b949bcbe4b7e825c1d8963fb3eb35c9b2d41f1885ec7ee89447484a",
+      "svg_sha256": "1d1d1923d88713c7dc6d80d63e92cd9f209db6cc4a9141baa47f6930cb931954"
+    },
+    {
+      "id": "D_8",
+      "character": "8",
+      "exact_bounds": [
+        89,
+        -20,
+        1050,
+        1430
+      ],
+      "region_bounds": [
+        89.0,
+        -20.0,
+        1050.0,
+        1430.0
+      ],
+      "contour_count": 3,
+      "component_count": 1,
+      "counter_count": 2,
+      "point_count": 255,
+      "scad_sha256": "e12a1f643a48118f24ddf2be4fb4f919728097229a351ecef390955abfdeaa24",
+      "svg_sha256": "b2dac7be5702d596e9983507dc55eafb63765967ba43bfecb626d18ef198a9e6"
+    },
+    {
+      "id": "P_question",
+      "character": "?",
+      "exact_bounds": [
+        84,
+        0,
+        1063,
+        1430
+      ],
+      "region_bounds": [
+        84.0,
+        0.0,
+        1063.0,
+        1430.0
+      ],
+      "contour_count": 2,
+      "component_count": 2,
+      "counter_count": 0,
+      "point_count": 110,
+      "scad_sha256": "9413db7c0743450243413e2701e50d624b86807539fc04be7a3a85c9bb0a3c66",
+      "svg_sha256": "a3a75e79153cd48414597f38776382384fae182b9a6d70bf7e546c8535ee38df"
+    },
+    {
+      "id": "P_exclamation",
+      "character": "!",
+      "exact_bounds": [
+        185,
+        0,
+        383,
+        1409
+      ],
+      "region_bounds": [
+        185.0,
+        0.0,
+        383.0,
+        1409.0
+      ],
+      "contour_count": 2,
+      "component_count": 2,
+      "counter_count": 0,
+      "point_count": 8,
+      "scad_sha256": "ef67680640a42ee74b5684bfa73930710edfd7648d63815e0a455c1b6c274cdd",
+      "svg_sha256": "c76cd5f0c8969e66b18b432a835ac49561b3f64b2919c13eb0cc0cc06e1a7945"
+    },
+    {
+      "id": "P_colon",
+      "character": ":",
+      "exact_bounds": [
+        187,
+        0,
+        382,
+        1082
+      ],
+      "region_bounds": [
+        187.0,
+        0.0,
+        382.0,
+        1082.0
+      ],
+      "contour_count": 2,
+      "component_count": 2,
+      "counter_count": 0,
+      "point_count": 8,
+      "scad_sha256": "b1916a36d0c222392952e660d9e0fcacc1f6f8281343f509dc9c847efb287d23",
+      "svg_sha256": "6bd29df1c19156f30b698c197a5f4b483505c393aece76ccd76d9e900befc4cf"
+    },
+    {
+      "id": "P_semicolon",
+      "character": ";",
+      "exact_bounds": [
+        184,
+        -262,
+        385,
+        1082
+      ],
+      "region_bounds": [
+        184.0,
+        -262.0,
+        385.0,
+        1082.0
+      ],
+      "contour_count": 2,
+      "component_count": 2,
+      "counter_count": 0,
+      "point_count": 25,
+      "scad_sha256": "adcf0ed32c9d1b1680c7f31da4afca8a19c96f441baf2a2673a29c0cfb8371a9",
+      "svg_sha256": "785c2dd8c874fb23fd8934ad71ab68ad505f9bb4bf94163f1c720abaae0ed8b8"
+    }
+  ]
+}
