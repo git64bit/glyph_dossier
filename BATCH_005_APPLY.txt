@@ -1,0 +1,5 @@
+BASELINE COMMIT: 0117e32
+Copy all included complete files over the repository working tree.
+This delta adds one portable 20-character Liberation Sans Regular glyph set.
+BOSL2 is resolved through include <BOSL2/std.scad>.
+Existing sectioning geometry is unchanged.

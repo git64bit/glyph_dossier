@@ -3,156 +3,115 @@
 Glyph Dossier analyzes individual English characters and develops a
 controlled path toward sectional large-format printing.
 
-The project covers:
+## Batch 005: portable glyph source proof
 
-- 26 uppercase letters;
-- 26 lowercase letters;
-- digits 0–9;
-- `?`, `!`, `:`, and `;`.
-
-## Batch 001: character anatomy
-
-Every character has a generic dossier describing expected components,
-counters, vertical class, archetype, significant features, font
-variations, and sectioning risks.
-
-## Batch 002: source-specific observation
-
-Three configurable font sources and a pending observation ledger support
-manual source-specific inspection without fabricated measurements.
-
-## Batch 003: first sectional experiment
-
-Uppercase `A` was clipped through an explicit rectangular grid without
-connectors or attachment assumptions.
-
-## Batch 004: exact-height normalization
-
-The source-specific `A` is now normalized before sectioning.
-
-The default method is:
+The project now contains one complete font-independent capture package:
 
 ```text
-resize
+glyph_sets/liberation_sans_regular/
 ```
 
-It uses OpenSCAD `resize()` to fit the actual rendered profile to the
-configured assembled height while preserving its aspect ratio.
+The source is **Liberation Sans Regular 2.1.5**, licensed under the SIL
+Open Font License 1.1.
 
-Additional methods are available:
+The package contains:
 
 ```text
-manual
-textmetrics
+original TTF
+license and provenance
+20 representative glyphs
+exact SVG path output per glyph
+flattened point-list region per glyph
+generated SCAD record per glyph
+JSON set metadata
+SVG contact sheet
+SHA-256 checksums
 ```
 
-`manual` uses explicit profile bounds entered at a known probe size.
+Normal use of the captured package does not call `text()` and does not
+require the font to be installed by Windows, Linux, or macOS.
 
-`textmetrics` uses the development-snapshot `textmetrics()` function.
-It should be selected only in an OpenSCAD build that provides that
-function.
+## BOSL2
 
-All methods establish a center-bottom profile anchor:
+Portable workbenches begin with:
+
+```scad
+include <BOSL2/std.scad>
+```
+
+BOSL2 is expected in the normal OpenSCAD user-library path. It is not
+copied into this repository.
+
+The captured point lists are treated as BOSL2 regions and checked with:
 
 ```text
-X = 0 at the horizontal profile center
-Y = 0 at the profile bottom
+is_region()
+is_valid_region()
+region_parts()
+region_area()
 ```
 
-The section grid is applied after normalization.
-
-## Font inventory
-
-Open:
+## Representative capture set
 
 ```text
-workbenches/font_inventory.scad
+A B O S Z
+a g i j m s
+0 1 2 4 8
+? ! : ;
 ```
 
-The console reports:
+This remains a 20-glyph proof. The full 66-glyph package is not yet
+claimed.
+
+## Portable workbenches
 
 ```text
-OpenSCAD version
-OpenSCAD version number
-Help > Font List
-configured source IDs and exact font strings
-license, URL, and revision fields
-bundled portable font families
+workbenches/portable_glyph.scad
+workbenches/portable_contact_sheet.scad
+workbenches/portable_region_diagnostics.scad
+workbenches/portable_vs_live.scad
 ```
 
-The complete machine-specific list remains OpenSCAD's **Help > Font
-List** pane. A SCAD file does not enumerate every installed font.
+`portable_vs_live.scad` is diagnostic only. Its left-hand object uses
+live `text()`; the right-hand object uses the captured region.
 
-The workbench has an optional `runtime_fontmetrics_enabled` switch. When
-enabled in a compatible development snapshot, it echoes `fontmetrics()`
-for each configured source, including the family and style that
-OpenSCAD actually resolved.
+## Regeneration
 
-## Normalized A workbenches
+From the repository root:
 
 ```text
-workbenches/a_normalized_profile.scad
-workbenches/a_section_plan.scad
-workbenches/a_section_layout.scad
-workbenches/a_section_export.scad
+python -m venv .venv
+.venv/bin/pip install -r tools/requirements.txt
+.venv/bin/python tools/extract_glyph_set.py \
+  --font glyph_sets/liberation_sans_regular/source/LiberationSans-Regular.ttf \
+  --spec tools/representative_set.json \
+  --out glyph_sets/liberation_sans_regular
 ```
 
-The three sectioning workbenches now operate on normalized geometry.
+On Windows, use `.venv\Scripts\python.exe` instead.
 
-### Default normalized experiment
+Verify the generated package:
 
 ```text
-target assembled height: 600 mm
-profile anchor: center-bottom
-grid: 3 columns × 3 rows
-cell: 200 × 200 mm
-grid origin: X = -300 mm, Y = 0 mm
-configured bed: 220 × 220 mm
+python tools/verify_glyph_set.py glyph_sets/liberation_sans_regular
 ```
 
-### Section manifest
-
-Every sectioning workbench reports all configured cells:
-
-```text
-section ID
-zero-based column and row
-global bounds
-local print bounds
-```
-
-OpenSCAD does not report whether a cell intersection is empty. Empty
-cells simply render no geometry.
-
-## Tests
+## Batch 005 tests
 
 Open each file directly and press F5:
 
 ```text
-tests/catalog_contract.scad
-tests/representative_set.scad
-tests/render_contract.scad
-tests/source_registry_contract.scad
-tests/observation_contract.scad
-tests/source_render_contract.scad
-tests/section_math_contract.scad
-tests/a_section_render_contract.scad
-tests/font_inventory_contract.scad
-tests/normalization_math_contract.scad
-tests/normalized_a_render_contract.scad
+tests/portable_registry_contract.scad
+tests/portable_bosl2_contract.scad
+tests/portable_render_contract.scad
 ```
 
-## Still deferred
+The previous tests remain valid and unchanged.
 
-```text
-connectors
-attachment methods
-inter-character spacing
-mounting
-automatic cut optimization
-other sectional glyphs
-accepted physical objects
-```
+## Deliberately unchanged
+
+Batch 005 does not connect captured regions to the sectioning pipeline.
+It does not add connectors, spacing, mounting, or print procedures.
 
 ## Workflow
 

@@ -1,0 +1,91 @@
+{
+  "set_id": "LIBERATION_SANS_REGULAR_R1",
+  "family": "Liberation Sans",
+  "style": "Regular",
+  "font_version": "2.1.5",
+  "license": "SIL Open Font License 1.1",
+  "source_url": "https://github.com/liberationfonts/liberation-fonts",
+  "flatten_tolerance_font_units": 2.0,
+  "glyphs": [
+    {
+      "id": "U_A",
+      "character": "A"
+    },
+    {
+      "id": "U_B",
+      "character": "B"
+    },
+    {
+      "id": "U_O",
+      "character": "O"
+    },
+    {
+      "id": "U_S",
+      "character": "S"
+    },
+    {
+      "id": "U_Z",
+      "character": "Z"
+    },
+    {
+      "id": "L_a",
+      "character": "a"
+    },
+    {
+      "id": "L_g",
+      "character": "g"
+    },
+    {
+      "id": "L_i",
+      "character": "i"
+    },
+    {
+      "id": "L_j",
+      "character": "j"
+    },
+    {
+      "id": "L_m",
+      "character": "m"
+    },
+    {
+      "id": "L_s",
+      "character": "s"
+    },
+    {
+      "id": "D_0",
+      "character": "0"
+    },
+    {
+      "id": "D_1",
+      "character": "1"
+    },
+    {
+      "id": "D_2",
+      "character": "2"
+    },
+    {
+      "id": "D_4",
+      "character": "4"
+    },
+    {
+      "id": "D_8",
+      "character": "8"
+    },
+    {
+      "id": "P_question",
+      "character": "?"
+    },
+    {
+      "id": "P_exclamation",
+      "character": "!"
+    },
+    {
+      "id": "P_colon",
+      "character": ":"
+    },
+    {
+      "id": "P_semicolon",
+      "character": ";"
+    }
+  ]
+}

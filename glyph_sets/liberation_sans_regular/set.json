@@ -1,0 +1,533 @@
+{
+  "set_id": "LIBERATION_SANS_REGULAR_R1",
+  "family": "Liberation Sans",
+  "style": "Regular",
+  "font_version": "2.1.5",
+  "license": "SIL Open Font License 1.1",
+  "source_url": "https://github.com/liberationfonts/liberation-fonts",
+  "flatten_tolerance_font_units": 2.0,
+  "glyphs": [
+    {
+      "id": "U_A",
+      "character": "A",
+      "codepoint": 65,
+      "glyph_name": "A",
+      "units_per_em": 2048,
+      "advance_width": 1366,
+      "exact_bounds": [
+        4,
+        0,
+        1362,
+        1409
+      ],
+      "region_bounds": [
+        4.0,
+        0.0,
+        1362.0,
+        1409.0
+      ],
+      "contour_count": 2,
+      "component_count": 1,
+      "counter_count": 1,
+      "point_count": 17,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bade59d822652f76e6941aa87b40a87c13d1cc70db98ededb5011127efafd1d3"
+    },
+    {
+      "id": "U_B",
+      "character": "B",
+      "codepoint": 66,
+      "glyph_name": "B",
+      "units_per_em": 2048,
+      "advance_width": 1366,
+      "exact_bounds": [
+        168,
+        0,
+        1258,
+        1409
+      ],
+      "region_bounds": [
+        168.0,
+        0.0,
+        1258.0,
+        1409.0
+      ],
+      "contour_count": 3,
+      "component_count": 1,
+      "counter_count": 2,
+      "point_count": 134,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bade59d822652f76e6941aa87b40a87c13d1cc70db98ededb5011127efafd1d3"
+    },
+    {
+      "id": "U_O",
+      "character": "O",
+      "codepoint": 79,
+      "glyph_name": "O",
+      "units_per_em": 2048,
+      "advance_width": 1593,
+      "exact_bounds": [
+        97,
+        -20,
+        1495,
+        1430
+      ],
+      "region_bounds": [
+        97.0,
+        -20.0,
+        1495.0,
+        1430.0
+      ],
+      "contour_count": 2,
+      "component_count": 1,
+      "counter_count": 1,
+      "point_count": 152,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bade59d822652f76e6941aa87b40a87c13d1cc70db98ededb5011127efafd1d3"
+    },
+    {
+      "id": "U_S",
+      "character": "S",
+      "codepoint": 83,
+      "glyph_name": "S",
+      "units_per_em": 2048,
+      "advance_width": 1366,
+      "exact_bounds": [
+        93,
+        -20,
+        1272,
+        1430
+      ],
+      "region_bounds": [
+        93.0,
+        -20.0,
+        1272.0,
+        1430.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 183,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bade59d822652f76e6941aa87b40a87c13d1cc70db98ededb5011127efafd1d3"
+    },
+    {
+      "id": "U_Z",
+      "character": "Z",
+      "codepoint": 90,
+      "glyph_name": "Z",
+      "units_per_em": 2048,
+      "advance_width": 1251,
+      "exact_bounds": [
+        65,
+        0,
+        1187,
+        1409
+      ],
+      "region_bounds": [
+        65.0,
+        0.0,
+        1187.0,
+        1409.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 10,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bade59d822652f76e6941aa87b40a87c13d1cc70db98ededb5011127efafd1d3"
+    },
+    {
+      "id": "L_a",
+      "character": "a",
+      "codepoint": 97,
+      "glyph_name": "a",
+      "units_per_em": 2048,
+      "advance_width": 1139,
+      "exact_bounds": [
+        87,
+        -20,
+        1139,
+        1102
+      ],
+      "region_bounds": [
+        87.0,
+        -20.0,
+        1139.0,
+        1102.0
+      ],
+      "contour_count": 2,
+      "component_count": 1,
+      "counter_count": 1,
+      "point_count": 164,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bade59d822652f76e6941aa87b40a87c13d1cc70db98ededb5011127efafd1d3"
+    },
+    {
+      "id": "L_g",
+      "character": "g",
+      "codepoint": 103,
+      "glyph_name": "g",
+      "units_per_em": 2048,
+      "advance_width": 1139,
+      "exact_bounds": [
+        86,
+        -425,
+        1007,
+        1099
+      ],
+      "region_bounds": [
+        86.0,
+        -425.0,
+        1007.0,
+        1099.0
+      ],
+      "contour_count": 2,
+      "component_count": 1,
+      "counter_count": 1,
+      "point_count": 170,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bade59d822652f76e6941aa87b40a87c13d1cc70db98ededb5011127efafd1d3"
+    },
+    {
+      "id": "L_i",
+      "character": "i",
+      "codepoint": 105,
+      "glyph_name": "i",
+      "units_per_em": 2048,
+      "advance_width": 455,
+      "exact_bounds": [
+        137,
+        0,
+        317,
+        1484
+      ],
+      "region_bounds": [
+        137.0,
+        0.0,
+        317.0,
+        1484.0
+      ],
+      "contour_count": 2,
+      "component_count": 2,
+      "counter_count": 0,
+      "point_count": 8,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bade59d822652f76e6941aa87b40a87c13d1cc70db98ededb5011127efafd1d3"
+    },
+    {
+      "id": "L_j",
+      "character": "j",
+      "codepoint": 106,
+      "glyph_name": "j",
+      "units_per_em": 2048,
+      "advance_width": 455,
+      "exact_bounds": [
+        -50,
+        -425,
+        317,
+        1484
+      ],
+      "region_bounds": [
+        -50.0,
+        -425.0,
+        317.0,
+        1484.0
+      ],
+      "contour_count": 2,
+      "component_count": 2,
+      "counter_count": 0,
+      "point_count": 35,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bade59d822652f76e6941aa87b40a87c13d1cc70db98ededb5011127efafd1d3"
+    },
+    {
+      "id": "L_m",
+      "character": "m",
+      "codepoint": 109,
+      "glyph_name": "m",
+      "units_per_em": 2048,
+      "advance_width": 1706,
+      "exact_bounds": [
+        136,
+        0,
+        1571,
+        1102
+      ],
+      "region_bounds": [
+        136.0,
+        0.0,
+        1571.0,
+        1102.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 122,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bade59d822652f76e6941aa87b40a87c13d1cc70db98ededb5011127efafd1d3"
+    },
+    {
+      "id": "L_s",
+      "character": "s",
+      "codepoint": 115,
+      "glyph_name": "s",
+      "units_per_em": 2048,
+      "advance_width": 1024,
+      "exact_bounds": [
+        57,
+        -20,
+        950,
+        1099
+      ],
+      "region_bounds": [
+        57.0,
+        -20.0,
+        950.0,
+        1099.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 157,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bade59d822652f76e6941aa87b40a87c13d1cc70db98ededb5011127efafd1d3"
+    },
+    {
+      "id": "D_0",
+      "character": "0",
+      "codepoint": 48,
+      "glyph_name": "zero",
+      "units_per_em": 2048,
+      "advance_width": 1139,
+      "exact_bounds": [
+        80,
+        -20,
+        1059,
+        1430
+      ],
+      "region_bounds": [
+        80.0,
+        -20.0,
+        1059.0,
+        1430.0
+      ],
+      "contour_count": 2,
+      "component_count": 1,
+      "counter_count": 1,
+      "point_count": 128,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bade59d822652f76e6941aa87b40a87c13d1cc70db98ededb5011127efafd1d3"
+    },
+    {
+      "id": "D_1",
+      "character": "1",
+      "codepoint": 49,
+      "glyph_name": "one",
+      "units_per_em": 2048,
+      "advance_width": 1139,
+      "exact_bounds": [
+        156,
+        0,
+        1039,
+        1409
+      ],
+      "region_bounds": [
+        156.0,
+        0.0,
+        1039.0,
+        1409.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 11,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bade59d822652f76e6941aa87b40a87c13d1cc70db98ededb5011127efafd1d3"
+    },
+    {
+      "id": "D_2",
+      "character": "2",
+      "codepoint": 50,
+      "glyph_name": "two",
+      "units_per_em": 2048,
+      "advance_width": 1139,
+      "exact_bounds": [
+        103,
+        0,
+        1036,
+        1430
+      ],
+      "region_bounds": [
+        103.0,
+        0.0,
+        1036.0,
+        1430.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 109,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bade59d822652f76e6941aa87b40a87c13d1cc70db98ededb5011127efafd1d3"
+    },
+    {
+      "id": "D_4",
+      "character": "4",
+      "codepoint": 52,
+      "glyph_name": "four",
+      "units_per_em": 2048,
+      "advance_width": 1139,
+      "exact_bounds": [
+        47,
+        0,
+        1079,
+        1409
+      ],
+      "region_bounds": [
+        47.0,
+        0.0,
+        1079.0,
+        1409.0
+      ],
+      "contour_count": 2,
+      "component_count": 1,
+      "counter_count": 1,
+      "point_count": 18,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bade59d822652f76e6941aa87b40a87c13d1cc70db98ededb5011127efafd1d3"
+    },
+    {
+      "id": "D_8",
+      "character": "8",
+      "codepoint": 56,
+      "glyph_name": "eight",
+      "units_per_em": 2048,
+      "advance_width": 1139,
+      "exact_bounds": [
+        89,
+        -20,
+        1050,
+        1430
+      ],
+      "region_bounds": [
+        89.0,
+        -20.0,
+        1050.0,
+        1430.0
+      ],
+      "contour_count": 3,
+      "component_count": 1,
+      "counter_count": 2,
+      "point_count": 255,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bade59d822652f76e6941aa87b40a87c13d1cc70db98ededb5011127efafd1d3"
+    },
+    {
+      "id": "P_question",
+      "character": "?",
+      "codepoint": 63,
+      "glyph_name": "question",
+      "units_per_em": 2048,
+      "advance_width": 1139,
+      "exact_bounds": [
+        84,
+        0,
+        1063,
+        1430
+      ],
+      "region_bounds": [
+        84.0,
+        0.0,
+        1063.0,
+        1430.0
+      ],
+      "contour_count": 2,
+      "component_count": 2,
+      "counter_count": 0,
+      "point_count": 110,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bade59d822652f76e6941aa87b40a87c13d1cc70db98ededb5011127efafd1d3"
+    },
+    {
+      "id": "P_exclamation",
+      "character": "!",
+      "codepoint": 33,
+      "glyph_name": "exclam",
+      "units_per_em": 2048,
+      "advance_width": 569,
+      "exact_bounds": [
+        185,
+        0,
+        383,
+        1409
+      ],
+      "region_bounds": [
+        185.0,
+        0.0,
+        383.0,
+        1409.0
+      ],
+      "contour_count": 2,
+      "component_count": 2,
+      "counter_count": 0,
+      "point_count": 8,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bade59d822652f76e6941aa87b40a87c13d1cc70db98ededb5011127efafd1d3"
+    },
+    {
+      "id": "P_colon",
+      "character": ":",
+      "codepoint": 58,
+      "glyph_name": "colon",
+      "units_per_em": 2048,
+      "advance_width": 569,
+      "exact_bounds": [
+        187,
+        0,
+        382,
+        1082
+      ],
+      "region_bounds": [
+        187.0,
+        0.0,
+        382.0,
+        1082.0
+      ],
+      "contour_count": 2,
+      "component_count": 2,
+      "counter_count": 0,
+      "point_count": 8,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bade59d822652f76e6941aa87b40a87c13d1cc70db98ededb5011127efafd1d3"
+    },
+    {
+      "id": "P_semicolon",
+      "character": ";",
+      "codepoint": 59,
+      "glyph_name": "semicolon",
+      "units_per_em": 2048,
+      "advance_width": 569,
+      "exact_bounds": [
+        184,
+        -262,
+        385,
+        1082
+      ],
+      "region_bounds": [
+        184.0,
+        -262.0,
+        385.0,
+        1082.0
+      ],
+      "contour_count": 2,
+      "component_count": 2,
+      "counter_count": 0,
+      "point_count": 25,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bade59d822652f76e6941aa87b40a87c13d1cc70db98ededb5011127efafd1d3"
+    }
+  ],
+  "source_sha256": "bade59d822652f76e6941aa87b40a87c13d1cc70db98ededb5011127efafd1d3",
+  "glyph_count": 20
+}
