@@ -1,0 +1,4 @@
+BASELINE COMMIT: c82cc94
+Copy all included complete files over the repository working tree.
+The new portable_a_* workbenches use captured BOSL2 U_A data only.
+The existing live text() route remains comparison-only.

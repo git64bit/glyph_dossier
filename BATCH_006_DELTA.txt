@@ -1,0 +1,48 @@
+BATCH: 006
+VERSION: 0.6.0
+BASELINE COMMIT: c82cc94
+DATE: 2026-07-24
+
+PURPOSE:
+  Connect the captured portable BOSL2 uppercase A directly to exact-height
+  normalization and rectangular section export.
+
+SOURCE AUTHORITY:
+  - Portable set: LIBERATION_SANS_REGULAR_R1
+  - Glyph: U_A
+  - Runtime source: captured BOSL2 region data
+  - No text() call in the portable normalization or sectioning route
+  - No installed-font dependency in the portable route
+
+ADDED:
+  - Exact portable normalization scale, width, and bounds reporting.
+  - Portable center-bottom normalized-profile workbench.
+  - Portable uppercase-A section-plan workbench.
+  - Portable exploded section-layout workbench.
+  - Portable individual-section export workbench.
+  - Deterministic section manifest with global and local cell bounds.
+  - Grid-coverage reporting against exact normalized glyph bounds.
+  - Portable section API.
+  - Portable normalization and rendering contract tests.
+
+UNCHANGED:
+  - Captured glyph records and checksums.
+  - Extractor.
+  - Live text() normalization and sectioning workbenches.
+  - Existing comparison workbench.
+  - Connectors, attachments, spacing, and mounting.
+
+IMPORTANT:
+  The live text() workbenches remain available only for comparison.
+  The new portable_a_* workbenches are the authoritative sectional route.
+
+TEST:
+  1. Copy this delta over commit c82cc94.
+  2. Run tests/portable_normalization_contract.scad with F5.
+  3. Run tests/portable_a_section_render_contract.scad with F5.
+  4. Run tests/portable_a_export_contract.scad with F5.
+  5. Run the prior portable tests.
+  6. Inspect workbenches/portable_a_normalized_profile.scad.
+  7. Inspect workbenches/portable_a_section_plan.scad.
+  8. Inspect workbenches/portable_a_section_layout.scad.
+  9. Inspect several cells through portable_a_section_export.scad.

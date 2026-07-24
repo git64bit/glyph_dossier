@@ -1,14 +1,17 @@
 # Accepted glyph objects
 
-The physical-object catalog remains empty in Batch 005.
+The catalog remains empty in Batch 006.
 
-Batch 005 accepts no print object. It establishes a portable source proof:
+The authoritative laboratory route is now the captured portable
+Liberation Sans `U_A`, normalized and sectioned without `text()`.
 
-- original licensed font retained;
-- representative glyph paths captured;
-- BOSL2 region validation defined;
-- operating-system font installation removed from normal captured use.
+Promotion still requires:
 
-The portable set itself remains a laboratory data package until its
-OpenSCAD tests are accepted and the capture is expanded or otherwise
-approved.
+1. confirmation that the portable profile renders correctly;
+2. confirmation of exact normalized dimensions;
+3. an acceptable section grid;
+4. verified local section exports;
+5. later physical reconstruction;
+6. explicit acceptance.
+
+No connectors, attachments, or accepted physical glyph object exist.

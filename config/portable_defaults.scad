@@ -30,6 +30,10 @@ VALID_PORTABLE_RENDER_MODES = [
     "contact_sheet",
     "diagnostics",
     "compare_live",
+    "a_normalized_profile",
+    "a_section_plan",
+    "a_section_layout",
+    "a_section_export",
     "report_only"
 ];
 

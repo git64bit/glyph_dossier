@@ -1,69 +1,119 @@
 # Glyph Dossier
 
-Glyph Dossier analyzes individual English characters and develops a
-controlled path toward sectional large-format printing.
+Glyph Dossier develops portable, analyzable character geometry for
+large sectional construction.
 
-## Batch 005: portable glyph source proof
+The project currently contains:
 
-The project now contains one complete font-independent capture package:
+- generic dossiers for 66 characters;
+- a source-observation framework;
+- a captured 20-character portable proof set;
+- an exact-height portable uppercase-A sectioning route.
 
-```text
-glyph_sets/liberation_sans_regular/
-```
+## Development history
 
-The source is **Liberation Sans Regular 2.1.5**, licensed under the SIL
-Open Font License 1.1.
+### Batch 001 — character anatomy
 
-The package contains:
+Generic dossiers were created for uppercase, lowercase, digits, and
+selected punctuation.
 
-```text
-original TTF
-license and provenance
-20 representative glyphs
-exact SVG path output per glyph
-flattened point-list region per glyph
-generated SCAD record per glyph
-JSON set metadata
-SVG contact sheet
-SHA-256 checksums
-```
+### Batch 002 — source-specific observation
 
-Normal use of the captured package does not call `text()` and does not
-require the font to be installed by Windows, Linux, or macOS.
+Three source slots and a manual observation ledger were added.
 
-## BOSL2
+### Batch 003 — first sectional A experiment
 
-Portable workbenches begin with:
+A live OpenSCAD `text()` glyph was clipped with a rectangular grid.
 
-```scad
-include <BOSL2/std.scad>
-```
+### Batch 004 — exact-height live-font normalization
 
-BOSL2 is expected in the normal OpenSCAD user-library path. It is not
-copied into this repository.
+The live `text()` route gained exact-height normalization methods.
 
-The captured point lists are treated as BOSL2 regions and checked with:
+### Batch 005 — portable captured glyph set
+
+Liberation Sans Regular was extracted directly from its TTF file into
+portable contour records. BOSL2 validates and renders those records.
+
+### Batch 006 — portable A sectioning
+
+The portable `U_A` record is now the authoritative source for:
 
 ```text
-is_region()
-is_valid_region()
-region_parts()
-region_area()
+exact-height normalization
+normalized width and bounds
+section-plan preview
+exploded section layout
+one-cell section export
+section manifest
 ```
 
-## Representative capture set
+The portable pipeline contains no `text()` call and requires no
+installed font.
+
+## Authoritative portable A workbenches
 
 ```text
-A B O S Z
-a g i j m s
-0 1 2 4 8
-? ! : ;
+workbenches/portable_a_normalized_profile.scad
+workbenches/portable_a_section_plan.scad
+workbenches/portable_a_section_layout.scad
+workbenches/portable_a_section_export.scad
 ```
 
-This remains a 20-glyph proof. The full 66-glyph package is not yet
-claimed.
+The default experiment is:
 
-## Portable workbenches
+```text
+portable set: LIBERATION_SANS_REGULAR_R1
+glyph: U_A
+target height: 600 mm
+extrusion depth: 6 mm
+normalized anchor: center-bottom
+grid origin: [-300, 0]
+cell size: [200, 200]
+grid: 3 × 3
+configured bed: [220, 220]
+```
+
+For the captured Liberation Sans `A`, the source region bounds are:
+
+```text
+[4, 0, 1362, 1409] font units
+```
+
+At 600 mm assembled height, the portable route reports the exact
+normalization scale and resulting width from those captured bounds.
+
+## Portable section manifest
+
+Every configured cell reports:
+
+```text
+section ID
+zero-based column and row
+global bounds
+local export bounds
+```
+
+The selected export is translated so the cell's lower-left corner is
+local `[0, 0]`.
+
+Batch 006 does not classify occupied and empty cells. The manifest is a
+deterministic grid inventory; an empty intersection renders no geometry.
+
+## Comparison-only live-font route
+
+These workbenches remain for comparison and regression testing:
+
+```text
+workbenches/a_normalized_profile.scad
+workbenches/a_section_plan.scad
+workbenches/a_section_layout.scad
+workbenches/a_section_export.scad
+workbenches/portable_vs_live.scad
+```
+
+They are no longer the authoritative portable object route.
+
+## Portable proof-set workbenches
 
 ```text
 workbenches/portable_glyph.scad
@@ -72,46 +122,38 @@ workbenches/portable_region_diagnostics.scad
 workbenches/portable_vs_live.scad
 ```
 
-`portable_vs_live.scad` is diagnostic only. Its left-hand object uses
-live `text()`; the right-hand object uses the captured region.
+## Batch 006 tests
 
-## Regeneration
-
-From the repository root:
+Open each directly and press F5:
 
 ```text
-python -m venv .venv
-.venv/bin/pip install -r tools/requirements.txt
-.venv/bin/python tools/extract_glyph_set.py \
-  --font glyph_sets/liberation_sans_regular/source/LiberationSans-Regular.ttf \
-  --spec tools/representative_set.json \
-  --out glyph_sets/liberation_sans_regular
+tests/portable_normalization_contract.scad
+tests/portable_a_section_render_contract.scad
+tests/portable_a_export_contract.scad
 ```
 
-On Windows, use `.venv\Scripts\python.exe` instead.
-
-Verify the generated package:
-
-```text
-python tools/verify_glyph_set.py glyph_sets/liberation_sans_regular
-```
-
-## Batch 005 tests
-
-Open each file directly and press F5:
+Then rerun:
 
 ```text
 tests/portable_registry_contract.scad
 tests/portable_bosl2_contract.scad
+tests/portable_component_color_contract.scad
 tests/portable_render_contract.scad
 ```
 
-The previous tests remain valid and unchanged.
+## Still deferred
 
-## Deliberately unchanged
-
-Batch 005 does not connect captured regions to the sectioning pipeline.
-It does not add connectors, spacing, mounting, or print procedures.
+```text
+occupied-cell computation
+automatic cut relocation
+connectors
+attachment methods
+inter-character spacing
+mounting
+portable sectioning of glyphs other than U_A
+expansion from 20 to 66 captured characters
+accepted physical objects
+```
 
 ## Workflow
 

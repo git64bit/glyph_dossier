@@ -2,16 +2,16 @@
 // LibFile: laboratory_projects.scad
 // Project: Glyph Dossier
 // FileGroup: Mutable Registry
-// FileSummary: Active anatomy, observation, section, and capture work.
+// FileSummary: Active portable uppercase-A sectioning laboratory.
 //////////////////////////////////////////////////////////////////////
 
 LABORATORY_PROJECTS = [
     glyph_project(
         "GLYPH_DOSSIER_LAB",
         "laboratory",
-        "0.5.0",
-        "Character anatomy, source observation, exact-height A sectioning, and portable glyph capture.",
-        "commit-0117e32-batch-005",
-        "Twenty-glyph Liberation Sans portable capture proof active; no physical objects accepted."
+        "0.6.0",
+        "Captured glyph analysis and portable exact-height uppercase-A sectioning.",
+        "commit-c82cc94-batch-006",
+        "Portable BOSL2 U_A is the authoritative sectional source; no physical objects accepted."
     )
 ];

@@ -30,6 +30,30 @@ function portable_normalized_width(glyph, target_height) =
     portable_glyph_width(glyph)
     * portable_target_scale(glyph, target_height);
 
+
+function portable_normalized_height(glyph, target_height) =
+    portable_glyph_height(glyph)
+    * portable_target_scale(glyph, target_height);
+
+function portable_normalized_left(glyph, target_height) =
+    -portable_normalized_width(glyph, target_height) / 2;
+
+function portable_normalized_right(glyph, target_height) =
+    portable_normalized_width(glyph, target_height) / 2;
+
+function portable_normalized_bottom(glyph, target_height) =
+    0;
+
+function portable_normalized_top(glyph, target_height) =
+    portable_normalized_height(glyph, target_height);
+
+function portable_normalized_bounds(glyph, target_height) = [
+    portable_normalized_left(glyph, target_height),
+    portable_normalized_bottom(glyph, target_height),
+    portable_normalized_right(glyph, target_height),
+    portable_normalized_top(glyph, target_height)
+];
+
 module portable_glyph_2d(glyph, target_height) {
     region(portable_normalized_region(glyph, target_height));
 }

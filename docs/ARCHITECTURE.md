@@ -1,49 +1,78 @@
 # Architecture
 
-Glyph Dossier now has two deliberately separate source routes.
+Glyph Dossier now has two deliberately separated pipelines.
 
-## Live font laboratory
+## Portable authoritative pipeline
 
 ```text
-installed font name
-→ OpenSCAD text()
-→ observation and early section experiments
+TTF source retained with license and checksum
+        ↓
+external extractor
+        ↓
+captured contour records
+        ↓
+BOSL2 region validation
+        ↓
+exact numeric center-bottom normalization
+        ↓
+rectangular section plan
+        ↓
+exploded layout or local section export
 ```
 
-This route remains useful for exploration but depends on font resolution.
+Batch 006 implements this pipeline for `U_A`.
 
-## Portable captured source
-
-```text
-font file stored in repository
-→ external outline extractor
-→ SVG curve archive
-→ flattened point-list records
-→ BOSL2 region validation and rendering
-```
-
-The portable route is independent of the operating system's font list.
-
-## Batch 005 boundary
-
-Portable capture is isolated in:
+The runtime portable route begins at:
 
 ```text
-glyph_sets/
-tools/extract_glyph_set.py
-tools/verify_glyph_set.py
-lib/portable_glyph_*.scad
-geometry/portable_glyph_*.scad
 portable_main.scad
-workbenches/portable_*.scad
 ```
 
-The existing exact-height and sectioning pipeline is unchanged. A later
-batch may replace its live-font source adapter with verified captured
-regions after this proof is accepted.
+Its sectioning layers are:
 
-## BOSL2 boundary
+```text
+config/portable_section_defaults.scad
+lib/portable_section_validation.scad
+lib/portable_section_reporting.scad
+geometry/portable_section_scene.scad
+```
 
-The repository references `BOSL2/std.scad` from the user's OpenSCAD
-library path. Generated glyph records are ordinary OpenSCAD arrays;
-BOSL2 validates and renders them as regions.
+The pipeline does not call `text()`.
+
+## Live comparison pipeline
+
+The earlier live-font route remains under:
+
+```text
+main.scad
+geometry/normalized_glyph.scad
+geometry/section_scene.scad
+workbenches/a_*.scad
+```
+
+It remains useful for comparing live font rendering against the captured
+portable geometry. It is no longer the authoritative portable export
+route.
+
+## Shared grid mathematics
+
+Both routes use:
+
+```text
+lib/sectioning.scad
+geometry/section_grid.scad
+geometry/a_hazard_map.scad
+```
+
+This keeps cell identifiers, bounds, and layout coordinates consistent.
+
+## Portable exact bounds
+
+The portable record contains its source-region bounds. Batch 006 derives
+the scale, normalized width, and normalized bounds numerically before
+rendering.
+
+## Deferred region booleans
+
+BOSL2 can operate on regions as data, but Batch 006 does not yet use
+region intersections to compute occupied cells or relocate cuts.
