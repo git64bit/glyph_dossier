@@ -1,4 +1,6 @@
-# Glyph dossier contract
+# Glyph and observation contracts
+
+## Generic glyph dossier
 
 Each character dossier contains:
 
@@ -17,23 +19,45 @@ Each character dossier contains:
 | Priority | Primary, secondary, or coverage study level |
 | Note | Character-specific design purpose |
 
-## Two-layer analysis
+## Font source
 
-### Character-level dossier
+A source record contains:
 
-This is the Batch 001 record. It describes what must be examined across
-fonts.
+| Field | Meaning |
+|---|---|
+| Source ID | Stable laboratory identity |
+| Kind | `font` in Batch 002 |
+| Label | Human-readable source label |
+| Font name | Installed family and style; empty means default |
+| License | Recorded license label |
+| URL | Source location |
+| Revision | File hash, package revision, or release |
+| Status | Active or disabled |
 
-### Source-specific observed dossier
+## Source-specific observation
 
-This is deferred. It will bind a character to a particular font,
-revision, license, source URL, rendered profile, and observed geometry.
+An observation contains:
 
-The distinction prevents a generic statement such as “lowercase g” from
-silently assuming either the one-storey or two-storey form.
+| Field | Meaning |
+|---|---|
+| Observation ID | Stable exact record name |
+| Source ID | Exact source identity |
+| Glyph ID | Exact generic dossier identity |
+| Status | Pending, observed, or verified |
+| Variant | Source-specific character form |
+| Components | Actual connected-component count |
+| Counters | Actual enclosed-counter count |
+| Extents | Left, right, bottom, and top coordinates |
+| Minimum stroke | Manually observed narrowest solid feature |
+| Minimum gap | Manually observed narrowest open separation |
+| Note | Source-specific observation record |
+
+`OBS_UNKNOWN` marks a value that has not been observed. Pending records
+may contain unknown values. Observed and verified records must contain a
+complete, internally valid measurement set.
 
 ## Sectioning boundary
 
-Future sectioning may consume an observed normalized profile. It must
-not infer section rules directly from the character name or raw
-`text()` call.
+Future sectioning may consume a verified source-specific observation and
+a normalized profile. It must not infer source geometry from the
+character name alone.

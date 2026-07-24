@@ -10,6 +10,10 @@ VALID_WORKBENCHES = [
     "laboratory",
     "profile",
     "contact_sheet",
+    "font_source",
+    "glyph_observation",
+    "glyph_comparison",
+    "source_contact_sheet",
     "catalog"
 ];
 
@@ -18,11 +22,20 @@ VALID_RENDER_MODES = [
     "profile_2d",
     "profile_3d",
     "contact_sheet",
+    "source_sample",
+    "observation",
+    "comparison",
+    "source_contact_sheet",
     "report_only"
 ];
 
 VALID_SOURCE_KINDS = [
     "font"
+];
+
+VALID_PROBE_ORIENTATIONS = [
+    "horizontal",
+    "vertical"
 ];
 
 function value_in_list(values, value) =
@@ -31,7 +44,9 @@ function value_in_list(values, value) =
 module validate_workbench_selection(
     workbench_name,
     render_mode,
-    source_kind
+    source_kind,
+    stroke_probe_orientation = "vertical",
+    gap_probe_orientation = "horizontal"
 ) {
     assert(
         value_in_list(VALID_WORKBENCHES, workbench_name),
@@ -43,6 +58,26 @@ module validate_workbench_selection(
     );
     assert(
         value_in_list(VALID_SOURCE_KINDS, source_kind),
-        str("Unsupported Batch 001 source kind: ", source_kind)
+        str("Unsupported source kind: ", source_kind)
+    );
+    assert(
+        value_in_list(
+            VALID_PROBE_ORIENTATIONS,
+            stroke_probe_orientation
+        ),
+        str(
+            "Unknown stroke probe orientation: ",
+            stroke_probe_orientation
+        )
+    );
+    assert(
+        value_in_list(
+            VALID_PROBE_ORIENTATIONS,
+            gap_probe_orientation
+        ),
+        str(
+            "Unknown gap probe orientation: ",
+            gap_probe_orientation
+        )
     );
 }

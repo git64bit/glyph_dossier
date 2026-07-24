@@ -1,17 +1,16 @@
 # Accepted glyph objects
 
-The catalog is empty in Batch 001.
+The catalog remains empty in Batch 002.
 
-Promotion requires a source-specific physical test and must preserve:
+Generic character dossiers and source-specific observations are design
+records, not accepted print objects.
 
-- glyph dossier ID;
-- font or procedural source;
-- license and source URL where applicable;
-- source revision or hash;
-- normalized profile parameters;
-- geometry-affecting values;
-- project revision;
-- physical acceptance record.
+Promotion requires:
 
-Character-level anatomical dossiers are design records, not accepted
-print objects.
+1. an identified and reproducible source;
+2. a verified source-specific observation;
+3. later normalized and sectioned geometry;
+4. physical printing and assembly tests;
+5. explicit acceptance.
+
+No sectioned or physically accepted glyph object exists yet.

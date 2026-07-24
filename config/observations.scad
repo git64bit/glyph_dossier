@@ -1,0 +1,8 @@
+//////////////////////////////////////////////////////////////////////
+// LibFile: observations.scad
+// Project: Glyph Dossier
+// FileGroup: Registry Routing
+// FileSummary: Exposes representative source-observation records.
+//////////////////////////////////////////////////////////////////////
+
+GLYPH_OBSERVATIONS = REPRESENTATIVE_OBSERVATIONS;

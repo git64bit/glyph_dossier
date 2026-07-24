@@ -2,11 +2,12 @@
 // LibFile: main.scad
 // Project: Glyph Dossier
 // FileGroup: Shared Workbench Orchestrator
-// FileSummary: Resolves, validates, reports, and dispatches analysis.
+// FileSummary: Resolves and dispatches anatomy and source observation.
 //////////////////////////////////////////////////////////////////////
 
-include <config/defaults.scad>
 include <lib/schema.scad>
+include <config/defaults.scad>
+
 include <registries/laboratory_projects.scad>
 include <registries/catalog_projects.scad>
 include <config/projects.scad>
@@ -18,20 +19,33 @@ include <registries/punctuation.scad>
 include <registries/study_sets.scad>
 include <config/glyphs.scad>
 
+include <registries/laboratory_sources.scad>
+include <config/sources.scad>
+include <registries/representative_observations.scad>
+include <config/observations.scad>
+
 include <config/workbenches.scad>
 include <lib/lookup.scad>
 include <lib/validation.scad>
 include <lib/reporting.scad>
+
 include <geometry/glyph_profile.scad>
 include <geometry/analysis_guides.scad>
 include <geometry/dossier_scene.scad>
 include <geometry/contact_sheet.scad>
+include <geometry/measurement_guides.scad>
+include <geometry/observation_scene.scad>
+include <geometry/source_sample.scad>
+include <geometry/source_comparison.scad>
+include <geometry/source_contact_sheet.scad>
 
 module run_glyph_dossier() {
     validate_workbench_selection(
         wb_workbench_name,
         wb_render_mode,
-        wb_source_kind
+        wb_source_kind,
+        wb_stroke_probe_orientation,
+        wb_gap_probe_orientation
     );
 
     project = named_record(
@@ -40,20 +54,37 @@ module run_glyph_dossier() {
         "Glyph Dossier project"
     );
 
+    source = named_record(
+        FONT_SOURCES,
+        wb_source_id,
+        "font source"
+    );
+
     validate_project(project);
     validate_glyph_registry(ALL_GLYPHS);
-    report_project(project, wb_report_level);
-    report_source(
-        wb_source_kind,
-        wb_font_name,
-        wb_font_license,
-        wb_font_source_url,
-        wb_font_revision
+    validate_font_source_registry(FONT_SOURCES);
+    validate_observation_registry(
+        GLYPH_OBSERVATIONS,
+        FONT_SOURCES,
+        ALL_GLYPHS
     );
+
+    report_project(project, wb_report_level);
+    report_font_source(source, wb_report_level);
 
     if (project[PR_KIND] == "catalog_notice") {
         report_catalog_notice(project);
-    } else if (wb_render_mode == "contact_sheet") {
+    } else if (wb_render_mode == "source_sample") {
+        render_source_sample(
+            source,
+            wb_source_sample_size,
+            wb_source_sample_depth,
+            wb_source_sample_line_gap
+        );
+    } else if (
+        wb_render_mode == "contact_sheet"
+        || wb_render_mode == "source_contact_sheet"
+    ) {
         validate_id_set(
             REPRESENTATIVE_SET_IDS,
             ALL_GLYPHS,
@@ -63,11 +94,10 @@ module run_glyph_dossier() {
             "REPRESENTATIVE_SET",
             REPRESENTATIVE_SET_IDS
         );
-        glyph_contact_sheet(
+        render_source_contact_sheet(
             REPRESENTATIVE_SET_IDS,
             ALL_GLYPHS,
-            wb_source_kind,
-            wb_font_name,
+            source,
             wb_sheet_columns,
             wb_sheet_cell_size,
             wb_sheet_glyph_size,
@@ -83,12 +113,120 @@ module run_glyph_dossier() {
         validate_glyph_dossier(dossier);
         report_glyph_dossier(dossier, wb_report_level);
 
-        if (wb_render_mode != "report_only")
+        if (wb_render_mode == "comparison") {
+            comparison_ids = [
+                wb_compare_source_1_id,
+                wb_compare_source_2_id,
+                wb_compare_source_3_id
+            ];
+
+            validate_id_set(
+                comparison_ids,
+                FONT_SOURCES,
+                "comparison source set"
+            );
+            report_source_order(comparison_ids);
+
+            for (source_id = comparison_ids)
+                report_font_source(
+                    named_record(
+                        FONT_SOURCES,
+                        source_id,
+                        "comparison source"
+                    ),
+                    wb_report_level
+                );
+
+            render_source_comparison(
+                dossier,
+                FONT_SOURCES,
+                comparison_ids,
+                wb_nominal_size,
+                wb_extrusion_depth,
+                wb_comparison_spacing
+            );
+        } else if (wb_render_mode == "observation") {
+            ledger_matches = observation_matches(
+                GLYPH_OBSERVATIONS,
+                source[FS_ID],
+                dossier[GD_ID]
+            );
+
+            if (len(ledger_matches) == 1)
+                report_glyph_observation(
+                    ledger_matches[0],
+                    wb_report_level,
+                    "LEDGER"
+                );
+            else
+                echo(
+                    "LEDGER_STATUS",
+                    str(
+                        "No unique pending slot for ",
+                        source[FS_ID],
+                        " ",
+                        dossier[GD_ID]
+                    )
+                );
+
+            candidate = glyph_observation(
+                str(
+                    "CANDIDATE_",
+                    source[FS_ID],
+                    "_",
+                    dossier[GD_ID]
+                ),
+                source[FS_ID],
+                dossier[GD_ID],
+                wb_observed_status,
+                wb_observed_variant,
+                wb_observed_components,
+                wb_observed_counters,
+                wb_observed_left_extent,
+                wb_observed_right_extent,
+                wb_observed_bottom_extent,
+                wb_observed_top_extent,
+                wb_observed_minimum_stroke,
+                wb_observed_minimum_gap,
+                wb_observation_note
+            );
+
+            validate_glyph_observation(candidate);
+            report_glyph_observation(
+                candidate,
+                wb_report_level,
+                "CANDIDATE"
+            );
+
+            render_observation_scene(
+                dossier,
+                source,
+                candidate,
+                wb_nominal_size,
+                wb_extrusion_depth,
+                wb_guide_depth,
+                wb_show_guides,
+                wb_show_frame,
+                wb_show_manual_guides,
+                wb_x_height_ratio,
+                wb_cap_height_ratio,
+                wb_ascender_ratio,
+                wb_descender_ratio,
+                wb_stroke_probe_x,
+                wb_stroke_probe_y,
+                wb_stroke_probe_orientation,
+                wb_stroke_probe_length,
+                wb_gap_probe_x,
+                wb_gap_probe_y,
+                wb_gap_probe_orientation,
+                wb_gap_probe_length
+            );
+        } else if (wb_render_mode != "report_only") {
             render_glyph_dossier(
                 dossier,
                 wb_render_mode,
-                wb_source_kind,
-                wb_font_name,
+                source[FS_KIND],
+                source[FS_FONT_NAME],
                 wb_nominal_size,
                 wb_extrusion_depth,
                 wb_guide_depth,
@@ -99,6 +237,7 @@ module run_glyph_dossier() {
                 wb_ascender_ratio,
                 wb_descender_ratio
             );
+        }
     }
 }
 

@@ -2,7 +2,7 @@
 // LibFile: lookup.scad
 // Project: Glyph Dossier
 // FileGroup: Exact Lookup
-// FileSummary: Requires exactly one matching named record.
+// FileSummary: Requires exact records and source-glyph observations.
 //////////////////////////////////////////////////////////////////////
 
 function named_matches(records, name) = [
@@ -28,3 +28,42 @@ function named_record(records, name, record_kind = "record") =
 
 function exact_name_count(records, name) =
     len(named_matches(records, name));
+
+function observation_matches(
+    records,
+    source_id,
+    glyph_id
+) = [
+    for (record = records)
+        if (
+            record[OB_SOURCE_ID] == source_id
+            && record[OB_GLYPH_ID] == glyph_id
+        )
+            record
+];
+
+function exact_observation_count(
+    records,
+    source_id,
+    glyph_id
+) =
+    len(observation_matches(records, source_id, glyph_id));
+
+function source_glyph_observation(
+    records,
+    source_id,
+    glyph_id
+) =
+    let(matches = observation_matches(records, source_id, glyph_id))
+    assert(
+        len(matches) == 1,
+        str(
+            "Expected one observation for source ",
+            source_id,
+            " and glyph ",
+            glyph_id,
+            "; found ",
+            len(matches)
+        )
+    )
+    matches[0];

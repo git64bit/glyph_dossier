@@ -2,7 +2,7 @@
 // LibFile: validation.scad
 // Project: Glyph Dossier
 // FileGroup: Contract Validation
-// FileSummary: Validates projects, dossiers, registries, and study sets.
+// FileSummary: Validates projects, glyphs, sources, and observations.
 //////////////////////////////////////////////////////////////////////
 
 VALID_GROUPS = [
@@ -29,6 +29,17 @@ VALID_VERTICAL_CLASSES = [
     "cap_punctuation",
     "x_punctuation",
     "descender_punctuation"
+];
+
+VALID_SOURCE_STATUSES = [
+    "active",
+    "disabled"
+];
+
+VALID_OBSERVATION_STATUSES = [
+    "pending",
+    "observed",
+    "verified"
 ];
 
 function count_group(records, group_name) =
@@ -119,6 +130,161 @@ module validate_glyph_registry(records) {
         assert(
             exact_name_count(records, record[GD_ID]) == 1,
             str("Duplicate dossier ID: ", record[GD_ID])
+        );
+    }
+}
+
+module validate_font_source(source) {
+    assert(
+        len(source) == 8,
+        str("Font source must contain 8 fields; found ", len(source))
+    );
+    assert(len(source[FS_ID]) > 0, "Font source ID is empty.");
+    assert(
+        source[FS_KIND] == "font",
+        str("Unsupported source kind: ", source[FS_KIND])
+    );
+    assert(len(source[FS_LABEL]) > 0,
+        str("Source label is empty: ", source[FS_ID]));
+    assert(
+        value_in_list(VALID_SOURCE_STATUSES, source[FS_STATUS]),
+        str("Unknown source status: ", source[FS_STATUS])
+    );
+}
+
+module validate_font_source_registry(sources) {
+    assert(
+        len(sources) == 3,
+        str("Expected 3 laboratory sources; found ", len(sources))
+    );
+
+    for (source = sources) {
+        validate_font_source(source);
+        assert(
+            exact_name_count(sources, source[FS_ID]) == 1,
+            str("Duplicate source ID: ", source[FS_ID])
+        );
+    }
+}
+
+module validate_glyph_observation(observation) {
+    assert(
+        len(observation) == 14,
+        str(
+            "Glyph observation must contain 14 fields; found ",
+            len(observation)
+        )
+    );
+    assert(len(observation[OB_ID]) > 0,
+        "Observation ID is empty.");
+    assert(len(observation[OB_SOURCE_ID]) > 0,
+        str("Observation source is empty: ", observation[OB_ID]));
+    assert(len(observation[OB_GLYPH_ID]) > 0,
+        str("Observation glyph is empty: ", observation[OB_ID]));
+    assert(
+        value_in_list(
+            VALID_OBSERVATION_STATUSES,
+            observation[OB_STATUS]
+        ),
+        str(
+            "Unknown observation status ",
+            observation[OB_STATUS],
+            " in ",
+            observation[OB_ID]
+        )
+    );
+    assert(len(observation[OB_VARIANT]) > 0,
+        str("Observation variant is empty: ", observation[OB_ID]));
+    assert(len(observation[OB_NOTE]) > 0,
+        str("Observation note is empty: ", observation[OB_ID]));
+
+    if (observation[OB_STATUS] != "pending") {
+        assert(
+            observation_value_known(observation[OB_COMPONENTS])
+            && observation[OB_COMPONENTS] >= 1,
+            str("Observed component count is invalid: ", observation[OB_ID])
+        );
+        assert(
+            observation_value_known(observation[OB_COUNTERS])
+            && observation[OB_COUNTERS] >= 0,
+            str("Observed counter count is invalid: ", observation[OB_ID])
+        );
+        assert(
+            observation_has_bounds(observation),
+            str("Observed extents are incomplete: ", observation[OB_ID])
+        );
+        assert(
+            observation[OB_LEFT] < observation[OB_RIGHT],
+            str("Observed horizontal extents are invalid: ", observation[OB_ID])
+        );
+        assert(
+            observation[OB_BOTTOM] < observation[OB_TOP],
+            str("Observed vertical extents are invalid: ", observation[OB_ID])
+        );
+        assert(
+            observation_value_known(observation[OB_MIN_STROKE])
+            && observation[OB_MIN_STROKE] > 0,
+            str("Observed minimum stroke is invalid: ", observation[OB_ID])
+        );
+        assert(
+            observation_value_known(observation[OB_MIN_GAP])
+            && observation[OB_MIN_GAP] >= 0,
+            str("Observed minimum gap is invalid: ", observation[OB_ID])
+        );
+    }
+}
+
+module validate_observation_registry(
+    observations,
+    sources,
+    glyphs
+) {
+    assert(
+        len(observations) == 20,
+        str(
+            "Expected 20 representative observations; found ",
+            len(observations)
+        )
+    );
+
+    for (observation = observations) {
+        validate_glyph_observation(observation);
+        assert(
+            exact_name_count(observations, observation[OB_ID]) == 1,
+            str("Duplicate observation ID: ", observation[OB_ID])
+        );
+        assert(
+            exact_name_count(
+                sources,
+                observation[OB_SOURCE_ID]
+            ) == 1,
+            str(
+                "Observation has unknown source: ",
+                observation[OB_ID]
+            )
+        );
+        assert(
+            exact_name_count(
+                glyphs,
+                observation[OB_GLYPH_ID]
+            ) == 1,
+            str(
+                "Observation has unknown glyph: ",
+                observation[OB_ID]
+            )
+        );
+        assert(
+            exact_observation_count(
+                observations,
+                observation[OB_SOURCE_ID],
+                observation[OB_GLYPH_ID]
+            ) == 1,
+            str(
+                "Duplicate source-glyph observation: ",
+                observation[OB_SOURCE_ID],
+                " ",
+                observation[OB_GLYPH_ID]
+            )
         );
     }
 }

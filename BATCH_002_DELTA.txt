@@ -1,0 +1,52 @@
+BATCH: 002
+VERSION: 0.2.0
+BASELINE COMMIT: 517fd84
+DATE: 2026-07-24
+
+PURPOSE:
+  Add source-specific observation without beginning sectioning.
+
+ADDED:
+  - Three configurable font-source records.
+  - Stable source IDs independent of installed font names.
+  - A pending observation ledger for the 20 representative glyphs.
+  - Manual source-specific observation candidates.
+  - Manual bounding, minimum-stroke, and minimum-gap guides.
+  - Same-glyph comparison across three source records.
+  - One-source representative contact sheet.
+  - Source sample workbench.
+  - Source, observation, rendering, and registry tests.
+  - Source and observation contracts.
+
+OBSERVATION FIELDS:
+  - actual connected-component count;
+  - actual counter count;
+  - observed form variant;
+  - left, right, bottom, and top extents;
+  - minimum stroke;
+  - minimum gap;
+  - observation status and notes.
+
+IMPORTANT:
+  OpenSCAD text() does not expose outline metrics. Batch 002 does not
+  fabricate measurements. The representative ledger begins as pending,
+  and the observation workbench produces a manually entered candidate.
+
+SOURCE SLOTS:
+  SRC_1, SRC_2, and SRC_3 are stable laboratory identities.
+  Their font names, licenses, URLs, and revisions are user-configurable.
+  An empty font name intentionally uses OpenSCAD's default font.
+
+EXPLICITLY DEFERRED:
+  - section boundaries;
+  - connectors;
+  - attachment methods;
+  - inter-character spacing;
+  - mounting;
+  - automatic outline measurement;
+  - accepted physical objects.
+
+TEST:
+  1. Copy this delta over commit 517fd84.
+  2. Run all tests listed in README.md with F5.
+  3. Inspect the four new Batch 002 workbenches.
