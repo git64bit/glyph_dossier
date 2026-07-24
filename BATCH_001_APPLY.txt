@@ -1,0 +1,3 @@
+BASELINE COMMIT: 7940732
+Copy all included complete files over the repository working tree.
+This initial delta establishes the complete Batch 001 framework.

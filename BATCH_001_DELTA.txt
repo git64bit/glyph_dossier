@@ -1,0 +1,39 @@
+BATCH: 001
+VERSION: 0.1.0
+BASELINE COMMIT: 7940732
+DATE: 2026-07-24
+
+PURPOSE:
+  Establish character-by-character design analysis before attempting
+  large-format sectioning.
+
+SCOPE:
+  - 26 uppercase dossiers.
+  - 26 lowercase dossiers.
+  - 10 digit dossiers.
+  - Four punctuation dossiers: ?, !, :, and ;.
+  - Twenty-character representative study set.
+  - Font-backed source adapter.
+  - Individual dossier, profile, and contact-sheet workbenches.
+  - Exact-name lookup, validation, reporting, tests, and documentation.
+
+EXPLICITLY DEFERRED:
+  - Section boundaries.
+  - Connectors and attachment methods.
+  - Inter-character spacing.
+  - Mounting.
+  - Font-file packaging.
+  - Accepted physical objects.
+  - Environmental or structural advice.
+
+DESIGN RULE:
+  Character anatomy is analyzed before a common sectioning system is
+  designed. Batch 001 records expected anatomy and risk; it does not
+  claim to measure a font outline automatically.
+
+TEST:
+  1. Copy this archive over commit 7940732.
+  2. Open tests/catalog_contract.scad and press F5.
+  3. Open tests/representative_set.scad and press F5.
+  4. Open tests/render_contract.scad and press F5.
+  5. Inspect workbenches/laboratory.scad.
