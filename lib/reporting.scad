@@ -132,3 +132,46 @@ module report_study_set(set_name, ids) {
 module report_source_order(source_ids) {
     echo("COMPARISON_SOURCE_ORDER", source_ids);
 }
+module report_section_plan(
+    origin_x,
+    origin_y,
+    cell_width,
+    cell_height,
+    columns,
+    rows,
+    bed_x,
+    bed_y
+) {
+    echo("SECTION_PLAN_ORIGIN_MM", [origin_x, origin_y]);
+    echo("SECTION_CELL_MM", [cell_width, cell_height]);
+    echo("SECTION_GRID", [columns, rows]);
+    echo("SECTION_COUNT", section_count(columns, rows));
+    echo("SECTION_PLAN_SIZE_MM", [
+        section_plan_width(cell_width, columns),
+        section_plan_height(cell_height, rows)
+    ]);
+    echo("CONFIGURED_BED_MM", [bed_x, bed_y]);
+    echo(
+        "SECTION_OCCUPANCY_POLICY",
+        "OpenSCAD does not report occupied cells; empty intersections render nothing."
+    );
+}
+
+module report_selected_section(
+    origin_x,
+    origin_y,
+    cell_width,
+    cell_height,
+    column,
+    row
+) {
+    echo("SELECTED_SECTION_ID", section_id(column, row));
+    echo("SELECTED_SECTION_INDEX_ZERO_BASED", [column, row]);
+    echo("SELECTED_SECTION_BOUNDS_MM", [
+        section_x0(origin_x, cell_width, column),
+        section_x1(origin_x, cell_width, column),
+        section_y0(origin_y, cell_height, row),
+        section_y1(origin_y, cell_height, row)
+    ]);
+}
+

@@ -1,0 +1,50 @@
+BATCH: 003
+VERSION: 0.3.0
+BASELINE COMMIT: 442fc54
+DATE: 2026-07-24
+
+PURPOSE:
+  Create the first large sectional glyph experiment.
+
+STRICT SCOPE:
+  - Uppercase A only.
+  - One selected font source.
+  - Plain rectangular clipping cells.
+  - Manual grid origin, cell size, row count, and column count.
+  - Whole-glyph section-plan preview.
+  - Exploded section-layout preview.
+  - One selected section exported at local print coordinates.
+  - Nominal A-specific apex, counter, and crossbar hazard guides.
+  - No automatic cut optimization.
+
+ADDED:
+  - Section-grid mathematics and validation.
+  - Section-plan, section-layout, and section-export geometry.
+  - Uppercase-A hazard-map guides.
+  - Three dedicated workbenches.
+  - Sectioning API and contract tests.
+  - Batch 003 design documentation.
+
+UNCHANGED:
+  - Character dossiers.
+  - Font-source registry.
+  - Source-observation registry.
+  - Existing workbenches and tests.
+
+EXPLICITLY ABSENT:
+  - connectors;
+  - pins, dovetails, screws, or adhesive assumptions;
+  - inter-character spacing;
+  - mounting;
+  - automatic outline measurement;
+  - automatic occupied-cell detection;
+  - automatic cut relocation;
+  - sectioning of any glyph other than uppercase A.
+
+TEST:
+  1. Copy this delta over commit 442fc54.
+  2. Run tests/section_math_contract.scad with F5.
+  3. Run tests/a_section_render_contract.scad with F5.
+  4. Inspect workbenches/a_section_plan.scad.
+  5. Inspect workbenches/a_section_layout.scad.
+  6. Select several cells in workbenches/a_section_export.scad.

@@ -11,62 +11,56 @@ project + glyph + source + observation registries
    ↓
 exact lookup
    ↓
-validation
-   ↓
-reporting
+validation and reporting
    ↓
 font source adapter
    ↓
-diagnostic rendering and manual observation
+diagnostic or section rendering
 ```
 
 ## Record layers
 
-The project now maintains four distinct records:
+The project maintains four record types:
 
-1. **Project records** identify the laboratory or accepted-object
-   catalog.
-2. **Glyph dossiers** describe source-independent character anatomy.
-3. **Font sources** preserve stable identities and provenance fields.
-4. **Glyph observations** bind one source identity to one glyph dossier.
+1. project records;
+2. generic glyph dossiers;
+3. font-source records;
+4. source-specific glyph observations.
 
-## Stable source identity
+## Batch 003 sectioning boundary
 
-`SRC_1`, `SRC_2`, and `SRC_3` are stable laboratory IDs. The installed
-font name may change without changing the registry architecture.
-
-A source record stores the font name, license, URL, revision, and
-status. Empty font names intentionally invoke OpenSCAD's default font.
-
-## Observation boundary
-
-OpenSCAD `text()` produces geometry but does not return outline metrics.
-Batch 002 therefore separates rendering from observation:
+The first sectioning experiment is intentionally separate from the
+character and source registries.
 
 ```text
-source + glyph dossier
+uppercase-A dossier
++ exact font source
++ explicit rectangular grid
         ↓
-rendered profile
+whole-profile intersection per grid cell
         ↓
-manual guides and entered values
-        ↓
-observation candidate
-        ↓
-later registry acceptance
+plan, exploded layout, or one local export
 ```
 
-Pending ledger records contain no invented measurements.
+`lib/sectioning.scad` contains only pure grid mathematics.
 
-## Source adapter boundary
+`geometry/section_grid.scad` creates clipping cells and preview lines.
 
-`geometry/glyph_profile.scad` remains the central font adapter. New
-geometry modules consume source records rather than directly selecting
-fonts.
+`geometry/a_hazard_map.scad` contains nominal, adjustable A-specific
+analysis guides.
 
-Later source kinds may provide procedural segment characters, stencil
-geometry, SVG or polygon profiles, and custom project-native glyphs.
+`geometry/section_scene.scad` creates plan, layout, and export views.
 
-## Sectioning remains absent
+## No geometry introspection claim
 
-No module in Batch 002 creates section boundaries, connectors, spacing,
-or mounting geometry.
+OpenSCAD does not report whether a clipping cell contains glyph
+geometry. The layout loops over every configured cell. Empty
+intersections render nothing.
+
+The section inventory is therefore deterministic by grid index, but
+occupied-cell detection remains deferred.
+
+## No connector layer
+
+The clipped faces remain plain. Batch 003 introduces no connector,
+spacing, mounting, or attachment abstraction.

@@ -1,0 +1,4 @@
+BASELINE COMMIT: 442fc54
+Copy all included complete files over the repository working tree.
+This delta adds the uppercase-A plain sectioning experiment only.
+Connectors, spacing, mounting, and automatic cut optimization remain absent.

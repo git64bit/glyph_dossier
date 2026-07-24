@@ -1,16 +1,18 @@
 # Accepted glyph objects
 
-The catalog remains empty in Batch 002.
+The catalog remains empty in Batch 003.
 
-Generic character dossiers and source-specific observations are design
-records, not accepted print objects.
+Batch 003 creates an experimental uppercase-A sectioning route, not an
+accepted glyph object.
 
 Promotion requires:
 
 1. an identified and reproducible source;
-2. a verified source-specific observation;
-3. later normalized and sectioned geometry;
-4. physical printing and assembly tests;
-5. explicit acceptance.
+2. an acceptable uppercase-A grid plan;
+3. successful export of the occupied cells;
+4. physical printing of the plain sections;
+5. reconstruction of the larger A;
+6. explicit acceptance.
 
-No sectioned or physically accepted glyph object exists yet.
+Connectors and attachment methods are not promotion requirements for
+this first plain-section experiment.

@@ -2,7 +2,7 @@
 // LibFile: main.scad
 // Project: Glyph Dossier
 // FileGroup: Shared Workbench Orchestrator
-// FileSummary: Resolves and dispatches anatomy and source observation.
+// FileSummary: Dispatches anatomy, observation, and A sectioning.
 //////////////////////////////////////////////////////////////////////
 
 include <lib/schema.scad>
@@ -26,6 +26,7 @@ include <config/observations.scad>
 
 include <config/workbenches.scad>
 include <lib/lookup.scad>
+include <lib/sectioning.scad>
 include <lib/validation.scad>
 include <lib/reporting.scad>
 
@@ -38,6 +39,9 @@ include <geometry/observation_scene.scad>
 include <geometry/source_sample.scad>
 include <geometry/source_comparison.scad>
 include <geometry/source_contact_sheet.scad>
+include <geometry/section_grid.scad>
+include <geometry/a_hazard_map.scad>
+include <geometry/section_scene.scad>
 
 module run_glyph_dossier() {
     validate_workbench_selection(
@@ -113,7 +117,102 @@ module run_glyph_dossier() {
         validate_glyph_dossier(dossier);
         report_glyph_dossier(dossier, wb_report_level);
 
-        if (wb_render_mode == "comparison") {
+        if (
+            wb_render_mode == "a_section_plan"
+            || wb_render_mode == "a_section_layout"
+            || wb_render_mode == "a_section_export"
+        ) {
+            validate_a_section_plan(
+                dossier,
+                wb_section_cell_width,
+                wb_section_cell_height,
+                wb_section_columns,
+                wb_section_rows,
+                wb_selected_section_column,
+                wb_selected_section_row,
+                wb_section_epsilon,
+                wb_bed_x,
+                wb_bed_y,
+                wb_a_apex_y_ratio,
+                wb_a_counter_bottom_ratio,
+                wb_a_counter_top_ratio,
+                wb_a_crossbar_y_ratio,
+                wb_a_counter_half_width_ratio
+            );
+
+            report_section_plan(
+                wb_section_origin_x,
+                wb_section_origin_y,
+                wb_section_cell_width,
+                wb_section_cell_height,
+                wb_section_columns,
+                wb_section_rows,
+                wb_bed_x,
+                wb_bed_y
+            );
+
+            if (wb_render_mode == "a_section_plan")
+                render_a_section_plan(
+                    dossier,
+                    source,
+                    wb_nominal_size,
+                    wb_extrusion_depth,
+                    wb_section_origin_x,
+                    wb_section_origin_y,
+                    wb_section_cell_width,
+                    wb_section_cell_height,
+                    wb_section_columns,
+                    wb_section_rows,
+                    wb_show_section_grid,
+                    wb_show_hazard_guides,
+                    wb_grid_line_width,
+                    wb_hazard_line_width,
+                    wb_a_apex_y_ratio,
+                    wb_a_counter_bottom_ratio,
+                    wb_a_counter_top_ratio,
+                    wb_a_crossbar_y_ratio,
+                    wb_a_counter_half_width_ratio
+                );
+            else if (wb_render_mode == "a_section_layout")
+                render_a_section_layout(
+                    dossier,
+                    source,
+                    wb_nominal_size,
+                    wb_extrusion_depth,
+                    wb_section_origin_x,
+                    wb_section_origin_y,
+                    wb_section_cell_width,
+                    wb_section_cell_height,
+                    wb_section_columns,
+                    wb_section_rows,
+                    wb_section_epsilon,
+                    wb_layout_gap
+                );
+            else {
+                report_selected_section(
+                    wb_section_origin_x,
+                    wb_section_origin_y,
+                    wb_section_cell_width,
+                    wb_section_cell_height,
+                    wb_selected_section_column,
+                    wb_selected_section_row
+                );
+
+                render_a_section_export(
+                    dossier,
+                    source,
+                    wb_nominal_size,
+                    wb_extrusion_depth,
+                    wb_section_origin_x,
+                    wb_section_origin_y,
+                    wb_section_cell_width,
+                    wb_section_cell_height,
+                    wb_selected_section_column,
+                    wb_selected_section_row,
+                    wb_section_epsilon
+                );
+            }
+        } else if (wb_render_mode == "comparison") {
             comparison_ids = [
                 wb_compare_source_1_id,
                 wb_compare_source_2_id,

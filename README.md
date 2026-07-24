@@ -1,7 +1,7 @@
 # Glyph Dossier
 
-Glyph Dossier analyzes individual English characters before designing a
-large-format sectioning system.
+Glyph Dossier analyzes individual English characters and develops a
+controlled path toward sectional large-format printing.
 
 The project covers:
 
@@ -18,86 +18,70 @@ variations, and sectioning risks.
 
 ## Batch 002: source-specific observation
 
-Batch 002 binds the representative study set to configurable font
-sources without claiming automatic font-outline measurement.
+Three configurable font sources and a pending observation ledger support
+manual source-specific inspection without fabricated measurements.
 
-Three stable laboratory source identities are provided:
+## Batch 003: first sectional experiment
 
-```text
-SRC_1
-SRC_2
-SRC_3
-```
+Batch 003 sections uppercase `A` only.
 
-Each source record contains:
+The experiment deliberately uses plain rectangular clipping cells. The
+grid is explicit and manually controlled:
 
 ```text
-source ID
-label
-font family and style
-license
-source URL
-revision or file hash
-status
+grid origin
+cell width and height
+column and row count
+selected column and row
 ```
 
-An empty font name uses OpenSCAD's default font.
+No connector or attachment geometry is included.
 
-The representative observation ledger begins with 20 pending records.
-The observation workbench allows manual entry of:
+Three views are provided:
 
 ```text
-actual component count
-actual counter count
-observed form variant
-left, right, bottom, and top extents
-minimum stroke
-minimum gap
-status
-notes
+workbenches/a_section_plan.scad
+workbenches/a_section_layout.scad
+workbenches/a_section_export.scad
 ```
 
-No values are fabricated. A record becomes an observation only after
-the user inspects the named source and enters the values.
+### Section plan
 
-## Representative study set
+Shows the complete source-specific `A`, the clipping grid, and optional
+nominal hazard guides for:
+
+- the apex;
+- the counter region;
+- the crossbar region.
+
+The hazard guides are adjustable visual aids. They are not measured font
+geometry and do not move cuts automatically.
+
+### Section layout
+
+Clips every grid cell and places the resulting sections in an exploded
+layout. Empty cells simply render no geometry.
+
+### Section export
+
+Clips one selected row and column, then translates that section into
+local positive cell coordinates for STL export.
+
+## Batch 003 default experiment
 
 ```text
-A B O S Z
-a g i j m s
-0 1 2 4 8
-? ! : ;
+nominal font size: 600 mm
+grid: 3 columns × 3 rows
+cell: 200 × 200 mm
+grid origin: X = -300 mm, Y = -20 mm
 ```
 
-## Batch 002 workbenches
+The cell dimensions fit within a 220 × 220 mm configured printer bed.
 
-```text
-workbenches/font_source.scad
-workbenches/glyph_observation.scad
-workbenches/glyph_comparison.scad
-workbenches/source_contact_sheet.scad
-```
+These values are laboratory defaults, not claims about the exact
+physical cap height of the selected font.
 
-Existing Batch 001 workbenches remain valid:
-
-```text
-workbenches/laboratory.scad
-workbenches/profile.scad
-workbenches/contact_sheet.scad
-workbenches/catalog.scad
-```
-
-### Recommended sequence
-
-1. Configure `SRC_1`, `SRC_2`, and `SRC_3`.
-2. Open `font_source.scad` to verify each source.
-3. Open `source_contact_sheet.scad` to inspect one source across the
-   representative set.
-4. Open `glyph_comparison.scad` to compare the same character across the
-   three source slots.
-5. Open `glyph_observation.scad` and enter observed values manually.
-
-## Tests
+## Complete test order
 
 Open each file directly and press F5:
 
@@ -108,13 +92,21 @@ tests/render_contract.scad
 tests/source_registry_contract.scad
 tests/observation_contract.scad
 tests/source_render_contract.scad
+tests/section_math_contract.scad
+tests/a_section_render_contract.scad
 ```
 
-## Deferred work
+## Still deferred
 
-The project still does not create section cuts, connectors, attachment
-methods, character spacing, mounting systems, or accepted printable
-objects.
+```text
+connectors
+attachment methods
+inter-character spacing
+mounting
+automatic font-outline measurement
+automatic cut optimization
+accepted physical objects
+```
 
 ## Workflow
 

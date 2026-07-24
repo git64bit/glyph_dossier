@@ -2,16 +2,16 @@
 // LibFile: laboratory_projects.scad
 // Project: Glyph Dossier
 // FileGroup: Mutable Registry
-// FileSummary: Active analysis and observation project.
+// FileSummary: Active analysis, observation, and A section experiment.
 //////////////////////////////////////////////////////////////////////
 
 LABORATORY_PROJECTS = [
     glyph_project(
         "GLYPH_DOSSIER_LAB",
         "laboratory",
-        "0.2.0",
-        "Character anatomy and source-specific observation before sectioning.",
-        "commit-517fd84-batch-002",
-        "Representative source-observation ledger active; no physical objects accepted."
+        "0.3.0",
+        "Character anatomy, source observation, and uppercase-A section experiment.",
+        "commit-442fc54-batch-003",
+        "Plain uppercase-A rectangular sectioning active; no physical objects accepted."
     )
 ];

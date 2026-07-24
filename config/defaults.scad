@@ -155,3 +155,49 @@ wb_font_name = wb_source_1_font_name;
 wb_font_license = wb_source_1_license;
 wb_font_source_url = wb_source_1_url;
 wb_font_revision = wb_source_1_revision;
+
+// Batch 003 uppercase-A section experiment.
+wb_section_origin_x = is_undef(section_origin_x)
+    ? -300 : section_origin_x;
+wb_section_origin_y = is_undef(section_origin_y)
+    ? -20 : section_origin_y;
+wb_section_cell_width = is_undef(section_cell_width)
+    ? 200 : section_cell_width;
+wb_section_cell_height = is_undef(section_cell_height)
+    ? 200 : section_cell_height;
+wb_section_columns = is_undef(section_columns)
+    ? 3 : section_columns;
+wb_section_rows = is_undef(section_rows)
+    ? 3 : section_rows;
+wb_selected_section_column = is_undef(selected_section_column)
+    ? 0 : selected_section_column;
+wb_selected_section_row = is_undef(selected_section_row)
+    ? 0 : selected_section_row;
+wb_section_epsilon = is_undef(section_epsilon)
+    ? 0.05 : section_epsilon;
+wb_layout_gap = is_undef(layout_gap)
+    ? 20 : layout_gap;
+wb_bed_x = is_undef(bed_x)
+    ? 220 : bed_x;
+wb_bed_y = is_undef(bed_y)
+    ? 220 : bed_y;
+
+wb_show_section_grid = is_undef(show_section_grid)
+    ? true : show_section_grid;
+wb_show_hazard_guides = is_undef(show_hazard_guides)
+    ? true : show_hazard_guides;
+wb_grid_line_width = is_undef(grid_line_width)
+    ? 1.2 : grid_line_width;
+wb_hazard_line_width = is_undef(hazard_line_width)
+    ? 5 : hazard_line_width;
+
+wb_a_apex_y_ratio = is_undef(a_apex_y_ratio)
+    ? 0.72 : a_apex_y_ratio;
+wb_a_counter_bottom_ratio = is_undef(a_counter_bottom_ratio)
+    ? 0.22 : a_counter_bottom_ratio;
+wb_a_counter_top_ratio = is_undef(a_counter_top_ratio)
+    ? 0.55 : a_counter_top_ratio;
+wb_a_crossbar_y_ratio = is_undef(a_crossbar_y_ratio)
+    ? 0.34 : a_crossbar_y_ratio;
+wb_a_counter_half_width_ratio = is_undef(a_counter_half_width_ratio)
+    ? 0.17 : a_counter_half_width_ratio;

@@ -14,6 +14,9 @@ VALID_WORKBENCHES = [
     "glyph_observation",
     "glyph_comparison",
     "source_contact_sheet",
+    "a_section_plan",
+    "a_section_layout",
+    "a_section_export",
     "catalog"
 ];
 
@@ -26,6 +29,9 @@ VALID_RENDER_MODES = [
     "observation",
     "comparison",
     "source_contact_sheet",
+    "a_section_plan",
+    "a_section_layout",
+    "a_section_export",
     "report_only"
 ];
 

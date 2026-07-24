@@ -9,7 +9,7 @@ workbench_name = "development";
 project_name_selected = "GLYPH_DOSSIER_LAB";
 glyph_id_selected = "U_A";
 source_id_selected = "SRC_1";
-render_mode = "observation";
+render_mode = "a_section_plan";
 report_level = "full";
 
 source_1_label = "Source 1";
@@ -55,12 +55,12 @@ gap_probe_y = 25;
 gap_probe_orientation = "horizontal";
 gap_probe_length = 30;
 
-nominal_size = 120;
+nominal_size = 600;
 extrusion_depth = 6;
 guide_depth = 0.8;
-show_guides = true;
-show_frame = true;
-show_manual_guides = true;
+show_guides = false;
+show_frame = false;
+show_manual_guides = false;
 
 x_height_ratio = 0.52;
 cap_height_ratio = 0.72;
@@ -76,5 +76,29 @@ source_sample_size = 42;
 source_sample_depth = 2;
 source_sample_line_gap = 1.35;
 comparison_spacing = 170;
+
+section_origin_x = -300;
+section_origin_y = -20;
+section_cell_width = 200;
+section_cell_height = 200;
+section_columns = 3;
+section_rows = 3;
+selected_section_column = 0;
+selected_section_row = 0;
+section_epsilon = 0.05;
+layout_gap = 20;
+bed_x = 220;
+bed_y = 220;
+
+show_section_grid = true;
+show_hazard_guides = true;
+grid_line_width = 1.2;
+hazard_line_width = 5;
+
+a_apex_y_ratio = 0.72;
+a_counter_bottom_ratio = 0.22;
+a_counter_top_ratio = 0.55;
+a_crossbar_y_ratio = 0.34;
+a_counter_half_width_ratio = 0.17;
 
 include <main.scad>

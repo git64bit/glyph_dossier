@@ -289,6 +289,99 @@ module validate_observation_registry(
     }
 }
 
+module validate_a_section_plan(
+    dossier,
+    cell_width,
+    cell_height,
+    columns,
+    rows,
+    selected_column,
+    selected_row,
+    epsilon,
+    bed_x,
+    bed_y,
+    apex_y_ratio,
+    counter_bottom_ratio,
+    counter_top_ratio,
+    crossbar_y_ratio,
+    counter_half_width_ratio
+) {
+    assert(
+        dossier[GD_ID] == "U_A",
+        str(
+            "Batch 003 sections uppercase A only; selected ",
+            dossier[GD_ID]
+        )
+    );
+    assert(cell_width > 0, "Section cell width must be positive.");
+    assert(cell_height > 0, "Section cell height must be positive.");
+    assert(
+        columns >= 1 && floor(columns) == columns,
+        "Section column count must be a positive integer."
+    );
+    assert(
+        rows >= 1 && floor(rows) == rows,
+        "Section row count must be a positive integer."
+    );
+    assert(
+        selected_column >= 0
+        && selected_column < columns
+        && floor(selected_column) == selected_column,
+        "Selected section column is outside the grid."
+    );
+    assert(
+        selected_row >= 0
+        && selected_row < rows
+        && floor(selected_row) == selected_row,
+        "Selected section row is outside the grid."
+    );
+    assert(
+        epsilon > 0 && epsilon <= 1,
+        "Section clipping epsilon must be greater than 0 and at most 1 mm."
+    );
+    assert(
+        cell_width <= bed_x,
+        str(
+            "Section cell width ",
+            cell_width,
+            " exceeds configured bed width ",
+            bed_x
+        )
+    );
+    assert(
+        cell_height <= bed_y,
+        str(
+            "Section cell height ",
+            cell_height,
+            " exceeds configured bed height ",
+            bed_y
+        )
+    );
+    assert(
+        apex_y_ratio > 0 && apex_y_ratio <= 1,
+        "A apex guide ratio must be in (0, 1]."
+    );
+    assert(
+        counter_bottom_ratio >= 0
+        && counter_bottom_ratio < counter_top_ratio,
+        "A counter guide ratios are invalid."
+    );
+    assert(
+        counter_top_ratio <= apex_y_ratio,
+        "A counter top guide must remain below the apex guide."
+    );
+    assert(
+        crossbar_y_ratio >= counter_bottom_ratio
+        && crossbar_y_ratio <= counter_top_ratio,
+        "A crossbar guide must remain inside the counter guide range."
+    );
+    assert(
+        counter_half_width_ratio > 0
+        && counter_half_width_ratio < 0.5,
+        "A counter half-width ratio must be in (0, 0.5)."
+    );
+}
+
 module validate_id_set(ids, records, set_name) {
     assert(len(ids) > 0, str(set_name, " is empty."));
 
