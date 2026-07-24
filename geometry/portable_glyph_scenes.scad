@@ -32,6 +32,12 @@ module portable_contact_sheet(
     }
 }
 
+function portable_component_color(index) = [
+    ((index + 1) % 3 == 0) ? 0.80 : 0.25,
+    ((index + 1) % 3 == 1) ? 0.80 : 0.25,
+    ((index + 1) % 3 == 2) ? 0.80 : 0.25
+];
+
 module portable_component_diagnostics(
     glyph,
     target_height,
@@ -44,11 +50,7 @@ module portable_component_diagnostics(
     parts = region_parts(normalized);
 
     for (index = [0 : len(parts) - 1])
-        color([
-            0.25 + 0.55 * ((index + 1) % 3 == 0),
-            0.25 + 0.55 * ((index + 1) % 3 == 1),
-            0.25 + 0.55 * ((index + 1) % 3 == 2)
-        ])
+        color(portable_component_color(index))
             linear_extrude(height = depth)
                 region(parts[index]);
 }

@@ -1,0 +1,30 @@
+BATCH: 005 CORRECTION
+BASELINE COMMIT: 855cb4b
+DATE: 2026-07-24
+
+PURPOSE:
+  Remove warnings from portable_region_diagnostics.scad.
+
+CAUSE:
+  OpenSCAD does not convert Boolean comparison results into numeric
+  values for multiplication.
+
+CORRECTION:
+  - Replace number * Boolean expressions with explicit ternary values.
+  - Centralize diagnostic colors in portable_component_color(index).
+  - Add tests/portable_component_color_contract.scad.
+
+UNCHANGED:
+  - Portable glyph records.
+  - BOSL2 regions.
+  - Source font and checksums.
+  - Normalization.
+  - Sectioning.
+  - Workbench behavior other than warning-free diagnostic colors.
+
+TEST:
+  1. Run tests/portable_component_color_contract.scad with F5.
+  2. Run tests/portable_bosl2_contract.scad with F5.
+  3. Run tests/portable_render_contract.scad with F5.
+  4. Run workbenches/portable_region_diagnostics.scad with F5.
+  5. Confirm zero errors and zero warnings.
