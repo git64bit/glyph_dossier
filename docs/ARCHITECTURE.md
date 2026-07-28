@@ -1,56 +1,42 @@
 # Architecture
 
-Glyph Dossier separates source capture from runtime geometry.
+## Portable source layer
 
-## Complete portable pipeline
+Each font family is an isolated package containing namespaced generated
+records. All packages implement the same 66 dossier IDs.
 
-```text
-retained TTF + license + provenance
-        ↓
-transactional external extractor
-        ↓
-immutable representative lock
-        ↓
-66 captured contour records
-        ↓
-BOSL2 regions
-        ↓
-catalog, normalization, and later sectioning
-```
-
-## Package authority
-
-The source package is:
+## Multi-family catalog layer
 
 ```text
-glyph_sets/liberation_sans_regular/
+portable_set_id_selected
+        ↓
+exact portable font-set lookup
+        ↓
+selected set glyph array
+        ↓
+portable_glyph_id_selected
+        ↓
+exact glyph lookup
+        ↓
+BOSL2 region rendering
 ```
 
-`manifest.scad` is the OpenSCAD registry authority. It exposes complete,
-category, and representative ID arrays plus the 66 glyph records.
+`portable_catalog_main.scad` includes the six set manifests and registry.
+The older `portable_main.scad` remains the single-family laboratory and A
+sectioning orchestrator.
 
-`set.json` is the machine-readable extraction record.
+## Collision control
 
-`checksums.sha256` protects every file in the package except itself.
+Set manifests use namespaced constants. Record-level IDs remain generic so
+shared dossier code can operate on any selected family.
 
-## Stability contract
+## Stability
 
-The original 20 records define revision `R1`. The extractor writes to a
-temporary staging directory, validates the lock, and only then replaces
-the generated package.
+Every new package has a 66-glyph JSON lock. Extraction is staged and only
+installed after an existing lock passes. Package checksums cover all stored
+files except the checksum list itself.
 
-This prevents a library update, platform change, extractor edit, or
-curve-flattening change from silently replacing previously accepted
-portable geometry.
+## Deferred
 
-## Runtime catalog
-
-`portable_main.scad` routes contact sheets through generated category ID
-arrays. `portable_catalog.scad` selects any exact portable ID.
-
-## Sectioning boundary
-
-Batch 007 does not generalize sectioning. Portable `U_A` remains the only
-authoritative sectional glyph. The next batch may generalize exact-bound
-normalization to every captured glyph without yet making sectioning
-generic.
+Family-selectable sectioning, occupied-cell analysis, cut relocation,
+connectors, and accepted physical objects remain outside Batch 008.

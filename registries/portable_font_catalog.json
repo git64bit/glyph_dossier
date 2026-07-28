@@ -1,0 +1,75 @@
+{
+  "catalog_id": "GLYPH_DOSSIER_PORTABLE_FONT_CATALOG_R1",
+  "font_set_count": 6,
+  "glyphs_per_set": 66,
+  "sets": [
+    {
+      "set_id": "LIBERATION_SANS_REGULAR_R1",
+      "family": "Liberation Sans",
+      "style": "Regular",
+      "package": "glyph_sets/liberation_sans_regular",
+      "source_sha256": "bade59d822652f76e6941aa87b40a87c13d1cc70db98ededb5011127efafd1d3",
+      "existing": true
+    },
+    {
+      "set_id": "MONTSERRAT_REGULAR_R1",
+      "family": "Montserrat",
+      "style": "Regular",
+      "package": "glyph_sets/montserrat_regular",
+      "source_filename": "Montserrat-Regular.otf",
+      "source_sha256": "c328f23de78e921549f7df7ad757294e30ed822a3879a2b23750eb2d57ddcacd",
+      "font_version": "Version 7.200;PS 007.200;hotconv 1.0.88;makeotf.lib2.5.64775",
+      "license": "SIL Open Font License 1.1",
+      "role": "geometric sans",
+      "existing": false
+    },
+    {
+      "set_id": "ALPHA_SLAB_ONE_REGULAR_R1",
+      "family": "Alpha Slab One",
+      "style": "Regular",
+      "package": "glyph_sets/alpha_slab_one_regular",
+      "source_filename": "AlphaSlabOne-Regular.otf",
+      "source_sha256": "bbb7302ce1eed6867dc75f4813339c54589b3da3b2226d0950b4f41a5c490daf",
+      "font_version": "Version 2.000",
+      "license": "SIL Open Font License 1.1",
+      "role": "heavy slab display",
+      "existing": false
+    },
+    {
+      "set_id": "FIRA_SANS_REGULAR_R1",
+      "family": "Fira Sans",
+      "style": "Regular",
+      "package": "glyph_sets/fira_sans_regular",
+      "source_filename": "FiraSans-Regular.otf",
+      "source_sha256": "6249d77fa313215cd66a97b942041ddbca73664309ac5e25bd0ab937d727c96e",
+      "font_version": "Version 4.301;PS 004.301;hotconv 1.0.88;makeotf.lib2.5.64775",
+      "license": "SIL Open Font License 1.1 or later",
+      "role": "humanist sans",
+      "existing": false
+    },
+    {
+      "set_id": "MIAMA_NUEVA_MEDIUM_R1",
+      "family": "Miama Nueva",
+      "style": "Medium",
+      "package": "glyph_sets/miama_nueva_medium",
+      "source_filename": "miama.otf",
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9",
+      "font_version": "Version 1.0",
+      "license": "SIL Open Font License 1.1",
+      "role": "script stress case",
+      "existing": false
+    },
+    {
+      "set_id": "PLAYFAIR_DISPLAY_REGULAR_R1",
+      "family": "Playfair Display",
+      "style": "Regular",
+      "package": "glyph_sets/playfair_display_regular",
+      "source_filename": "PlayfairDisplay-Regular.otf",
+      "source_sha256": "e3c63beadfe417f215c985d9e9b28880ed9f02fe76c552c7fea8d9dad894ec1a",
+      "font_version": "Version 1.004;PS 001.004;hotconv 1.0.70;makeotf.lib2.5.58329",
+      "license": "SIL Open Font License 1.1",
+      "role": "display serif",
+      "existing": false
+    }
+  ]
+}

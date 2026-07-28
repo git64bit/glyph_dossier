@@ -1,0 +1,13 @@
+{
+  "set_id": "MONTSERRAT_REGULAR_R1",
+  "constant_prefix": "MSR1",
+  "family": "Montserrat",
+  "style": "Regular",
+  "font_version": "Version 7.200;PS 007.200;hotconv 1.0.88;makeotf.lib2.5.64775",
+  "license": "SIL Open Font License 1.1",
+  "source_url": "https://github.com/JulietaUla/Montserrat",
+  "source_filename": "Montserrat-Regular.otf",
+  "source_sha256_expected": "c328f23de78e921549f7df7ad757294e30ed822a3879a2b23750eb2d57ddcacd",
+  "flatten_tolerance_font_units": 2,
+  "role": "geometric sans"
+}

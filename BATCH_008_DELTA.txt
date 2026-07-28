@@ -1,0 +1,43 @@
+BATCH: 008
+VERSION: 0.8.0
+BASELINE COMMIT: 348cfd5
+DATE: 2026-07-28
+
+PURPOSE:
+  Add set-ID plus glyph-ID selection to the portable catalog and store
+  several materially different portable font families.
+
+PORTABLE FAMILIES:
+  - Liberation Sans Regular R1 (existing)
+  - Montserrat Regular R1
+  - Alpha Slab One Regular R1
+  - Fira Sans Regular R1
+  - Miama Nueva Medium R1
+  - Playfair Display Regular R1
+
+PACKAGE CONTRACT:
+  - 66 dossier glyphs per family.
+  - Namespaced generated constants prevent cross-family collisions.
+  - Exact family lookup precedes exact glyph lookup.
+  - Source filename, license, provenance, SHA-256, and version recorded.
+  - Every new package has a 66-glyph immutable package lock.
+  - Source font binaries are not packaged; extracted contours are portable.
+
+WORKBENCHES:
+  - portable_catalog.scad: family plus glyph selection.
+  - category sheets: family selection.
+  - portable_family_comparison.scad: same glyph across all six families.
+
+UNCHANGED:
+  - Liberation Sans package contents.
+  - Portable U_A normalization and A-only sectioning.
+  - Connectors, attachment methods, and printing.
+
+TEST:
+  1. Run tools/verify_namespaced_font_set.py for each new package.
+  2. F5 tests/portable_font_set_registry_contract.scad.
+  3. F5 tests/portable_font_set_isolation_contract.scad.
+  4. F5 tests/portable_catalog_selection_contract.scad.
+  5. F5 tests/portable_multi_family_render_contract.scad.
+  6. Inspect workbenches/portable_catalog.scad.
+  7. Inspect workbenches/portable_family_comparison.scad.

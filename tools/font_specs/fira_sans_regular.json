@@ -1,0 +1,13 @@
+{
+  "set_id": "FIRA_SANS_REGULAR_R1",
+  "constant_prefix": "FSR1",
+  "family": "Fira Sans",
+  "style": "Regular",
+  "font_version": "Version 4.301;PS 004.301;hotconv 1.0.88;makeotf.lib2.5.64775",
+  "license": "SIL Open Font License 1.1 or later",
+  "source_url": "https://github.com/mozilla/Fira",
+  "source_filename": "FiraSans-Regular.otf",
+  "source_sha256_expected": "6249d77fa313215cd66a97b942041ddbca73664309ac5e25bd0ab937d727c96e",
+  "flatten_tolerance_font_units": 2,
+  "role": "humanist sans"
+}

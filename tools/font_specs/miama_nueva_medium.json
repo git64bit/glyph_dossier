@@ -1,0 +1,13 @@
+{
+  "set_id": "MIAMA_NUEVA_MEDIUM_R1",
+  "constant_prefix": "MNMR1",
+  "family": "Miama Nueva",
+  "style": "Medium",
+  "font_version": "Version 1.0",
+  "license": "SIL Open Font License 1.1",
+  "source_url": "https://ctan.org/pkg/miama",
+  "source_filename": "miama.otf",
+  "source_sha256_expected": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9",
+  "flatten_tolerance_font_units": 2,
+  "role": "script stress case"
+}

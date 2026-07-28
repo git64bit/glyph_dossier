@@ -1,0 +1,5 @@
+BASELINE COMMIT: 348cfd5
+Copy all included complete files over the repository working tree.
+This delta adds five new portable contour families and a six-set catalog.
+No font binaries are contained in this delta.
+The Liberation Sans U_A sectioning route is unchanged.
