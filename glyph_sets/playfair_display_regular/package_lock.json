@@ -1,0 +1,1461 @@
+{
+  "lock_id": "PLAYFAIR_DISPLAY_REGULAR_R1_PACKAGE_LOCK",
+  "set_id": "PLAYFAIR_DISPLAY_REGULAR_R1",
+  "source_sha256": "e3c63beadfe417f215c985d9e9b28880ed9f02fe76c552c7fea8d9dad894ec1a",
+  "flatten_tolerance_font_units": 2,
+  "glyph_count": 66,
+  "glyphs": [
+    {
+      "id": "U_A",
+      "character": "A",
+      "exact_bounds": [
+        -14,
+        0,
+        1303,
+        1460
+      ],
+      "region_bounds": [
+        -14.0,
+        0.0,
+        1303.0,
+        1460.0
+      ],
+      "contour_count": 2,
+      "component_count": 1,
+      "counter_count": 1,
+      "point_count": 57,
+      "scad_sha256": "d1cdb57ab190acc080646ca9ea3c920fbd6841c6c357b1fa820f61b7e851d6a3",
+      "svg_sha256": "e41a348dd30dbb7e0c5eef882b1c30ea2d94cea477432e7e98cc79064ac3d8a2"
+    },
+    {
+      "id": "U_B",
+      "character": "B",
+      "exact_bounds": [
+        86,
+        0,
+        1184,
+        1450
+      ],
+      "region_bounds": [
+        86.0,
+        0.0,
+        1184.0,
+        1450.0
+      ],
+      "contour_count": 3,
+      "component_count": 1,
+      "counter_count": 2,
+      "point_count": 155,
+      "scad_sha256": "0109c6b810e5706bd9e9c0ab965a5d01bc3f1d15b9301ffbd9d53beeeaf5423f",
+      "svg_sha256": "44ddae387a1035bf5ba610c39f23dcda2d5e012f2e64372887ec2c5f342b92e3"
+    },
+    {
+      "id": "U_C",
+      "character": "C",
+      "exact_bounds": [
+        109,
+        -29,
+        1276,
+        1479
+      ],
+      "region_bounds": [
+        109.0,
+        -29.0,
+        1276.0,
+        1479.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 128,
+      "scad_sha256": "e142640881ed1ad82b1477d37c7b751bf389e14dce36e14339b1b217a239c832",
+      "svg_sha256": "b57aa9397fd5f2c79bf240f64fac007ef7e4bf7b6340cd1c3c267e1778ca274d"
+    },
+    {
+      "id": "U_D",
+      "character": "D",
+      "exact_bounds": [
+        86,
+        0,
+        1368,
+        1450
+      ],
+      "region_bounds": [
+        86.0,
+        0.0,
+        1368.0,
+        1450.0
+      ],
+      "contour_count": 2,
+      "component_count": 1,
+      "counter_count": 1,
+      "point_count": 107,
+      "scad_sha256": "73606523a253b1d7e4013e91f8fe69b68b7923350ba35dacabd738634b5e2695",
+      "svg_sha256": "de7060ae719f32e7810a41b04536e796b405cf3d5a7fa97f284557ad28782b8a"
+    },
+    {
+      "id": "U_E",
+      "character": "E",
+      "exact_bounds": [
+        86,
+        0,
+        1149,
+        1450
+      ],
+      "region_bounds": [
+        86.0,
+        0.0,
+        1149.0,
+        1450.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 110,
+      "scad_sha256": "85f93ade99fb01a8be12f3be9b65b5ffed309e2f28e9f735b5a9e8974ad118b9",
+      "svg_sha256": "da871bc05e0493e5b6e92f4afd02f06c55a666a684e81489ee8af01d2acca845"
+    },
+    {
+      "id": "U_F",
+      "character": "F",
+      "exact_bounds": [
+        86,
+        0,
+        1108,
+        1450
+      ],
+      "region_bounds": [
+        86.0,
+        0.0,
+        1108.0,
+        1450.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 93,
+      "scad_sha256": "143c925ebf7e5c952a85041342b3b092d4aa6e4c84b7dee73120cada47ea84df",
+      "svg_sha256": "7012082cb3abaf6c0bd60148191edbd8bb2f1bad1b658b4f95883a9794b00d71"
+    },
+    {
+      "id": "U_G",
+      "character": "G",
+      "exact_bounds": [
+        111,
+        -29,
+        1370,
+        1479
+      ],
+      "region_bounds": [
+        111.0,
+        -29.0,
+        1370.0,
+        1479.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 145,
+      "scad_sha256": "17e0e5dda45e007961015661ce6d5a1916573c10db804dcf8b19c773a010372c",
+      "svg_sha256": "d402efdf83b20d377b2d2c56e09ae42309c4ab8d5cd7ee0ec5cd6576686d0b09"
+    },
+    {
+      "id": "U_H",
+      "character": "H",
+      "exact_bounds": [
+        86,
+        0,
+        1464,
+        1450
+      ],
+      "region_bounds": [
+        86.0,
+        0.0,
+        1464.0,
+        1450.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 96,
+      "scad_sha256": "c20b72426b1a93b7213dbe068561009d74433d90ff2864b5e8dd775efcfe55f1",
+      "svg_sha256": "292c4011394ae2a0426d7b7519aec272595ec70c37488e84515da2f79d28e8ce"
+    },
+    {
+      "id": "U_I",
+      "character": "I",
+      "exact_bounds": [
+        86,
+        0,
+        608,
+        1450
+      ],
+      "region_bounds": [
+        86.0,
+        0.0,
+        608.0,
+        1450.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 46,
+      "scad_sha256": "2ae452829cbeca01516d3d2513940f49a597fa7a1c43002feccc0bec5876d60a",
+      "svg_sha256": "bf300ebc91f47faea0a3feaf8e55a44e9208f0b4801a155e3f3f0642e93db0ed"
+    },
+    {
+      "id": "U_J",
+      "character": "J",
+      "exact_bounds": [
+        -307,
+        -385,
+        596,
+        1450
+      ],
+      "region_bounds": [
+        -307.0,
+        -385.0,
+        596.0,
+        1450.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 93,
+      "scad_sha256": "c97ba340b17d3286c7f9831fabdc696b706a33b20fcecdd8fccebe4355e18351",
+      "svg_sha256": "4a83f550637b9abce7799be2513861af47293b43722b49c8133d94689a105b4b"
+    },
+    {
+      "id": "U_K",
+      "character": "K",
+      "exact_bounds": [
+        86,
+        0,
+        1339,
+        1450
+      ],
+      "region_bounds": [
+        86.0,
+        0.0,
+        1339.0,
+        1450.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 108,
+      "scad_sha256": "168dc509a6cf5a14b82e4d09789c04903efbcfe81baed1ddc182665712d8c94c",
+      "svg_sha256": "b77843116fc3eefa411747b7d2df234adda6b8e7c188a662ac1b761087eb9ee4"
+    },
+    {
+      "id": "U_L",
+      "character": "L",
+      "exact_bounds": [
+        86,
+        0,
+        1149,
+        1450
+      ],
+      "region_bounds": [
+        86.0,
+        0.0,
+        1149.0,
+        1450.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 64,
+      "scad_sha256": "094b979048da2c66e074bc1ea715ac2568595f22921375c883d28c52cdb6ee41",
+      "svg_sha256": "8acbac6f3e51b1fcbfdfc7e9d8a22cfe11d576556eaad1fc39d90f4ef3f8f699"
+    },
+    {
+      "id": "U_M",
+      "character": "M",
+      "exact_bounds": [
+        86,
+        -10,
+        1698,
+        1450
+      ],
+      "region_bounds": [
+        86.0,
+        -10.0,
+        1698.0,
+        1450.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 78,
+      "scad_sha256": "280576e64496f13c486232e4abc8adec3b03130c29f1e749aa6757e48a9b9468",
+      "svg_sha256": "63653c7cb5b7afafb05791f1fea1501b40ce536adec8e49f014ca5c84b6c5d0a"
+    },
+    {
+      "id": "U_N",
+      "character": "N",
+      "exact_bounds": [
+        86,
+        -10,
+        1372,
+        1450
+      ],
+      "region_bounds": [
+        86.0,
+        -10.0,
+        1372.0,
+        1450.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 64,
+      "scad_sha256": "aba371dee647d50d9d048ac50da194723e076972b549bee959173e2794eec39b",
+      "svg_sha256": "19f4e7d59272477ed966339c4f2f88daf026997aa33fefe10ced1d21ddbfe5e5"
+    },
+    {
+      "id": "U_O",
+      "character": "O",
+      "exact_bounds": [
+        109,
+        -29,
+        1409,
+        1479
+      ],
+      "region_bounds": [
+        109.0,
+        -29.0,
+        1409.0,
+        1479.0
+      ],
+      "contour_count": 2,
+      "component_count": 1,
+      "counter_count": 1,
+      "point_count": 128,
+      "scad_sha256": "06263f4929baff8015a01adf44a45cf804b19d029545c573ee13e2d2cddb84b4",
+      "svg_sha256": "e47edec5b35819050a650f6da9227ba7cebeb80ab307882e81019aa6087f5c45"
+    },
+    {
+      "id": "U_P",
+      "character": "P",
+      "exact_bounds": [
+        86,
+        0,
+        1139,
+        1450
+      ],
+      "region_bounds": [
+        86.0,
+        0.0,
+        1139.0,
+        1450.0
+      ],
+      "contour_count": 2,
+      "component_count": 1,
+      "counter_count": 1,
+      "point_count": 107,
+      "scad_sha256": "3368148bee15be323aaafae33738aaec56022c988d2bfaf3ddece3911f91757d",
+      "svg_sha256": "cf5b816fd2e3335877bcc11e54ad00dc3537d60b9983ee2ef979c4dbd50273de"
+    },
+    {
+      "id": "U_Q",
+      "character": "Q",
+      "exact_bounds": [
+        109,
+        -385,
+        1563,
+        1479
+      ],
+      "region_bounds": [
+        109.0,
+        -385.0,
+        1563.0,
+        1479.0
+      ],
+      "contour_count": 2,
+      "component_count": 1,
+      "counter_count": 1,
+      "point_count": 187,
+      "scad_sha256": "05fdd0da0efa8e1c77d935fa2429620ec7f19b4a5344e95d6697a4fffbfe7c0e",
+      "svg_sha256": "2d2f6d3bd19304623345ac5ae77538fb759313be5c4fe47924baa0b47e9bdd90"
+    },
+    {
+      "id": "U_R",
+      "character": "R",
+      "exact_bounds": [
+        86,
+        -29,
+        1352,
+        1450
+      ],
+      "region_bounds": [
+        86.0,
+        -29.0,
+        1352.0,
+        1450.0
+      ],
+      "contour_count": 2,
+      "component_count": 1,
+      "counter_count": 1,
+      "point_count": 152,
+      "scad_sha256": "7a1d35c5266136d695b35e43942d5db72594c32d0b1d89aa652a844d0145bec1",
+      "svg_sha256": "3cce33dcba70ebe4ad9cb7677f11863968048e2e1d8789e8965c5ce3e43d0e3c"
+    },
+    {
+      "id": "U_S",
+      "character": "S",
+      "exact_bounds": [
+        129,
+        -29,
+        1006,
+        1473
+      ],
+      "region_bounds": [
+        129.0,
+        -29.0,
+        1006.0,
+        1473.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 154,
+      "scad_sha256": "fa75608e8e499471810b77b9143d6c747e56518969689dd8cc943b6d6d11b31e",
+      "svg_sha256": "0efd638f4f5aef79b0fabc53ae9c8ef369c256cb8a6a4e2f7ade111451bf80ba"
+    },
+    {
+      "id": "U_T",
+      "character": "T",
+      "exact_bounds": [
+        59,
+        0,
+        1212,
+        1450
+      ],
+      "region_bounds": [
+        59.0,
+        0.0,
+        1212.0,
+        1450.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 64,
+      "scad_sha256": "d9706e2da359efc084699b526ebcdc726d1b7e398646f22105e7ea7b51c56ab9",
+      "svg_sha256": "58b8edf6ec123d535f7619d84aaa28499b476a92bbcef7a4081573283074b2b6"
+    },
+    {
+      "id": "U_U",
+      "character": "U",
+      "exact_bounds": [
+        55,
+        -29,
+        1341,
+        1450
+      ],
+      "region_bounds": [
+        55.0,
+        -29.0,
+        1341.0,
+        1450.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 106,
+      "scad_sha256": "fabfbd75701291c6ed793e0b742adc02ae59616f738102c4a0d7e097221aafcd",
+      "svg_sha256": "1e67aec186c7e5be265b566481a6c2e6128ecddb8dac3609ce754b94c9220af2"
+    },
+    {
+      "id": "U_V",
+      "character": "V",
+      "exact_bounds": [
+        -12,
+        -10,
+        1305,
+        1450
+      ],
+      "region_bounds": [
+        -12.0,
+        -10.0,
+        1305.0,
+        1450.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 53,
+      "scad_sha256": "a662170de58c43240a2c4cefd0600eac6500318f4d964a1e78b8cb338700bd05",
+      "svg_sha256": "987672f5afdb409533b54d0e58df8802303a34b81c6f0000a65352772215bca5"
+    },
+    {
+      "id": "U_W",
+      "character": "W",
+      "exact_bounds": [
+        -14,
+        -10,
+        1858,
+        1450
+      ],
+      "region_bounds": [
+        -14.0,
+        -10.0,
+        1858.0,
+        1450.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 80,
+      "scad_sha256": "dea1c0564b1ba1d88e48169f3c352fa0e4e6edd07ba606f7e968102e0b9cf318",
+      "svg_sha256": "25da133d512e07b5e2038df4979367e0c3df25f196c9eee69fe477ef70bc47c2"
+    },
+    {
+      "id": "U_X",
+      "character": "X",
+      "exact_bounds": [
+        33,
+        0,
+        1284,
+        1450
+      ],
+      "region_bounds": [
+        33.0,
+        0.0,
+        1284.0,
+        1450.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 94,
+      "scad_sha256": "1180a423f5c33a060a07454f30ff79292de887e3250b9c1907b71b37e1090046",
+      "svg_sha256": "4a59b1046ed6ea42d8c9183e8d189adabc2e3eede43098290919c28c3f95f41d"
+    },
+    {
+      "id": "U_Y",
+      "character": "Y",
+      "exact_bounds": [
+        -6,
+        0,
+        1204,
+        1450
+      ],
+      "region_bounds": [
+        -6.0,
+        0.0,
+        1204.0,
+        1450.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 71,
+      "scad_sha256": "2abe8c2a56f3950aab6b41b4cae8a88ff7969564103ea02910b5f55ea9277362",
+      "svg_sha256": "c276107368a341ef5687b7e36ff75c1a653b60c14d3c4683bee4708354294962"
+    },
+    {
+      "id": "U_Z",
+      "character": "Z",
+      "exact_bounds": [
+        86,
+        0,
+        1126,
+        1450
+      ],
+      "region_bounds": [
+        86.0,
+        0.0,
+        1126.0,
+        1450.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 50,
+      "scad_sha256": "a181489a105e2e4edb681154c7c4ca5eddc015f23b8445a0f1306961f27c62e1",
+      "svg_sha256": "1fd8e71dfeef2eecbd0efd44394bd6f7951317f8a276560a33419993cb48c635"
+    },
+    {
+      "id": "L_a",
+      "character": "a",
+      "exact_bounds": [
+        80,
+        -14,
+        1018,
+        1083
+      ],
+      "region_bounds": [
+        80.0,
+        -14.0,
+        1018.0,
+        1083.0
+      ],
+      "contour_count": 2,
+      "component_count": 1,
+      "counter_count": 1,
+      "point_count": 151,
+      "scad_sha256": "9817941e24de9c5df801417872f8a5c37b4bdadfc6f7925d32c3accb3677a39c",
+      "svg_sha256": "94ea7b37be08104205aa451c7f386fd451d914b128fc7871c5277df05c1a688d"
+    },
+    {
+      "id": "L_b",
+      "character": "b",
+      "exact_bounds": [
+        8,
+        -33,
+        1057,
+        1604
+      ],
+      "region_bounds": [
+        8.0,
+        -33.0,
+        1057.0,
+        1604.0
+      ],
+      "contour_count": 2,
+      "component_count": 1,
+      "counter_count": 1,
+      "point_count": 112,
+      "scad_sha256": "1031e05dff129f8e231d37921b8bc338567af6e360d01882083e4739f7e563f1",
+      "svg_sha256": "867122e52ec2e8ff5e7f8cf70368e79567c1b07437f3b2ceaba71c89afa567ed"
+    },
+    {
+      "id": "L_c",
+      "character": "c",
+      "exact_bounds": [
+        94,
+        -29,
+        924,
+        1083
+      ],
+      "region_bounds": [
+        94.0,
+        -29.0,
+        924.0,
+        1083.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 124,
+      "scad_sha256": "fe405fdfbc1b48f963e889f4cf1e69752c3ef51a613ad49c8bc2dc14195a1db7",
+      "svg_sha256": "8cf33dcd833adbdd1233feae2b252d77b4f821bea80347f1ecc981b09251340b"
+    },
+    {
+      "id": "L_d",
+      "character": "d",
+      "exact_bounds": [
+        97.98191150082036,
+        -29,
+        1147,
+        1606
+      ],
+      "region_bounds": [
+        98.0,
+        -29.0,
+        1147.0,
+        1606.0
+      ],
+      "contour_count": 2,
+      "component_count": 1,
+      "counter_count": 1,
+      "point_count": 125,
+      "scad_sha256": "c69456187258144b540afe151a9fc6709fb907112ce9bef6b15790bd95eda9e1",
+      "svg_sha256": "10ad768202132349c8207fa0af358e5dac4a246155c2dab3b501598fb74d545d"
+    },
+    {
+      "id": "L_e",
+      "character": "e",
+      "exact_bounds": [
+        94,
+        -29,
+        948,
+        1083
+      ],
+      "region_bounds": [
+        94.0,
+        -29.0,
+        948.0,
+        1083.0
+      ],
+      "contour_count": 2,
+      "component_count": 1,
+      "counter_count": 1,
+      "point_count": 106,
+      "scad_sha256": "d51d109d7d3665971a7904b0ab20e2fbeb0b704f958fc80cdf46abaa35a15939",
+      "svg_sha256": "724c46a3d2a34cf2a8dce631f868873140cf0a17434b838ec462faadd3a016c3"
+    },
+    {
+      "id": "L_f",
+      "character": "f",
+      "exact_bounds": [
+        53,
+        0,
+        807,
+        1602
+      ],
+      "region_bounds": [
+        53.0,
+        0.0,
+        807.0,
+        1602.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 91,
+      "scad_sha256": "874ef6ac9661e1a4852ed233c413bf86e33519f2e4ab3ab1d7bff09c40004904",
+      "svg_sha256": "d72dd73c7de3ffed4b130a578650c2a59b2f4a55153ad07e88b61c23055b188c"
+    },
+    {
+      "id": "L_g",
+      "character": "g",
+      "exact_bounds": [
+        39,
+        -385,
+        1024,
+        1315
+      ],
+      "region_bounds": [
+        39.0,
+        -385.0,
+        1024.0,
+        1315.0
+      ],
+      "contour_count": 3,
+      "component_count": 1,
+      "counter_count": 2,
+      "point_count": 232,
+      "scad_sha256": "0e6247941e257a12156cfeca5c4dc7474bf35daa7c314cb913aee3e9a92ff498",
+      "svg_sha256": "65e07e2becab846c77dd15c98898f203c6cb17d3fc6a1fe9161733b65f296422"
+    },
+    {
+      "id": "L_h",
+      "character": "h",
+      "exact_bounds": [
+        41,
+        0,
+        1174,
+        1604
+      ],
+      "region_bounds": [
+        41.0,
+        0.0,
+        1174.0,
+        1604.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 105,
+      "scad_sha256": "dd1832f4960a85e20454fc64a742c1ba2b986302665ef8a9aa1072f5d9e63845",
+      "svg_sha256": "84ed2f76901c799e18acec4ea4a7be6a887fadadb6ee1742765249eb7cd1fa8b"
+    },
+    {
+      "id": "L_i",
+      "character": "i",
+      "exact_bounds": [
+        59,
+        0,
+        555,
+        1567
+      ],
+      "region_bounds": [
+        59.0,
+        0.0,
+        555.0,
+        1567.0
+      ],
+      "contour_count": 2,
+      "component_count": 2,
+      "counter_count": 0,
+      "point_count": 70,
+      "scad_sha256": "494e37736cc9c05f623bd3370ea7b6f4f52670c17b035ae3909b9211349495b7",
+      "svg_sha256": "eae9560657457fc349d98cdb1dd3fa110b9f37ce9b638c072e81052f1352a86e"
+    },
+    {
+      "id": "L_j",
+      "character": "j",
+      "exact_bounds": [
+        -131,
+        -385,
+        403,
+        1556
+      ],
+      "region_bounds": [
+        -131.0,
+        -385.0,
+        403.0,
+        1556.0
+      ],
+      "contour_count": 2,
+      "component_count": 2,
+      "counter_count": 0,
+      "point_count": 100,
+      "scad_sha256": "223561e79a9741948ec82027c425a189964f4f2caba9933b944a6f33f992eeed",
+      "svg_sha256": "a3268af0cda9a20bd982ec26957dc075605a603a2bcf6ccf781bac8d58865490"
+    },
+    {
+      "id": "L_k",
+      "character": "k",
+      "exact_bounds": [
+        41,
+        0,
+        1112,
+        1606
+      ],
+      "region_bounds": [
+        41.0,
+        0.0,
+        1112.0,
+        1606.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 91,
+      "scad_sha256": "1f0527e1150fb57b0f87d93b0044a20edc01793658536fcc997a32babc46a788",
+      "svg_sha256": "0213914aec4c8a3b9d101fba36989dfbd3ce214d668294a810ac77e525cba89f"
+    },
+    {
+      "id": "L_l",
+      "character": "l",
+      "exact_bounds": [
+        45,
+        0,
+        541,
+        1606
+      ],
+      "region_bounds": [
+        45.0,
+        0.0,
+        541.0,
+        1606.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 38,
+      "scad_sha256": "e9286471e6a5933038acd2bb2a773e1381ec43d9a1dafbe220f2b60ac50c683c",
+      "svg_sha256": "36ca4ab943a187fc1b2958a632004ccb1282ba7679161a1248e7cf6a2a1101f8"
+    },
+    {
+      "id": "L_m",
+      "character": "m",
+      "exact_bounds": [
+        59,
+        0,
+        1788,
+        1083
+      ],
+      "region_bounds": [
+        59.0,
+        0.0,
+        1788.0,
+        1083.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 165,
+      "scad_sha256": "33e0166738f29b4a385b1367b8ca1b2628dcdd188cf88ff5e9dcfabb4154d437",
+      "svg_sha256": "7bf4bb8aced2c44d5789b0d761532e76cbe6f290f6a9b3d2cf271402dace3ca6"
+    },
+    {
+      "id": "L_n",
+      "character": "n",
+      "exact_bounds": [
+        59,
+        0,
+        1192,
+        1083
+      ],
+      "region_bounds": [
+        59.0,
+        0.0,
+        1192.0,
+        1083.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 104,
+      "scad_sha256": "3de60e45f3c820c54b9bac753c30b0333797097074ff1bfd15ee4a2f376d17b6",
+      "svg_sha256": "b831e076a42cd62fe1c7471be196d83bbedc7c1e2dab4e32732bda9f27d839bd"
+    },
+    {
+      "id": "L_o",
+      "character": "o",
+      "exact_bounds": [
+        96,
+        -29,
+        1026,
+        1083
+      ],
+      "region_bounds": [
+        96.0,
+        -29.0,
+        1026.0,
+        1083.0
+      ],
+      "contour_count": 2,
+      "component_count": 1,
+      "counter_count": 1,
+      "point_count": 120,
+      "scad_sha256": "478f2c44a698d20d79830189d2325c0bb53899338d7567aa690b019f9c6eed0a",
+      "svg_sha256": "7b7bfa19e2f68858a12d63257905bca1651acfb44c32f87f53c8f4195d72eaad"
+    },
+    {
+      "id": "L_p",
+      "character": "p",
+      "exact_bounds": [
+        45,
+        -371,
+        1094,
+        1083
+      ],
+      "region_bounds": [
+        45.0,
+        -371.0,
+        1094.0,
+        1083.0
+      ],
+      "contour_count": 2,
+      "component_count": 1,
+      "counter_count": 1,
+      "point_count": 130,
+      "scad_sha256": "860a951311b96a86d760fe7004075f8d2cd6d3f3bffa4fbe1534f01b0bbc3c9f",
+      "svg_sha256": "f954b216ce8113c8f50c372f58294af02aa3e6db123d0f8008413f9de7cad802"
+    },
+    {
+      "id": "L_q",
+      "character": "q",
+      "exact_bounds": [
+        96,
+        -371,
+        1124,
+        1087
+      ],
+      "region_bounds": [
+        96.0,
+        -371.0,
+        1124.0,
+        1087.0
+      ],
+      "contour_count": 2,
+      "component_count": 1,
+      "counter_count": 1,
+      "point_count": 120,
+      "scad_sha256": "03a58598939a942d95ad37ee8b472cf205c51e66cc37025a6a2b57564487222e",
+      "svg_sha256": "ac32027cc82549d23c72d8f9760f817a4568a1bd718cd6087a3bfe40f81755c7"
+    },
+    {
+      "id": "L_r",
+      "character": "r",
+      "exact_bounds": [
+        59,
+        0,
+        883,
+        1083
+      ],
+      "region_bounds": [
+        59.0,
+        0.0,
+        883.0,
+        1083.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 91,
+      "scad_sha256": "dbc54a0474e3b62f97b3309fd134c56d3344dbe044557259a87e23e0a14eb279",
+      "svg_sha256": "94db1b34510fdac8ef20e7b90880e4c34e43cf1f280b3ef2cbbcbe5802cd7dc4"
+    },
+    {
+      "id": "L_s",
+      "character": "s",
+      "exact_bounds": [
+        113,
+        -29,
+        817,
+        1083
+      ],
+      "region_bounds": [
+        113.0,
+        -29.0,
+        817.0,
+        1083.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 125,
+      "scad_sha256": "13ff7caff5baedb27b35b54e76d0fdd3cd365c1d2053359a2e3cb70661810f77",
+      "svg_sha256": "615b9e80e0e3bfbe1ba885f4144f14a5925d41ce65f9a44aed38793683725c32"
+    },
+    {
+      "id": "L_t",
+      "character": "t",
+      "exact_bounds": [
+        8,
+        -29,
+        745,
+        1395
+      ],
+      "region_bounds": [
+        8.0,
+        -29.0,
+        745.0,
+        1395.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 51,
+      "scad_sha256": "4cfe6237e9dcacf21f1d3a5a0125c16801324a43f1d9c0c4da76c0e667e1d2a0",
+      "svg_sha256": "7d234d071bda242a47b0d7b6d1d32d655b797c692746bbc6d560bbff8741cb6f"
+    },
+    {
+      "id": "L_u",
+      "character": "u",
+      "exact_bounds": [
+        33,
+        -29,
+        1145,
+        1077
+      ],
+      "region_bounds": [
+        33.0,
+        -29.0,
+        1145.0,
+        1077.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 86,
+      "scad_sha256": "7ab3cb3d409ea6d5dfa91ec4cd19b63f1220bc806627e44bad69186c4668d905",
+      "svg_sha256": "6dba7f551aac67592f922d4b983a19c4cdd2bff5ed7c7c57cb235ec377091d40"
+    },
+    {
+      "id": "L_v",
+      "character": "v",
+      "exact_bounds": [
+        -4,
+        -10,
+        995,
+        1055
+      ],
+      "region_bounds": [
+        -4.0,
+        -10.0,
+        995.0,
+        1055.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 50,
+      "scad_sha256": "56e3e97e43ca3695d63838caff0599f1f2c88b177da7d46246bc06a06410605c",
+      "svg_sha256": "20064c2259bfdc82dbbe6404022ff18557c2ed88f9c488499c06690eb32091d8"
+    },
+    {
+      "id": "L_w",
+      "character": "w",
+      "exact_bounds": [
+        0,
+        -10,
+        1571,
+        1063
+      ],
+      "region_bounds": [
+        0.0,
+        -10.0,
+        1571.0,
+        1063.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 56,
+      "scad_sha256": "55690a14060e3c745746f6fb4daa639d6acf5a461e6c4415fe6b8975b531230c",
+      "svg_sha256": "9f16b4ef7bff06a0270df047475a5b2d9f6e783d15d20a261b60cb38a663834e"
+    },
+    {
+      "id": "L_x",
+      "character": "x",
+      "exact_bounds": [
+        43,
+        0,
+        1036,
+        1055
+      ],
+      "region_bounds": [
+        43.0,
+        0.0,
+        1036.0,
+        1055.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 86,
+      "scad_sha256": "1c2fb48dfadf9d14314b0680b5321fba706cc131e7ab017eac4e08919f582811",
+      "svg_sha256": "246327506ea5192e7e1eda9ef5729c508b4c82b04766d9205e5c453c11bb57be"
+    },
+    {
+      "id": "L_y",
+      "character": "y",
+      "exact_bounds": [
+        -8,
+        -385,
+        1012,
+        1055
+      ],
+      "region_bounds": [
+        -8.0,
+        -385.0,
+        1012.0,
+        1055.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 97,
+      "scad_sha256": "6a36a8a63b8d65d75be481c970553685b4bab1815c2e2355917e42575704838b",
+      "svg_sha256": "85c75b024f56fd17f266dc92b9234f0d04a56325f29a84a388c6d91343361d66"
+    },
+    {
+      "id": "L_z",
+      "character": "z",
+      "exact_bounds": [
+        78,
+        -10,
+        899,
+        1065
+      ],
+      "region_bounds": [
+        78.0,
+        -10.0,
+        899.0,
+        1065.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 40,
+      "scad_sha256": "722349d6111d28fef5bb6153b917b8548ef7dea286e792aac3212c20d8ad3442",
+      "svg_sha256": "fd264b70a8b705a948df1baaec69d5e2954850f4a22884e09a7fdf49dccb2a83"
+    },
+    {
+      "id": "D_0",
+      "character": "0",
+      "exact_bounds": [
+        106,
+        -29,
+        1120,
+        1083
+      ],
+      "region_bounds": [
+        106.0,
+        -29.0,
+        1120.0,
+        1083.0
+      ],
+      "contour_count": 2,
+      "component_count": 1,
+      "counter_count": 1,
+      "point_count": 128,
+      "scad_sha256": "79bbca8363f6d05dbf9cde550425f2f0a8da6d2d0f71a58ff8cd219b7038feb2",
+      "svg_sha256": "590e61f6e8e27c7a6e2d74ddf478e4e97c1ad568b80b9ccc241c466c9e658c58"
+    },
+    {
+      "id": "D_1",
+      "character": "1",
+      "exact_bounds": [
+        96,
+        0,
+        715,
+        1077
+      ],
+      "region_bounds": [
+        96.0,
+        0.0,
+        715.0,
+        1077.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 41,
+      "scad_sha256": "0158eb55a26fc7a735ae625aa47d909a48ded04aad2e951f271bd02333ab76db",
+      "svg_sha256": "2399c7c93a21d8d5c0165b5902c0ef0030558a360934d8d525ac8ed29a3b277d"
+    },
+    {
+      "id": "D_2",
+      "character": "2",
+      "exact_bounds": [
+        96,
+        -10,
+        889,
+        1083
+      ],
+      "region_bounds": [
+        96.0,
+        -10.0,
+        889.0,
+        1083.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 76,
+      "scad_sha256": "5c94fc1e62d4afde5fc005c6e6432508949acbb97b6e220d20439a70deb1867a",
+      "svg_sha256": "f19ea9593541fc5abe39c194184916267773ab11865f9ce800f3143a9723624d"
+    },
+    {
+      "id": "D_3",
+      "character": "3",
+      "exact_bounds": [
+        76,
+        -309,
+        834,
+        1083
+      ],
+      "region_bounds": [
+        76.0,
+        -309.0,
+        834.0,
+        1083.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 118,
+      "scad_sha256": "4a945ac7a0716d8494e9cfba163ae6c90bde623279c50454ed352f9a2e29f9ba",
+      "svg_sha256": "8a7921f3bf32a8ea4869ac55a3a6c997648b8174daaa631ee8112e46bce95438"
+    },
+    {
+      "id": "D_4",
+      "character": "4",
+      "exact_bounds": [
+        35,
+        -289,
+        938,
+        1083
+      ],
+      "region_bounds": [
+        35.0,
+        -289.0,
+        938.0,
+        1083.0
+      ],
+      "contour_count": 2,
+      "component_count": 1,
+      "counter_count": 1,
+      "point_count": 25,
+      "scad_sha256": "a7d20a15e22956cb29207f8c00a8554423b5cce5c036685fa3c696d71d2cd3e7",
+      "svg_sha256": "e7ae4e254499b070f8122bde88398fa60fe02f3a19b6a398470983a308195433"
+    },
+    {
+      "id": "D_5",
+      "character": "5",
+      "exact_bounds": [
+        92,
+        -303,
+        768,
+        1157
+      ],
+      "region_bounds": [
+        92.0,
+        -303.0,
+        768.0,
+        1157.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 84,
+      "scad_sha256": "2ee9df9a3aa38ff28a13fc0ec6d94119770a1c0bd27ab510898b4761cd654ae4",
+      "svg_sha256": "e2d6f99c7db1010041d44ece6b25a2e6442c15f38447d978834472c77bd5f99f"
+    },
+    {
+      "id": "D_6",
+      "character": "6",
+      "exact_bounds": [
+        113,
+        -29,
+        981,
+        1481
+      ],
+      "region_bounds": [
+        113.0,
+        -29.0,
+        981.0,
+        1481.0
+      ],
+      "contour_count": 2,
+      "component_count": 1,
+      "counter_count": 1,
+      "point_count": 136,
+      "scad_sha256": "06fc4a7da67e301d036bc2aa55aeae265d00035660598406b98cb940b2024240",
+      "svg_sha256": "3711758892a680bc5270766afe624dab6fbca427dedf25f8429e103462dd16f1"
+    },
+    {
+      "id": "D_7",
+      "character": "7",
+      "exact_bounds": [
+        55,
+        -303,
+        815,
+        1063
+      ],
+      "region_bounds": [
+        55.0,
+        -303.0,
+        815.0,
+        1063.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 54,
+      "scad_sha256": "8377a2e795ca714a25509d653427c73dd19eba16a9a4b6e469ae4842b1c579bd",
+      "svg_sha256": "168b3560ae31b33d86a6f20e34352c4c3bc722135d99a324893343790dbc47b3"
+    },
+    {
+      "id": "D_8",
+      "character": "8",
+      "exact_bounds": [
+        106,
+        -29,
+        961,
+        1479
+      ],
+      "region_bounds": [
+        106.0,
+        -29.0,
+        961.0,
+        1479.0
+      ],
+      "contour_count": 3,
+      "component_count": 1,
+      "counter_count": 2,
+      "point_count": 162,
+      "scad_sha256": "e464df2b8993445606a94afdf24d315c68caf394f7eae1a5a64943b36d1989ad",
+      "svg_sha256": "14b0b93721cc8d29949da108c9d4cfd841a6da36b205e1246fd510b854b3d19a"
+    },
+    {
+      "id": "D_9",
+      "character": "9",
+      "exact_bounds": [
+        76,
+        -303,
+        944,
+        1083
+      ],
+      "region_bounds": [
+        76.0,
+        -303.0,
+        944.0,
+        1083.0
+      ],
+      "contour_count": 2,
+      "component_count": 1,
+      "counter_count": 1,
+      "point_count": 136,
+      "scad_sha256": "f341862d51534084eb7a01d51ecdc6e8f651b4260fbed46a6aa5e490a8ae130a",
+      "svg_sha256": "700d8a4eed1145efb7d2a3cedfa2cdefd89470dc185dafa4db8f0135f5ba7232"
+    },
+    {
+      "id": "P_question",
+      "character": "?",
+      "exact_bounds": [
+        66,
+        -29,
+        870,
+        1602
+      ],
+      "region_bounds": [
+        66.0,
+        -29.0,
+        870.0,
+        1602.0
+      ],
+      "contour_count": 2,
+      "component_count": 2,
+      "counter_count": 0,
+      "point_count": 131,
+      "scad_sha256": "0206735cb31cd138eb7fd6512bd1a2e9a24b809ad202f2c1861536bc064c5142",
+      "svg_sha256": "980e8d001bdf771c782a0b9a08ece5c5eb835ddeff78172840f782b5c5bd35f9"
+    },
+    {
+      "id": "P_exclamation",
+      "character": "!",
+      "exact_bounds": [
+        137,
+        -29,
+        399,
+        1602
+      ],
+      "region_bounds": [
+        137.0,
+        -29.0,
+        399.0,
+        1602.0
+      ],
+      "contour_count": 2,
+      "component_count": 2,
+      "counter_count": 0,
+      "point_count": 61,
+      "scad_sha256": "1a8f433d2d6c506599cbf6f87af8f8c2073cfdb54c9c5a7b2cb6cddab8564b06",
+      "svg_sha256": "8861b6a9a244e60d33d0b16a1649ff5147baf9cbedb52e069c60375dbce73dbd"
+    },
+    {
+      "id": "P_colon",
+      "character": ":",
+      "exact_bounds": [
+        141,
+        -29,
+        403,
+        1081
+      ],
+      "region_bounds": [
+        141.0,
+        -29.0,
+        403.0,
+        1081.0
+      ],
+      "contour_count": 2,
+      "component_count": 2,
+      "counter_count": 0,
+      "point_count": 64,
+      "scad_sha256": "8cf754eb9a94e079958d0f7e5c581504de30d57979bacc5b913bca3050c9a205",
+      "svg_sha256": "86b649e4809bc034c00ed1c2d0ea7380fbbf1a67ba9ff49fa1457de9f7fa96fc"
+    },
+    {
+      "id": "P_semicolon",
+      "character": ";",
+      "exact_bounds": [
+        150,
+        -283,
+        437,
+        1081
+      ],
+      "region_bounds": [
+        150.0,
+        -283.0,
+        437.0,
+        1081.0
+      ],
+      "contour_count": 2,
+      "component_count": 2,
+      "counter_count": 0,
+      "point_count": 79,
+      "scad_sha256": "61f7c7e978aaa0c7934210217500ddbb059f7c04c1f7824ff173319a2d6124fe",
+      "svg_sha256": "57ee30ba873bf27416100f72b74f81aa9ba75060921594f024c0e3657b783e60"
+    }
+  ]
+}
