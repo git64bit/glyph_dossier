@@ -1,10 +1,10 @@
 # Accepted glyph objects
 
-The source catalog contains 396 portable set-and-glyph profiles.
+The source catalog contains 396 portable profiles.
 
-Generic exact-height normalization is available for every profile, but
-there are no accepted physical glyph objects.
+Generic exact-height normalization and rectangular sectioning are
+available for every profile. There are still no accepted physical glyph
+objects.
 
-The only sectional laboratory object remains the fixed Liberation Sans
-`U_A` experiment. Generic sectioning, occupied-cell analysis,
-connectors, and physical acceptance remain deferred.
+Occupied-cell analysis, cut-quality analysis, connectors, and physical
+acceptance remain deferred.

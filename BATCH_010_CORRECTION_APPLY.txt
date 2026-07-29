@@ -1,0 +1,3 @@
+Apply after the Batch 010 delta over commit 82d8782.
+Replace the two SCAD files and retain the correction record.
+Then rerun all four Batch 010 tests.

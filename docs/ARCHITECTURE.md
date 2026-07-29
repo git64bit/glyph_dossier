@@ -1,68 +1,63 @@
 # Architecture
 
-Glyph Dossier separates font capture from runtime geometry.
+Glyph Dossier separates source capture, normalization, and sectioning.
 
 ## Portable source layer
 
 ```text
-retained source identity and license
-        ↓
-external extraction
-        ↓
-immutable SCAD contour records
-        ↓
-isolated font-set registry
+embedded source package
         ↓
 exact set ID + glyph ID lookup
+        ↓
+captured BOSL2 region
 ```
-
-Six embedded sets currently expose 396 portable profiles.
 
 ## Generic normalization layer
 
-Batch 009 adds a shared normalization route:
-
 ```text
-selected font set
+captured region bounds
         ↓
-selected portable glyph
+exact target-height scale
         ↓
-captured BOSL2 region bounds
-        ↓
-exact scale from requested visible height
-        ↓
-center-bottom normalized region
-        ↓
-profile rendering and numeric report
+visible-center-bottom normalized region
 ```
 
-The implementation is distributed across:
+## Generic sectioning layer
+
+Batch 010 adds:
 
 ```text
-geometry/portable_glyph_region.scad
-lib/portable_normalization_validation.scad
-lib/portable_normalization_reporting.scad
-geometry/portable_normalized_profile_scene.scad
-portable_catalog_main.scad
-workbenches/portable_normalized_profile.scad
+normalized portable region
+        ↓
+automatic or manual rectangular grid
+        ↓
+full section manifest
+        ↓
+plan, exploded layout, or local cell export
 ```
 
-The generic route does not call `text()`, `resize()`, or
-`textmetrics()`.
+Implementation:
 
-## Baseline preservation
+```text
+config/portable_generic_section_defaults.scad
+lib/portable_generic_sectioning.scad
+lib/portable_generic_section_validation.scad
+lib/portable_generic_section_reporting.scad
+geometry/portable_generic_section_scene.scad
+portable_section_main.scad
+```
 
-Runtime geometry is anchored to its visible bottom, but the source
-baseline remains recoverable from captured bounds. Descenders and
-punctuation therefore normalize consistently without losing their
-original baseline relationship.
+Automatic mode derives the smallest complete centered-bottom grid from
+normalized visible bounds and configured cell dimensions.
+
+Manual mode preserves direct operator control.
 
 ## Fixed A sectioning layer
 
-The earlier Liberation Sans `U_A` sectioning experiment remains a
-separate accepted path. Batch 009 does not alter it.
+The earlier `portable_a_*` route remains byte-identical and separate.
+Its A-specific hazard guides are not used by generic sectioning.
 
-## Next architectural boundary
+## Next boundary
 
-Generic sectioning should consume the generic normalized region from
-Batch 009. It should not depend on A-specific hazard guides.
+BOSL2 occupied-cell detection should classify each resolved grid cell
+without changing the accepted clipping and local-coordinate contract.

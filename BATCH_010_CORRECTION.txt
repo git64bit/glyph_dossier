@@ -1,0 +1,31 @@
+BATCH: 010 CORRECTION
+VERSION: 0.10.0
+BASELINE: Batch 010 delta applied over commit 82d8782
+DATE: 2026-07-29
+
+OBSERVED FAILURE:
+  tests/portable_generic_section_resolution_contract.scad
+  ALPHA_SLAB_ONE_REGULAR_R1 L_c
+
+CAUSE:
+  Automatic grid coverage compared mathematically coincident section
+  and normalized-glyph boundaries using strict floating-point
+  inequalities. OpenSCAD may evaluate the normalized 600 mm top as a
+  microscopically larger value.
+
+CORRECTION:
+  portable_generic_grid_covers_glyph() now applies a default
+  0.000001 mm comparison tolerance to all four coverage boundaries.
+
+UNCHANGED:
+  - grid resolution
+  - grid origin
+  - section clipping
+  - section IDs and manifests
+  - local export coordinates
+  - all glyph packages
+  - all Batch 009 normalization files
+  - fixed portable_a_* route
+
+RETEST:
+  Run all four Batch 010 tests again.

@@ -5,18 +5,8 @@ large sectional construction.
 
 ## Stored portable catalog
 
-The repository contains six isolated portable font sets:
-
-```text
-LIBERATION_SANS_REGULAR_R1
-MONTSERRAT_REGULAR_R1
-ALPHA_SLAB_ONE_REGULAR_R1
-FIRA_SANS_REGULAR_R1
-MIAMA_NUEVA_MEDIUM_R1
-PLAYFAIR_DISPLAY_REGULAR_R1
-```
-
-Each contains the same 66 dossier identities:
+The unified repository contains six embedded portable font sets and
+sixty-six glyph identities per set:
 
 ```text
 6 sets × 66 glyphs = 396 portable profiles
@@ -28,70 +18,40 @@ Catalog identity is:
 portable set ID + glyph ID
 ```
 
-## Generic exact-height normalization
-
-Open:
+## Generic normalization
 
 ```text
 workbenches/portable_normalized_profile.scad
 ```
 
-Select any stored family and glyph, then set the requested visible
-height and extrusion depth.
+Any stored profile can be normalized to an exact visible height without
+`text()`, `resize()`, `textmetrics()`, or operating-system font lookup.
 
-The normalization authority is the captured BOSL2 region bounds:
-
-```text
-visible horizontal center = X 0
-visible bottom = Y 0
-visible height = requested height
-```
-
-The console reports exact source bounds, scale, normalized width,
-normalized bounds, normalized source-baseline position, normalized
-advance width, components, counters, and source checksum.
-
-This route does not call:
+## Generic sectioning
 
 ```text
-text()
-resize()
-textmetrics()
+workbenches/portable_section_plan.scad
+workbenches/portable_section_layout.scad
+workbenches/portable_section_export.scad
 ```
 
-It does not consult the operating-system font inventory.
+Generic sectioning supports all 396 profiles.
 
-## Multi-family catalog
+Grid modes:
 
 ```text
-workbenches/portable_catalog.scad
+auto   derive complete centered-bottom grid from target and cell size
+manual use explicit origin, columns, and rows
 ```
 
-It supports direct set-and-glyph selection, normal 2D or 3D rendering,
-component diagnostics, and contact sheets.
+Every cell receives a deterministic object ID and local export bounds.
 
-## Family comparison
+Batch 010 does not compute occupied cells. Empty intersections render no
+geometry but remain in the manifest.
 
-```text
-workbenches/portable_family_comparison.scad
-```
+## Fixed A laboratory route
 
-This renders one selected glyph from all six stored packages.
-
-## Family-selectable sheets
-
-```text
-workbenches/portable_contact_sheet.scad
-workbenches/portable_uppercase_sheet.scad
-workbenches/portable_lowercase_sheet.scad
-workbenches/portable_digit_sheet.scad
-workbenches/portable_punctuation_sheet.scad
-```
-
-## Portable A sectioning
-
-The accepted sectioning experiment remains deliberately fixed to the
-captured Liberation Sans `U_A`:
+The accepted Liberation Sans `U_A` experiment remains unchanged:
 
 ```text
 workbenches/portable_a_normalized_profile.scad
@@ -100,22 +60,18 @@ workbenches/portable_a_section_layout.scad
 workbenches/portable_a_section_export.scad
 ```
 
-Batch 009 does not change that route.
-
-## Batch 009 tests
+## Batch 010 tests
 
 ```text
-tests/portable_generic_normalization_contract.scad
-tests/portable_descender_normalization_contract.scad
-tests/portable_punctuation_normalization_contract.scad
-tests/portable_multi_family_normalization_contract.scad
-tests/portable_generic_normalized_render_contract.scad
+tests/portable_generic_section_resolution_contract.scad
+tests/portable_generic_section_manifest_contract.scad
+tests/portable_generic_section_render_contract.scad
+tests/portable_generic_section_export_contract.scad
 ```
 
-## Deferred priorities
+## Remaining priorities
 
 ```text
-generic section plan, layout, and export
 BOSL2 occupied-cell detection
 fragment and cut-quality reporting
 segmented-font schema and procedural adapter

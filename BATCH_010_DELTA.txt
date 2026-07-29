@@ -1,0 +1,68 @@
+BATCH: 010
+VERSION: 0.10.0
+BASELINE COMMIT: 82d8782
+DATE: 2026-07-29
+
+PURPOSE:
+  Add generic multi-family rectangular section planning, exploded
+  layout, and local individual-section export.
+
+SOURCE MATRIX:
+  - Six embedded portable font sets.
+  - Sixty-six glyph identities per set.
+  - 396 selectable normalized profiles.
+  - Captured BOSL2 regions remain the geometry authority.
+
+GRID MODES:
+  auto:
+    - columns = ceil(normalized glyph width / cell width)
+    - rows = ceil(target height / cell height)
+    - plan is centered horizontally on X 0
+    - plan begins at visible bottom Y 0
+  manual:
+    - origin, columns, and rows are supplied explicitly
+
+ADDED:
+  - portable_section_main.scad
+  - config/portable_generic_section_defaults.scad
+  - lib/portable_generic_sectioning.scad
+  - lib/portable_generic_section_validation.scad
+  - lib/portable_generic_section_reporting.scad
+  - geometry/portable_generic_section_scene.scad
+  - workbenches/portable_section_plan.scad
+  - workbenches/portable_section_layout.scad
+  - workbenches/portable_section_export.scad
+  - api/portable_multi_family_sectioning_v1.scad
+  - generic resolution, manifest, render, and export tests
+  - docs/GENERIC_PORTABLE_SECTIONING.md
+
+SECTION CONTRACT:
+  - exact selected set-and-glyph lookup
+  - exact-height visible-center-bottom normalization
+  - deterministic C<column>_R<row> cell IDs
+  - deterministic set__glyph__cell object IDs
+  - selected cell translated to local [0, 0]
+  - cell dimensions validated against configured bed dimensions
+  - all configured cells remain in the manifest
+  - empty intersections render no geometry
+
+UNCHANGED:
+  - all glyph_sets files
+  - generic normalization workbench
+  - all portable_a_* workbenches
+  - accepted A sectioning geometry and validation
+  - occupied-cell detection
+  - fragment and cut-quality analysis
+  - segmented-font adapters
+  - connectors and attachment geometry
+
+TEST:
+  1. Copy the delta over commit 82d8782.
+  2. Run tests/portable_generic_section_resolution_contract.scad.
+  3. Run tests/portable_generic_section_manifest_contract.scad.
+  4. Run tests/portable_generic_section_render_contract.scad.
+  5. Run tests/portable_generic_section_export_contract.scad.
+  6. Inspect workbenches/portable_section_plan.scad.
+  7. Inspect workbenches/portable_section_layout.scad.
+  8. Inspect several cells in portable_section_export.scad.
+  9. Confirm zero errors and zero warnings.
