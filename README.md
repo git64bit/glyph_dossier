@@ -5,38 +5,22 @@ large sectional construction.
 
 ## Portable catalog
 
-The unified repository contains:
-
 ```text
 6 embedded font sets
 66 glyph identities per set
 396 selectable portable profiles
 ```
 
-Catalog identity is:
-
-```text
-portable set ID + glyph ID
-```
-
-## Generic normalization
+## Generic normalization and sectioning
 
 ```text
 workbenches/portable_normalized_profile.scad
-```
-
-Any stored profile can be normalized to an exact visible height without
-live font lookup.
-
-## Generic sectioning
-
-```text
 workbenches/portable_section_plan.scad
 workbenches/portable_section_layout.scad
 workbenches/portable_section_export.scad
 ```
 
-Automatic and manual rectangular grids support all 396 profiles.
+Automatic and manual rectangular grids support every stored profile.
 
 ## Occupied-cell detection
 
@@ -46,39 +30,48 @@ workbenches/portable_occupied_section_layout.scad
 workbenches/portable_occupied_section_export.scad
 ```
 
-Each cell is intersected with the exact normalized BOSL2 glyph region.
-The resulting clipped region supplies area, cell-area ratio, connected
-component count, status, and deterministic identity.
+BOSL2 clipped regions provide exact occupied area, component count, and
+occupied-only export identity.
 
-Occupied-only export selects a row-major occupied ordinal, so empty cells
-no longer need to be inspected or exported.
+## Fragment and cut-quality reporting
 
-Zero-area or boundary-only contact is treated as empty.
+```text
+workbenches/portable_section_quality.scad
+```
+
+The quality workbench reports:
+
+```text
+small and disconnected components
+component span and effective-thickness estimates
+shared seam lengths and interval counts
+flattened source-vertex proximity to cuts
+counter-cut candidates
+actual fragment bed fit
+```
+
+Views include a quality plan, review-only exploded layout, and
+report-only mode.
+
+Thresholds are visible operator controls. The quality layer does not
+move cuts or alter section geometry.
 
 ## Fixed A laboratory route
 
-The accepted Liberation Sans `U_A` experiment remains unchanged:
+The accepted Liberation Sans `U_A` experiment remains unchanged.
+
+## Batch 012 tests
 
 ```text
-workbenches/portable_a_normalized_profile.scad
-workbenches/portable_a_section_plan.scad
-workbenches/portable_a_section_layout.scad
-workbenches/portable_a_section_export.scad
-```
-
-## Batch 011 tests
-
-```text
-tests/portable_occupancy_boolean_contract.scad
-tests/portable_occupancy_manifest_contract.scad
-tests/portable_occupancy_partition_contract.scad
-tests/portable_occupancy_render_contract.scad
+tests/portable_quality_math_contract.scad
+tests/portable_quality_threshold_contract.scad
+tests/portable_quality_manifest_contract.scad
+tests/portable_quality_render_contract.scad
 ```
 
 ## Remaining priorities
 
 ```text
-fragment and cut-quality reporting
 segmented-font schema and procedural adapter
 additional segmented and modular families
 deterministic export packages

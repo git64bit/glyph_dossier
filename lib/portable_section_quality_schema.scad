@@ -1,0 +1,63 @@
+//////////////////////////////////////////////////////////////////////
+// LibFile: portable_section_quality_schema.scad
+// Project: Glyph Dossier
+// FileGroup: Portable Section Quality Schema
+// FileSummary: Indexed immutable fragment and cut diagnostics.
+//////////////////////////////////////////////////////////////////////
+
+PSQ_COLUMN = 0;
+PSQ_ROW = 1;
+PSQ_SECTION_ID = 2;
+PSQ_OBJECT_ID = 3;
+PSQ_OCCUPIED = 4;
+PSQ_STATUS = 5;
+PSQ_FLAGS = 6;
+PSQ_AREA = 7;
+PSQ_CELL_AREA_RATIO = 8;
+PSQ_COMPONENT_COUNT = 9;
+PSQ_COMPONENT_AREAS = 10;
+PSQ_COMPONENT_BOUNDS = 11;
+PSQ_SMALLEST_COMPONENT_AREA = 12;
+PSQ_MIN_COMPONENT_EXTENT = 13;
+PSQ_MIN_THICKNESS_ESTIMATE = 14;
+PSQ_MULTIPLE_COMPONENTS = 15;
+PSQ_SMALL_COMPONENT = 16;
+PSQ_THIN_COMPONENT = 17;
+PSQ_SEAM_LENGTHS = 18;
+PSQ_SEAM_SEGMENT_COUNTS = 19;
+PSQ_TOTAL_SEAM_LENGTH = 20;
+PSQ_SHORTEST_SEAM_LENGTH = 21;
+PSQ_SHORT_SEAM = 22;
+PSQ_MAX_SEAM_SEGMENT_COUNT = 23;
+PSQ_COUNTER_CUT_CANDIDATE = 24;
+PSQ_MIN_VERTEX_CUT_DISTANCE = 25;
+PSQ_VERTEX_NEAR_CUT = 26;
+PSQ_FRAGMENT_BOUNDS = 27;
+PSQ_FRAGMENT_SIZE = 28;
+PSQ_BED_FIT = 29;
+PSQ_REVIEW = 30;
+PSQ_REGION = 31;
+
+PSQ_SIDE_LEFT = 0;
+PSQ_SIDE_RIGHT = 1;
+PSQ_SIDE_BOTTOM = 2;
+PSQ_SIDE_TOP = 3;
+
+PORTABLE_QUALITY_EMPTY = "empty";
+PORTABLE_QUALITY_CLEAR = "clear";
+PORTABLE_QUALITY_REVIEW = "review";
+
+PORTABLE_QUALITY_FLAG_MULTIPLE =
+    "multiple_components";
+PORTABLE_QUALITY_FLAG_SMALL =
+    "small_component_area";
+PORTABLE_QUALITY_FLAG_THIN =
+    "thin_component_estimate";
+PORTABLE_QUALITY_FLAG_SHORT_SEAM =
+    "short_shared_seam";
+PORTABLE_QUALITY_FLAG_VERTEX =
+    "vertex_near_cut";
+PORTABLE_QUALITY_FLAG_COUNTER =
+    "counter_cut_candidate";
+PORTABLE_QUALITY_FLAG_BED =
+    "bed_overflow";

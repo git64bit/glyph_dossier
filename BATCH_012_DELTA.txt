@@ -1,0 +1,84 @@
+BATCH: 012
+VERSION: 0.12.0
+BASELINE COMMIT: 8e55691
+DATE: 2026-07-29
+
+PURPOSE:
+  Add fragment and cut-quality screening to accepted BOSL2 occupied
+  section records.
+
+AUTHORITY:
+  - exact normalized BOSL2 glyph region
+  - exact clipped occupancy regions from Batch 011
+  - deterministic automatic or manual grid
+  - immutable diagnostic records
+  - operator-configurable screening thresholds
+
+QUALITY METRICS:
+  - connected component count
+  - component areas and bounds
+  - smallest component area
+  - minimum component bounding-box extent
+  - minimum span-normalized area thickness estimate
+  - shared seam lengths on left, right, bottom, and top
+  - shared seam segment counts
+  - shortest positive shared seam
+  - multiple shared seam interval candidate
+  - minimum flattened source-vertex distance to an internal cut
+  - actual fragment bounds and configured-bed fit
+
+REVIEW FLAGS:
+  - multiple_components
+  - small_component_area
+  - thin_component_estimate
+  - short_shared_seam
+  - vertex_near_cut
+  - counter_cut_candidate
+  - bed_overflow
+
+INTERPRETATION:
+  - thresholds are screening controls, not automatic acceptance rules
+  - effective thickness is an estimate:
+      component area / maximum component bounding-box span
+  - counter-cut candidate means an internal seam has multiple shared
+    boundary intervals; it is not a definitive counter classification
+  - vertex proximity uses captured flattened source vertices
+  - no cut line is moved or rewritten
+
+ADDED:
+  - lib/portable_section_quality_schema.scad
+  - lib/portable_section_quality_math.scad
+  - lib/portable_section_quality.scad
+  - lib/portable_section_quality_validation.scad
+  - lib/portable_section_quality_reporting.scad
+  - geometry/portable_section_quality_scene.scad
+  - workbenches/portable_section_quality.scad
+  - four quality tests
+  - docs/PORTABLE_SECTION_QUALITY.md
+
+EXTENDED:
+  - portable_section_main.scad
+  - generic section configuration
+  - README and architecture documentation
+  - project registries
+
+UNCHANGED:
+  - all glyph_sets files
+  - Batch 011 occupancy schemas and calculations
+  - exact-height normalization mathematics
+  - grid resolution and origin
+  - section clipping and local export
+  - deterministic section IDs
+  - fixed portable_a_* route
+  - automatic cut relocation
+  - segmented-font adapters
+  - connectors and attachment geometry
+
+TEST:
+  1. Copy the delta over commit 8e55691.
+  2. Run tests/portable_quality_math_contract.scad.
+  3. Run tests/portable_quality_threshold_contract.scad.
+  4. Run tests/portable_quality_manifest_contract.scad.
+  5. Run tests/portable_quality_render_contract.scad.
+  6. Inspect workbenches/portable_section_quality.scad in all views.
+  7. Confirm zero errors and zero warnings.

@@ -1,75 +1,58 @@
 # Architecture
 
-Glyph Dossier separates source capture, normalization, sectioning, and
-section analysis.
+Glyph Dossier separates source capture, normalization, sectioning,
+occupancy, and quality screening.
 
-## Portable source layer
+## Data path
 
 ```text
-embedded font package
+embedded font set
         ↓
 exact set ID + glyph ID lookup
         ↓
-captured BOSL2 region
-```
-
-## Generic normalization layer
-
-```text
-captured region bounds
-        ↓
-exact target-height scale
-        ↓
-visible-center-bottom normalized region
-```
-
-## Generic sectioning layer
-
-```text
-normalized portable region
+normalized BOSL2 region
         ↓
 automatic or manual rectangular grid
         ↓
-deterministic section manifest
+exact clipped occupancy records
         ↓
-plan, exploded layout, or local cell export
+immutable quality records
 ```
 
-## Occupancy layer
+## Quality layer
 
-Batch 011 adds data-level Boolean analysis:
+Batch 012 reads accepted occupancy records and derives:
 
 ```text
-normalized portable region
-        +
-one rectangular cell region
-        ↓
-BOSL2 intersection()
-        ↓
-clipped region
-        ↓
-area, ratio, components, occupied status
+component metrics
+shared seam metrics
+flattened source-vertex cut proximity
+fragment bounds
+configured-bed fit
+review flags
 ```
-
-All cell records are created once for the selected workbench operation.
-Occupied-only layout and export render the recorded clipped region rather
-than repeating CSG clipping.
 
 Implementation:
 
 ```text
-lib/portable_section_occupancy_schema.scad
-lib/portable_section_occupancy.scad
-lib/portable_section_occupancy_validation.scad
-lib/portable_section_occupancy_reporting.scad
-geometry/portable_section_occupancy_scene.scad
+lib/portable_section_quality_schema.scad
+lib/portable_section_quality_math.scad
+lib/portable_section_quality_vertices.scad
+lib/portable_section_quality.scad
+lib/portable_section_quality_validation.scad
+lib/portable_section_quality_reporting.scad
+geometry/portable_section_quality_scene.scad
 ```
 
-## Fixed A route
+The quality layer is diagnostic. It does not mutate normalized geometry,
+grids, occupancy records, or section exports.
 
-The earlier `portable_a_*` route remains separate and unchanged.
+## Fixed route
+
+The earlier `portable_a_*` section experiment remains separate and
+unchanged.
 
 ## Next boundary
 
-Fragment and cut-quality reporting should consume the accepted occupancy
-records. It must not modify normalization, grid resolution, or clipping.
+The next planned source layer is a segmented-display schema and
+procedural segment adapter.

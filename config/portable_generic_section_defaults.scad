@@ -103,6 +103,39 @@ ps_selected_occupied_ordinal =
     ? 0
     : portable_selected_occupied_ordinal;
 
+ps_quality_small_component_area =
+    is_undef(portable_quality_small_component_area)
+    ? 100
+    : portable_quality_small_component_area;
+ps_quality_thin_component_estimate =
+    is_undef(portable_quality_thin_component_estimate)
+    ? 5
+    : portable_quality_thin_component_estimate;
+ps_quality_vertex_cut_distance =
+    is_undef(portable_quality_vertex_cut_distance)
+    ? 5
+    : portable_quality_vertex_cut_distance;
+ps_quality_short_seam_length =
+    is_undef(portable_quality_short_seam_length)
+    ? 15
+    : portable_quality_short_seam_length;
+ps_quality_counter_segment_count =
+    is_undef(portable_quality_counter_segment_count)
+    ? 2
+    : portable_quality_counter_segment_count;
+ps_quality_boundary_tolerance =
+    is_undef(portable_quality_boundary_tolerance)
+    ? 0.000001
+    : portable_quality_boundary_tolerance;
+ps_quality_overlay_depth =
+    is_undef(portable_quality_overlay_depth)
+    ? 0.6
+    : portable_quality_overlay_depth;
+ps_show_empty_quality_cells =
+    is_undef(portable_show_empty_quality_cells)
+    ? true
+    : portable_show_empty_quality_cells;
+
 VALID_PORTABLE_GENERIC_SECTION_MODES = [
     "section_plan",
     "section_layout",
@@ -111,6 +144,9 @@ VALID_PORTABLE_GENERIC_SECTION_MODES = [
     "occupied_layout",
     "occupied_export",
     "occupancy_report",
+    "quality_plan",
+    "quality_review_layout",
+    "quality_report",
     "report_only"
 ];
 
@@ -187,6 +223,36 @@ module validate_portable_generic_section_controls() {
     assert(
         ps_occupancy_overlay_depth > 0,
         "Portable occupancy overlay depth must be positive."
+    );
+    assert(
+        ps_quality_small_component_area >= 0,
+        "Quality small-component area must be nonnegative."
+    );
+    assert(
+        ps_quality_thin_component_estimate >= 0,
+        "Quality thickness estimate must be nonnegative."
+    );
+    assert(
+        ps_quality_vertex_cut_distance >= 0,
+        "Quality vertex distance must be nonnegative."
+    );
+    assert(
+        ps_quality_short_seam_length >= 0,
+        "Quality short-seam length must be nonnegative."
+    );
+    assert(
+        ps_quality_counter_segment_count >= 2
+        && floor(ps_quality_counter_segment_count)
+            == ps_quality_counter_segment_count,
+        "Quality counter segment count must be an integer of at least two."
+    );
+    assert(
+        ps_quality_boundary_tolerance > 0,
+        "Quality boundary tolerance must be positive."
+    );
+    assert(
+        ps_quality_overlay_depth > 0,
+        "Quality overlay depth must be positive."
     );
     assert(
         ps_selected_occupied_ordinal >= 0

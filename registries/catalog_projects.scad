@@ -9,9 +9,9 @@ CATALOG_PROJECTS = [
     glyph_project(
         "NO_ACCEPTED_GLYPH_OBJECTS",
         "catalog_notice",
-        "0.11.0",
+        "0.12.0",
         "Physically accepted source-specific glyph objects.",
-        "commit-c58e767-batch-011",
+        "commit-8e55691-batch-012",
         "No accepted physical glyph objects."
     )
 ];

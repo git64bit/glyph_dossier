@@ -10,6 +10,7 @@ include <BOSL2/std.scad>
 include <lib/portable_glyph_schema.scad>
 include <lib/portable_font_set_schema.scad>
 include <lib/portable_section_occupancy_schema.scad>
+include <lib/portable_section_quality_schema.scad>
 include <glyph_sets/liberation_sans_regular/manifest.scad>
 include <registries/portable_font_sets.scad>
 
@@ -28,6 +29,11 @@ include <lib/portable_generic_section_reporting.scad>
 include <lib/portable_section_occupancy.scad>
 include <lib/portable_section_occupancy_validation.scad>
 include <lib/portable_section_occupancy_reporting.scad>
+include <lib/portable_section_quality_math.scad>
+include <lib/portable_section_quality_vertices.scad>
+include <lib/portable_section_quality.scad>
+include <lib/portable_section_quality_validation.scad>
+include <lib/portable_section_quality_reporting.scad>
 include <config/portable_generic_section_defaults.scad>
 
 include <geometry/portable_glyph_region.scad>
@@ -35,6 +41,7 @@ include <geometry/section_grid.scad>
 include <geometry/portable_normalized_profile_scene.scad>
 include <geometry/portable_generic_section_scene.scad>
 include <geometry/portable_section_occupancy_scene.scad>
+include <geometry/portable_section_quality_scene.scad>
 
 function portable_section_mode_needs_occupancy(
     render_mode
@@ -45,7 +52,22 @@ function portable_section_mode_needs_occupancy(
             "occupancy_plan",
             "occupied_layout",
             "occupied_export",
-            "occupancy_report"
+            "occupancy_report",
+            "quality_plan",
+            "quality_review_layout",
+            "quality_report"
+        ]
+    );
+
+function portable_section_mode_needs_quality(
+    render_mode
+) =
+    in_list(
+        render_mode,
+        [
+            "quality_plan",
+            "quality_review_layout",
+            "quality_report"
         ]
     );
 
@@ -91,6 +113,10 @@ module run_portable_section_workbench() {
         portable_section_mode_needs_occupancy(
             ps_render_mode
         );
+    quality_needed =
+        portable_section_mode_needs_quality(
+            ps_render_mode
+        );
     occupancy_records =
         occupancy_needed
         ? portable_section_occupancy_records(
@@ -105,6 +131,34 @@ module run_portable_section_workbench() {
             rows,
             ps_occupancy_area_epsilon,
             ps_occupancy_boolean_epsilon
+        )
+        : [];
+
+    validation_bed_x =
+        quality_needed
+        ? max(ps_bed_x, ps_cell_width)
+        : ps_bed_x;
+    validation_bed_y =
+        quality_needed
+        ? max(ps_bed_y, ps_cell_height)
+        : ps_bed_y;
+
+    quality_records =
+        quality_needed
+        ? portable_section_quality_records(
+            occupancy_records,
+            glyph,
+            ps_target_height,
+            columns,
+            rows,
+            ps_quality_small_component_area,
+            ps_quality_thin_component_estimate,
+            ps_quality_vertex_cut_distance,
+            ps_quality_short_seam_length,
+            ps_quality_counter_segment_count,
+            ps_quality_boundary_tolerance,
+            ps_bed_x,
+            ps_bed_y
         )
         : [];
 
@@ -132,8 +186,8 @@ module run_portable_section_workbench() {
         ps_selected_row,
         ps_epsilon,
         ps_layout_gap,
-        ps_bed_x,
-        ps_bed_y
+        validation_bed_x,
+        validation_bed_y
     );
 
     if (occupancy_needed)
@@ -144,6 +198,16 @@ module run_portable_section_workbench() {
             ps_cell_width,
             ps_cell_height,
             ps_occupancy_area_epsilon
+        );
+
+    if (quality_needed)
+        validate_portable_section_quality_records(
+            quality_records,
+            occupancy_records,
+            columns,
+            rows,
+            ps_bed_x,
+            ps_bed_y
         );
 
     report_portable_font_registry(
@@ -194,6 +258,25 @@ module run_portable_section_workbench() {
         );
         report_portable_section_occupancy_manifest(
             occupancy_records
+        );
+    }
+
+    if (quality_needed) {
+        report_portable_section_quality_summary(
+            set_record,
+            glyph,
+            quality_records,
+            ps_quality_small_component_area,
+            ps_quality_thin_component_estimate,
+            ps_quality_vertex_cut_distance,
+            ps_quality_short_seam_length,
+            ps_quality_counter_segment_count,
+            ps_quality_boundary_tolerance,
+            ps_bed_x,
+            ps_bed_y
+        );
+        report_portable_section_quality_manifest(
+            quality_records
         );
     }
 
@@ -288,6 +371,34 @@ module run_portable_section_workbench() {
     else if (ps_render_mode == "occupied_layout")
         portable_occupied_section_layout(
             occupancy_records,
+            ps_cell_width,
+            ps_cell_height,
+            ps_layout_gap,
+            ps_depth
+        );
+    else if (ps_render_mode == "quality_plan")
+        portable_section_quality_plan(
+            glyph,
+            ps_target_height,
+            ps_depth,
+            occupancy_records,
+            quality_records,
+            origin_x,
+            origin_y,
+            ps_cell_width,
+            ps_cell_height,
+            columns,
+            rows,
+            ps_grid_line_width,
+            ps_quality_overlay_depth,
+            ps_show_empty_quality_cells
+        );
+    else if (
+        ps_render_mode == "quality_review_layout"
+    )
+        portable_quality_review_layout(
+            occupancy_records,
+            quality_records,
             ps_cell_width,
             ps_cell_height,
             ps_layout_gap,
