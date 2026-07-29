@@ -1,0 +1,1871 @@
+{
+  "set_id": "MIAMA_NUEVA_MEDIUM_R1",
+  "constant_prefix": "MNMR1",
+  "family": "Miama Nueva",
+  "style": "Medium",
+  "font_version": "Version 1.0",
+  "license": "SIL Open Font License 1.1",
+  "source_url": "https://ctan.org/pkg/miama",
+  "source_filename": "miama.otf",
+  "source_sha256_expected": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9",
+  "flatten_tolerance_font_units": 2,
+  "role": "script stress case",
+  "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9",
+  "glyph_count": 66,
+  "group_counts": {
+    "uppercase": 26,
+    "lowercase": 26,
+    "digit": 10,
+    "punctuation": 4
+  },
+  "glyphs": [
+    {
+      "id": "U_A",
+      "character": "A",
+      "group": "uppercase",
+      "representative": true,
+      "codepoint": 65,
+      "glyph_name": "A",
+      "units_per_em": 1000,
+      "advance_width": 980,
+      "exact_bounds": [
+        -50,
+        -13,
+        1160,
+        902
+      ],
+      "region_bounds": [
+        -50.0,
+        -13.0,
+        1160.0,
+        902.0
+      ],
+      "contour_count": 2,
+      "component_count": 1,
+      "counter_count": 1,
+      "point_count": 102,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "U_B",
+      "character": "B",
+      "group": "uppercase",
+      "representative": true,
+      "codepoint": 66,
+      "glyph_name": "B",
+      "units_per_em": 1000,
+      "advance_width": 850,
+      "exact_bounds": [
+        39,
+        -38,
+        904,
+        886
+      ],
+      "region_bounds": [
+        39.0,
+        -38.0,
+        904.0,
+        886.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 146,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "U_C",
+      "character": "C",
+      "group": "uppercase",
+      "representative": false,
+      "codepoint": 67,
+      "glyph_name": "C",
+      "units_per_em": 1000,
+      "advance_width": 860,
+      "exact_bounds": [
+        164,
+        -20,
+        992,
+        886
+      ],
+      "region_bounds": [
+        164.0,
+        -20.0,
+        992.0,
+        886.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 105,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "U_D",
+      "character": "D",
+      "group": "uppercase",
+      "representative": false,
+      "codepoint": 68,
+      "glyph_name": "D",
+      "units_per_em": 1000,
+      "advance_width": 1140,
+      "exact_bounds": [
+        86,
+        -20,
+        1156,
+        886
+      ],
+      "region_bounds": [
+        86.0,
+        -20.0,
+        1156.0,
+        886.0
+      ],
+      "contour_count": 3,
+      "component_count": 1,
+      "counter_count": 2,
+      "point_count": 159,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "U_E",
+      "character": "E",
+      "group": "uppercase",
+      "representative": false,
+      "codepoint": 69,
+      "glyph_name": "E",
+      "units_per_em": 1000,
+      "advance_width": 834,
+      "exact_bounds": [
+        158,
+        -24,
+        994,
+        886
+      ],
+      "region_bounds": [
+        158.0,
+        -24.0,
+        994.0,
+        886.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 126,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "U_F",
+      "character": "F",
+      "group": "uppercase",
+      "representative": false,
+      "codepoint": 70,
+      "glyph_name": "F",
+      "units_per_em": 1000,
+      "advance_width": 670,
+      "exact_bounds": [
+        46,
+        -17,
+        1039,
+        939
+      ],
+      "region_bounds": [
+        46.0,
+        -17.0,
+        1039.0,
+        939.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 83,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "U_G",
+      "character": "G",
+      "group": "uppercase",
+      "representative": false,
+      "codepoint": 71,
+      "glyph_name": "G",
+      "units_per_em": 1000,
+      "advance_width": 970,
+      "exact_bounds": [
+        164,
+        -295,
+        1090,
+        886
+      ],
+      "region_bounds": [
+        164.0,
+        -295.0,
+        1090.0,
+        886.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 159,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "U_H",
+      "character": "H",
+      "group": "uppercase",
+      "representative": false,
+      "codepoint": 72,
+      "glyph_name": "H",
+      "units_per_em": 1000,
+      "advance_width": 1025,
+      "exact_bounds": [
+        58,
+        -30,
+        1205,
+        886
+      ],
+      "region_bounds": [
+        58.0,
+        -30.0,
+        1205.0,
+        886.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 131,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "U_I",
+      "character": "I",
+      "group": "uppercase",
+      "representative": false,
+      "codepoint": 73,
+      "glyph_name": "I",
+      "units_per_em": 1000,
+      "advance_width": 400,
+      "exact_bounds": [
+        32,
+        -32,
+        652,
+        873
+      ],
+      "region_bounds": [
+        32.0,
+        -32.0,
+        652.0,
+        873.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 42,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "U_J",
+      "character": "J",
+      "group": "uppercase",
+      "representative": false,
+      "codepoint": 74,
+      "glyph_name": "J",
+      "units_per_em": 1000,
+      "advance_width": 576,
+      "exact_bounds": [
+        -304,
+        -403,
+        863,
+        892
+      ],
+      "region_bounds": [
+        -304.0,
+        -403.0,
+        863.0,
+        892.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 97,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "U_K",
+      "character": "K",
+      "group": "uppercase",
+      "representative": false,
+      "codepoint": 75,
+      "glyph_name": "K",
+      "units_per_em": 1000,
+      "advance_width": 770,
+      "exact_bounds": [
+        6,
+        -206,
+        1067,
+        886
+      ],
+      "region_bounds": [
+        6.0,
+        -206.0,
+        1067.0,
+        886.0
+      ],
+      "contour_count": 2,
+      "component_count": 1,
+      "counter_count": 1,
+      "point_count": 119,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "U_L",
+      "character": "L",
+      "group": "uppercase",
+      "representative": false,
+      "codepoint": 76,
+      "glyph_name": "L",
+      "units_per_em": 1000,
+      "advance_width": 680,
+      "exact_bounds": [
+        17,
+        -302,
+        1169,
+        886
+      ],
+      "region_bounds": [
+        17.0,
+        -302.0,
+        1169.0,
+        886.0
+      ],
+      "contour_count": 2,
+      "component_count": 1,
+      "counter_count": 1,
+      "point_count": 128,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "U_M",
+      "character": "M",
+      "group": "uppercase",
+      "representative": false,
+      "codepoint": 77,
+      "glyph_name": "M",
+      "units_per_em": 1000,
+      "advance_width": 1200,
+      "exact_bounds": [
+        36,
+        -302,
+        1460,
+        900
+      ],
+      "region_bounds": [
+        36.0,
+        -302.0,
+        1460.0,
+        900.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 188,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "U_N",
+      "character": "N",
+      "group": "uppercase",
+      "representative": false,
+      "codepoint": 78,
+      "glyph_name": "N",
+      "units_per_em": 1000,
+      "advance_width": 850,
+      "exact_bounds": [
+        -60,
+        -61,
+        1218,
+        916
+      ],
+      "region_bounds": [
+        -60.0,
+        -61.0,
+        1218.0,
+        916.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 87,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "U_O",
+      "character": "O",
+      "group": "uppercase",
+      "representative": true,
+      "codepoint": 79,
+      "glyph_name": "O",
+      "units_per_em": 1000,
+      "advance_width": 960,
+      "exact_bounds": [
+        102,
+        -22,
+        1029,
+        887
+      ],
+      "region_bounds": [
+        102.0,
+        -22.0,
+        1029.0,
+        887.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 119,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "U_P",
+      "character": "P",
+      "group": "uppercase",
+      "representative": false,
+      "codepoint": 80,
+      "glyph_name": "P",
+      "units_per_em": 1000,
+      "advance_width": 820,
+      "exact_bounds": [
+        56,
+        -32,
+        1006,
+        886
+      ],
+      "region_bounds": [
+        56.0,
+        -32.0,
+        1006.0,
+        886.0
+      ],
+      "contour_count": 2,
+      "component_count": 1,
+      "counter_count": 1,
+      "point_count": 110,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "U_Q",
+      "character": "Q",
+      "group": "uppercase",
+      "representative": false,
+      "codepoint": 81,
+      "glyph_name": "Q",
+      "units_per_em": 1000,
+      "advance_width": 919,
+      "exact_bounds": [
+        135,
+        -299,
+        1159,
+        906
+      ],
+      "region_bounds": [
+        135.0,
+        -299.0,
+        1159.0,
+        906.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 175,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "U_R",
+      "character": "R",
+      "group": "uppercase",
+      "representative": false,
+      "codepoint": 82,
+      "glyph_name": "R",
+      "units_per_em": 1000,
+      "advance_width": 760,
+      "exact_bounds": [
+        62,
+        -266,
+        1036,
+        886
+      ],
+      "region_bounds": [
+        62.0,
+        -266.0,
+        1036.0,
+        886.0
+      ],
+      "contour_count": 3,
+      "component_count": 1,
+      "counter_count": 2,
+      "point_count": 125,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "U_S",
+      "character": "S",
+      "group": "uppercase",
+      "representative": true,
+      "codepoint": 83,
+      "glyph_name": "S",
+      "units_per_em": 1000,
+      "advance_width": 752,
+      "exact_bounds": [
+        76,
+        -34,
+        900,
+        886
+      ],
+      "region_bounds": [
+        76.0,
+        -34.0,
+        900.0,
+        886.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 113,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "U_T",
+      "character": "T",
+      "group": "uppercase",
+      "representative": false,
+      "codepoint": 84,
+      "glyph_name": "T",
+      "units_per_em": 1000,
+      "advance_width": 695,
+      "exact_bounds": [
+        121,
+        -17,
+        1075,
+        939
+      ],
+      "region_bounds": [
+        121.0,
+        -17.0,
+        1075.0,
+        939.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 64,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "U_U",
+      "character": "U",
+      "group": "uppercase",
+      "representative": false,
+      "codepoint": 85,
+      "glyph_name": "U",
+      "units_per_em": 1000,
+      "advance_width": 1003,
+      "exact_bounds": [
+        195,
+        -17,
+        1183,
+        886
+      ],
+      "region_bounds": [
+        195.0,
+        -17.0,
+        1183.0,
+        886.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 141,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "U_V",
+      "character": "V",
+      "group": "uppercase",
+      "representative": false,
+      "codepoint": 86,
+      "glyph_name": "V",
+      "units_per_em": 1000,
+      "advance_width": 798,
+      "exact_bounds": [
+        185,
+        -34,
+        1164,
+        894
+      ],
+      "region_bounds": [
+        185.0,
+        -34.0,
+        1164.0,
+        894.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 84,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "U_W",
+      "character": "W",
+      "group": "uppercase",
+      "representative": false,
+      "codepoint": 87,
+      "glyph_name": "W",
+      "units_per_em": 1000,
+      "advance_width": 1019,
+      "exact_bounds": [
+        184,
+        -34,
+        1412,
+        894
+      ],
+      "region_bounds": [
+        184.0,
+        -34.0,
+        1412.0,
+        894.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 132,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "U_X",
+      "character": "X",
+      "group": "uppercase",
+      "representative": false,
+      "codepoint": 88,
+      "glyph_name": "X",
+      "units_per_em": 1000,
+      "advance_width": 796,
+      "exact_bounds": [
+        -34.13006479436304,
+        -88,
+        1129.084944665313,
+        886
+      ],
+      "region_bounds": [
+        -34.0,
+        -88.0,
+        1129.0,
+        886.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 96,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "U_Y",
+      "character": "Y",
+      "group": "uppercase",
+      "representative": false,
+      "codepoint": 89,
+      "glyph_name": "Y",
+      "units_per_em": 1000,
+      "advance_width": 715,
+      "exact_bounds": [
+        126,
+        -32,
+        1184,
+        889
+      ],
+      "region_bounds": [
+        126.0,
+        -32.0,
+        1184.0,
+        889.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 89,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "U_Z",
+      "character": "Z",
+      "group": "uppercase",
+      "representative": true,
+      "codepoint": 90,
+      "glyph_name": "Z",
+      "units_per_em": 1000,
+      "advance_width": 940,
+      "exact_bounds": [
+        55,
+        -177,
+        1181,
+        886
+      ],
+      "region_bounds": [
+        55.0,
+        -177.0,
+        1181.0,
+        886.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 94,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "L_a",
+      "character": "a",
+      "group": "lowercase",
+      "representative": true,
+      "codepoint": 97,
+      "glyph_name": "a",
+      "units_per_em": 1000,
+      "advance_width": 612,
+      "exact_bounds": [
+        67,
+        -12,
+        792,
+        451
+      ],
+      "region_bounds": [
+        67.0,
+        -12.0,
+        792.0,
+        451.0
+      ],
+      "contour_count": 3,
+      "component_count": 1,
+      "counter_count": 2,
+      "point_count": 119,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "L_b",
+      "character": "b",
+      "group": "lowercase",
+      "representative": false,
+      "codepoint": 98,
+      "glyph_name": "b",
+      "units_per_em": 1000,
+      "advance_width": 600,
+      "exact_bounds": [
+        52,
+        -16,
+        600,
+        1151
+      ],
+      "region_bounds": [
+        52.0,
+        -16.0,
+        600.0,
+        1151.0
+      ],
+      "contour_count": 2,
+      "component_count": 1,
+      "counter_count": 1,
+      "point_count": 109,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "L_c",
+      "character": "c",
+      "group": "lowercase",
+      "representative": false,
+      "codepoint": 99,
+      "glyph_name": "c",
+      "units_per_em": 1000,
+      "advance_width": 473,
+      "exact_bounds": [
+        66,
+        -22,
+        653,
+        451
+      ],
+      "region_bounds": [
+        66.0,
+        -22.0,
+        653.0,
+        451.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 76,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "L_d",
+      "character": "d",
+      "group": "lowercase",
+      "representative": false,
+      "codepoint": 100,
+      "glyph_name": "d",
+      "units_per_em": 1000,
+      "advance_width": 632,
+      "exact_bounds": [
+        62,
+        -12,
+        889,
+        1151
+      ],
+      "region_bounds": [
+        62.0,
+        -12.0,
+        889.0,
+        1151.0
+      ],
+      "contour_count": 2,
+      "component_count": 1,
+      "counter_count": 1,
+      "point_count": 137,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "L_e",
+      "character": "e",
+      "group": "lowercase",
+      "representative": false,
+      "codepoint": 101,
+      "glyph_name": "e",
+      "units_per_em": 1000,
+      "advance_width": 444,
+      "exact_bounds": [
+        58,
+        -16,
+        624,
+        451
+      ],
+      "region_bounds": [
+        58.0,
+        -16.0,
+        624.0,
+        451.0
+      ],
+      "contour_count": 2,
+      "component_count": 1,
+      "counter_count": 1,
+      "point_count": 85,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "L_f",
+      "character": "f",
+      "group": "lowercase",
+      "representative": false,
+      "codepoint": 102,
+      "glyph_name": "f",
+      "units_per_em": 1000,
+      "advance_width": 400,
+      "exact_bounds": [
+        -800,
+        -951,
+        870,
+        1104
+      ],
+      "region_bounds": [
+        -800.0,
+        -951.0,
+        870.0,
+        1104.0
+      ],
+      "contour_count": 2,
+      "component_count": 1,
+      "counter_count": 1,
+      "point_count": 139,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "L_g",
+      "character": "g",
+      "group": "lowercase",
+      "representative": true,
+      "codepoint": 103,
+      "glyph_name": "g",
+      "units_per_em": 1000,
+      "advance_width": 580,
+      "exact_bounds": [
+        -559,
+        -856,
+        609,
+        464
+      ],
+      "region_bounds": [
+        -559.0,
+        -856.0,
+        609.0,
+        464.0
+      ],
+      "contour_count": 2,
+      "component_count": 1,
+      "counter_count": 1,
+      "point_count": 150,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "L_h",
+      "character": "h",
+      "group": "lowercase",
+      "representative": false,
+      "codepoint": 104,
+      "glyph_name": "h",
+      "units_per_em": 1000,
+      "advance_width": 650,
+      "exact_bounds": [
+        17,
+        -408,
+        859,
+        1151
+      ],
+      "region_bounds": [
+        17.0,
+        -408.0,
+        859.0,
+        1151.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 132,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "L_i",
+      "character": "i",
+      "group": "lowercase",
+      "representative": true,
+      "codepoint": 105,
+      "glyph_name": "i",
+      "units_per_em": 1000,
+      "advance_width": 364,
+      "exact_bounds": [
+        73,
+        -8,
+        544,
+        734
+      ],
+      "region_bounds": [
+        73.0,
+        -8.0,
+        544.0,
+        734.0
+      ],
+      "contour_count": 2,
+      "component_count": 2,
+      "counter_count": 0,
+      "point_count": 82,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "L_j",
+      "character": "j",
+      "group": "lowercase",
+      "representative": true,
+      "codepoint": 106,
+      "glyph_name": "j",
+      "units_per_em": 1000,
+      "advance_width": 348,
+      "exact_bounds": [
+        -744,
+        -741,
+        528,
+        734
+      ],
+      "region_bounds": [
+        -744.0,
+        -741.0,
+        528.0,
+        734.0
+      ],
+      "contour_count": 3,
+      "component_count": 2,
+      "counter_count": 1,
+      "point_count": 129,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "L_k",
+      "character": "k",
+      "group": "lowercase",
+      "representative": false,
+      "codepoint": 107,
+      "glyph_name": "k",
+      "units_per_em": 1000,
+      "advance_width": 570,
+      "exact_bounds": [
+        14,
+        -18,
+        750,
+        1151
+      ],
+      "region_bounds": [
+        14.0,
+        -18.0,
+        750.0,
+        1151.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 119,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "L_l",
+      "character": "l",
+      "group": "lowercase",
+      "representative": false,
+      "codepoint": 108,
+      "glyph_name": "l",
+      "units_per_em": 1000,
+      "advance_width": 402,
+      "exact_bounds": [
+        93,
+        -23,
+        634,
+        1151
+      ],
+      "region_bounds": [
+        93.0,
+        -23.0,
+        634.0,
+        1151.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 80,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "L_m",
+      "character": "m",
+      "group": "lowercase",
+      "representative": true,
+      "codepoint": 109,
+      "glyph_name": "m",
+      "units_per_em": 1000,
+      "advance_width": 750,
+      "exact_bounds": [
+        15,
+        -346,
+        1022,
+        460
+      ],
+      "region_bounds": [
+        15.0,
+        -346.0,
+        1022.0,
+        460.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 148,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "L_n",
+      "character": "n",
+      "group": "lowercase",
+      "representative": false,
+      "codepoint": 110,
+      "glyph_name": "n",
+      "units_per_em": 1000,
+      "advance_width": 630,
+      "exact_bounds": [
+        13,
+        -20,
+        810,
+        460
+      ],
+      "region_bounds": [
+        13.0,
+        -20.0,
+        810.0,
+        460.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 102,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "L_o",
+      "character": "o",
+      "group": "lowercase",
+      "representative": false,
+      "codepoint": 111,
+      "glyph_name": "o",
+      "units_per_em": 1000,
+      "advance_width": 560,
+      "exact_bounds": [
+        66,
+        -16,
+        538,
+        451
+      ],
+      "region_bounds": [
+        66.0,
+        -16.0,
+        538.0,
+        451.0
+      ],
+      "contour_count": 2,
+      "component_count": 1,
+      "counter_count": 1,
+      "point_count": 73,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "L_p",
+      "character": "p",
+      "group": "lowercase",
+      "representative": false,
+      "codepoint": 112,
+      "glyph_name": "p",
+      "units_per_em": 1000,
+      "advance_width": 560,
+      "exact_bounds": [
+        -560,
+        -948,
+        587,
+        451
+      ],
+      "region_bounds": [
+        -560.0,
+        -948.0,
+        587.0,
+        451.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 106,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "L_q",
+      "character": "q",
+      "group": "lowercase",
+      "representative": false,
+      "codepoint": 113,
+      "glyph_name": "q",
+      "units_per_em": 1000,
+      "advance_width": 632,
+      "exact_bounds": [
+        -196,
+        -950,
+        812,
+        451
+      ],
+      "region_bounds": [
+        -196.0,
+        -950.0,
+        812.0,
+        451.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 128,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "L_r",
+      "character": "r",
+      "group": "lowercase",
+      "representative": false,
+      "codepoint": 114,
+      "glyph_name": "r",
+      "units_per_em": 1000,
+      "advance_width": 500,
+      "exact_bounds": [
+        39,
+        -18,
+        569,
+        460
+      ],
+      "region_bounds": [
+        39.0,
+        -18.0,
+        569.0,
+        460.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 69,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "L_s",
+      "character": "s",
+      "group": "lowercase",
+      "representative": true,
+      "codepoint": 115,
+      "glyph_name": "s",
+      "units_per_em": 1000,
+      "advance_width": 430,
+      "exact_bounds": [
+        29,
+        -15,
+        448,
+        451
+      ],
+      "region_bounds": [
+        29.0,
+        -15.0,
+        448.0,
+        451.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 87,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "L_t",
+      "character": "t",
+      "group": "lowercase",
+      "representative": false,
+      "codepoint": 116,
+      "glyph_name": "t",
+      "units_per_em": 1000,
+      "advance_width": 460,
+      "exact_bounds": [
+        109,
+        -18,
+        640,
+        811
+      ],
+      "region_bounds": [
+        109.0,
+        -18.0,
+        640.0,
+        811.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 92,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "L_u",
+      "character": "u",
+      "group": "lowercase",
+      "representative": false,
+      "codepoint": 117,
+      "glyph_name": "u",
+      "units_per_em": 1000,
+      "advance_width": 650,
+      "exact_bounds": [
+        70,
+        -17,
+        830,
+        460
+      ],
+      "region_bounds": [
+        70.0,
+        -17.0,
+        830.0,
+        460.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 103,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "L_v",
+      "character": "v",
+      "group": "lowercase",
+      "representative": false,
+      "codepoint": 118,
+      "glyph_name": "v",
+      "units_per_em": 1000,
+      "advance_width": 445,
+      "exact_bounds": [
+        80,
+        -24,
+        604,
+        482
+      ],
+      "region_bounds": [
+        80.0,
+        -24.0,
+        604.0,
+        482.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 56,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "L_w",
+      "character": "w",
+      "group": "lowercase",
+      "representative": false,
+      "codepoint": 119,
+      "glyph_name": "w",
+      "units_per_em": 1000,
+      "advance_width": 635,
+      "exact_bounds": [
+        69,
+        -17,
+        795,
+        482
+      ],
+      "region_bounds": [
+        69.0,
+        -17.0,
+        795.0,
+        482.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 89,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "L_x",
+      "character": "x",
+      "group": "lowercase",
+      "representative": false,
+      "codepoint": 120,
+      "glyph_name": "x",
+      "units_per_em": 1000,
+      "advance_width": 559,
+      "exact_bounds": [
+        -46,
+        -120,
+        739,
+        471
+      ],
+      "region_bounds": [
+        -46.0,
+        -120.0,
+        739.0,
+        471.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 91,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "L_y",
+      "character": "y",
+      "group": "lowercase",
+      "representative": false,
+      "codepoint": 121,
+      "glyph_name": "y",
+      "units_per_em": 1000,
+      "advance_width": 630,
+      "exact_bounds": [
+        -439,
+        -694,
+        810,
+        448
+      ],
+      "region_bounds": [
+        -439.0,
+        -694.0,
+        810.0,
+        448.0
+      ],
+      "contour_count": 2,
+      "component_count": 1,
+      "counter_count": 1,
+      "point_count": 153,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "L_z",
+      "character": "z",
+      "group": "lowercase",
+      "representative": false,
+      "codepoint": 122,
+      "glyph_name": "z",
+      "units_per_em": 1000,
+      "advance_width": 478,
+      "exact_bounds": [
+        -501,
+        -778,
+        658,
+        448
+      ],
+      "region_bounds": [
+        -501.0,
+        -778.0,
+        658.0,
+        448.0
+      ],
+      "contour_count": 2,
+      "component_count": 1,
+      "counter_count": 1,
+      "point_count": 157,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "D_0",
+      "character": "0",
+      "group": "digit",
+      "representative": true,
+      "codepoint": 48,
+      "glyph_name": "zero",
+      "units_per_em": 1000,
+      "advance_width": 760,
+      "exact_bounds": [
+        166,
+        -22,
+        836,
+        886
+      ],
+      "region_bounds": [
+        166.0,
+        -22.0,
+        836.0,
+        886.0
+      ],
+      "contour_count": 2,
+      "component_count": 1,
+      "counter_count": 1,
+      "point_count": 88,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "D_1",
+      "character": "1",
+      "group": "digit",
+      "representative": true,
+      "codepoint": 49,
+      "glyph_name": "one",
+      "units_per_em": 1000,
+      "advance_width": 630,
+      "exact_bounds": [
+        112,
+        -21,
+        828,
+        886
+      ],
+      "region_bounds": [
+        112.0,
+        -21.0,
+        828.0,
+        886.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 51,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "D_2",
+      "character": "2",
+      "group": "digit",
+      "representative": true,
+      "codepoint": 50,
+      "glyph_name": "two",
+      "units_per_em": 1000,
+      "advance_width": 700,
+      "exact_bounds": [
+        -30,
+        -10,
+        771,
+        884
+      ],
+      "region_bounds": [
+        -30.0,
+        -10.0,
+        771.0,
+        884.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 96,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "D_3",
+      "character": "3",
+      "group": "digit",
+      "representative": false,
+      "codepoint": 51,
+      "glyph_name": "three",
+      "units_per_em": 1000,
+      "advance_width": 710,
+      "exact_bounds": [
+        32,
+        -22,
+        764,
+        886
+      ],
+      "region_bounds": [
+        32.0,
+        -22.0,
+        764.0,
+        886.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 123,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "D_4",
+      "character": "4",
+      "group": "digit",
+      "representative": true,
+      "codepoint": 52,
+      "glyph_name": "four",
+      "units_per_em": 1000,
+      "advance_width": 760,
+      "exact_bounds": [
+        70,
+        -22,
+        865,
+        886
+      ],
+      "region_bounds": [
+        70.0,
+        -22.0,
+        865.0,
+        886.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 79,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "D_5",
+      "character": "5",
+      "group": "digit",
+      "representative": false,
+      "codepoint": 53,
+      "glyph_name": "five",
+      "units_per_em": 1000,
+      "advance_width": 700,
+      "exact_bounds": [
+        64,
+        -22,
+        953,
+        901
+      ],
+      "region_bounds": [
+        64.0,
+        -22.0,
+        953.0,
+        901.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 117,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "D_6",
+      "character": "6",
+      "group": "digit",
+      "representative": false,
+      "codepoint": 54,
+      "glyph_name": "six",
+      "units_per_em": 1000,
+      "advance_width": 730,
+      "exact_bounds": [
+        105,
+        -25,
+        908,
+        904
+      ],
+      "region_bounds": [
+        105.0,
+        -25.0,
+        908.0,
+        904.0
+      ],
+      "contour_count": 2,
+      "component_count": 1,
+      "counter_count": 1,
+      "point_count": 112,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "D_7",
+      "character": "7",
+      "group": "digit",
+      "representative": false,
+      "codepoint": 55,
+      "glyph_name": "seven",
+      "units_per_em": 1000,
+      "advance_width": 660,
+      "exact_bounds": [
+        102,
+        -23,
+        921,
+        889
+      ],
+      "region_bounds": [
+        102.0,
+        -23.0,
+        921.0,
+        889.0
+      ],
+      "contour_count": 1,
+      "component_count": 1,
+      "counter_count": 0,
+      "point_count": 73,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "D_8",
+      "character": "8",
+      "group": "digit",
+      "representative": true,
+      "codepoint": 56,
+      "glyph_name": "eight",
+      "units_per_em": 1000,
+      "advance_width": 700,
+      "exact_bounds": [
+        89,
+        -25,
+        836,
+        886
+      ],
+      "region_bounds": [
+        89.0,
+        -25.0,
+        836.0,
+        886.0
+      ],
+      "contour_count": 2,
+      "component_count": 1,
+      "counter_count": 1,
+      "point_count": 139,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "D_9",
+      "character": "9",
+      "group": "digit",
+      "representative": false,
+      "codepoint": 57,
+      "glyph_name": "nine",
+      "units_per_em": 1000,
+      "advance_width": 690,
+      "exact_bounds": [
+        74,
+        -23,
+        832,
+        886
+      ],
+      "region_bounds": [
+        74.0,
+        -23.0,
+        832.0,
+        886.0
+      ],
+      "contour_count": 2,
+      "component_count": 1,
+      "counter_count": 1,
+      "point_count": 134,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "P_question",
+      "character": "?",
+      "group": "punctuation",
+      "representative": true,
+      "codepoint": 63,
+      "glyph_name": "question",
+      "units_per_em": 1000,
+      "advance_width": 640,
+      "exact_bounds": [
+        157,
+        -6,
+        764,
+        886
+      ],
+      "region_bounds": [
+        157.0,
+        -6.0,
+        764.0,
+        886.0
+      ],
+      "contour_count": 2,
+      "component_count": 2,
+      "counter_count": 0,
+      "point_count": 105,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "P_exclamation",
+      "character": "!",
+      "group": "punctuation",
+      "representative": true,
+      "codepoint": 33,
+      "glyph_name": "exclam",
+      "units_per_em": 1000,
+      "advance_width": 434,
+      "exact_bounds": [
+        157,
+        -6,
+        684,
+        814
+      ],
+      "region_bounds": [
+        157.0,
+        -6.0,
+        684.0,
+        814.0
+      ],
+      "contour_count": 2,
+      "component_count": 2,
+      "counter_count": 0,
+      "point_count": 55,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "P_colon",
+      "character": ":",
+      "group": "punctuation",
+      "representative": true,
+      "codepoint": 58,
+      "glyph_name": "colon",
+      "units_per_em": 1000,
+      "advance_width": 404,
+      "exact_bounds": [
+        112,
+        -8,
+        404,
+        449
+      ],
+      "region_bounds": [
+        112.0,
+        -8.0,
+        404.0,
+        449.0
+      ],
+      "contour_count": 2,
+      "component_count": 2,
+      "counter_count": 0,
+      "point_count": 42,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    },
+    {
+      "id": "P_semicolon",
+      "character": ";",
+      "group": "punctuation",
+      "representative": true,
+      "codepoint": 59,
+      "glyph_name": "semicolon",
+      "units_per_em": 1000,
+      "advance_width": 454,
+      "exact_bounds": [
+        -28,
+        -268,
+        326,
+        401
+      ],
+      "region_bounds": [
+        -28.0,
+        -268.0,
+        326.0,
+        401.0
+      ],
+      "contour_count": 2,
+      "component_count": 2,
+      "counter_count": 0,
+      "point_count": 55,
+      "flatten_tolerance_font_units": 2.0,
+      "source_sha256": "bf42594bbe668462a481fe5b12625903ea9e2a3c05a6c5b3620b2cbcfececab9"
+    }
+  ]
+}
