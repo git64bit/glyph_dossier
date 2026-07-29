@@ -3,7 +3,7 @@
 Glyph Dossier develops portable, analyzable character geometry for
 large sectional construction.
 
-## Portable catalog
+## Imported portable catalog
 
 ```text
 6 embedded font sets
@@ -11,68 +11,71 @@ large sectional construction.
 396 selectable portable profiles
 ```
 
-## Generic normalization and sectioning
+Imported packages remain unified under `glyph_sets/`.
+
+## Generic pipeline
+
+The accepted portable pipeline provides:
 
 ```text
-workbenches/portable_normalized_profile.scad
-workbenches/portable_section_plan.scad
-workbenches/portable_section_layout.scad
-workbenches/portable_section_export.scad
+exact-height normalization
+automatic and manual rectangular sectioning
+BOSL2 occupied-cell detection
+fragment and cut-quality screening
 ```
 
-Automatic and manual rectangular grids support every stored profile.
+## Procedural segmented sources
 
-## Occupied-cell detection
+Batch 013 adds two project-authored adapters:
 
 ```text
-workbenches/portable_section_occupancy.scad
-workbenches/portable_occupied_section_layout.scad
-workbenches/portable_occupied_section_export.scad
+PROCEDURAL_14_SEGMENT_EXTENDED_R1
+PROCEDURAL_7_SEGMENT_EXTENDED_R1
 ```
 
-BOSL2 clipped regions provide exact occupied area, component count, and
-occupied-only export identity.
-
-## Fragment and cut-quality reporting
+Workbenches:
 
 ```text
-workbenches/portable_section_quality.scad
+workbenches/segmented_catalog.scad
+workbenches/segmented_pipeline.scad
+workbenches/segmented_contact_sheet.scad
 ```
 
-The quality workbench reports:
+The segmented schema distinguishes:
 
 ```text
-small and disconnected components
-component span and effective-thickness estimates
-shared seam lengths and interval counts
-flattened source-vertex proximity to cuts
-counter-cut candidates
-actual fragment bed fit
+visible
+intentional_blank
+unsupported
 ```
 
-Views include a quality plan, review-only exploded layout, and
-report-only mode.
+Visible masks convert to the existing portable-glyph record and can
+enter normalization, sectioning, and occupied-cell detection.
 
-Thresholds are visible operator controls. The quality layer does not
-move cuts or alter section geometry.
+Blank and unsupported mappings remain selectable catalog states. In a
+pipeline view they report that portable geometry is unavailable and
+render the source-state frame without raising an assertion.
+
+The segmented sets remain separate from the six imported font families.
+
+## Batch 013 tests
+
+```text
+tests/segmented_schema_contract.scad
+tests/segmented_status_contract.scad
+tests/segmented_adapter_contract.scad
+tests/segmented_pipeline_contract.scad
+tests/segmented_render_contract.scad
+```
 
 ## Fixed A laboratory route
 
-The accepted Liberation Sans `U_A` experiment remains unchanged.
-
-## Batch 012 tests
-
-```text
-tests/portable_quality_math_contract.scad
-tests/portable_quality_threshold_contract.scad
-tests/portable_quality_manifest_contract.scad
-tests/portable_quality_render_contract.scad
-```
+The accepted Liberation Sans `portable_a_*` experiment remains
+unchanged.
 
 ## Remaining priorities
 
 ```text
-segmented-font schema and procedural adapter
 additional segmented and modular families
 deterministic export packages
 attachment geometry

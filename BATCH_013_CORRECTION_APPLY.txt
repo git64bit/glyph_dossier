@@ -1,0 +1,3 @@
+Apply after the Batch 013 delta over commit 369efce.
+Non-visible pipeline selections become non-fatal and fresh defaults use D_8.
+Rerun all Batch 013 tests plus segmented_nonvisible_pipeline_contract.scad.

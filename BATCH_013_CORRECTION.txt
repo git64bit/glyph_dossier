@@ -1,0 +1,35 @@
+BATCH: 013 CORRECTION
+VERSION: 0.13.0
+BASELINE: Batch 013 delta applied over commit 369efce
+DATE: 2026-07-29
+
+OBSERVED FAILURE:
+  PROCEDURAL_7_SEGMENT_EXTENDED_R1
+  U_A
+  normalized_profile
+
+CAUSE:
+  U_A is correctly classified as unsupported in the seven-segment set.
+  The orchestrator incorrectly treated a valid non-visible source state
+  as a fatal pipeline assertion.
+
+CORRECTION:
+  - Fresh segmented workbenches now select D_8, visible in both sets.
+  - Blank and unsupported mappings remain valid selectable states.
+  - Pipeline views report SEGMENTED_PIPELINE_AVAILABLE = false.
+  - Their source-state frame is rendered instead.
+  - The portable adapter and downstream geometry stages are not called.
+  - Compilation continues without an error.
+
+UNCHANGED:
+  - U_A remains unsupported in the seven-segment set
+  - P_exclamation remains intentional_blank
+  - all masks, templates, canonical JSON, and fingerprints
+  - imported font packages
+  - accepted normalization, sectioning, occupancy, and quality code
+
+RETEST:
+  - tests/segmented_nonvisible_pipeline_contract.scad
+  - all five original Batch 013 tests
+  - segmented_catalog.scad with seven-segment U_A / normalized_profile
+  - segmented_pipeline.scad with seven-segment D_8

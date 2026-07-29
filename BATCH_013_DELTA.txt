@@ -1,0 +1,64 @@
+BATCH: 013
+VERSION: 0.13.0
+BASELINE COMMIT: 369efce
+DATE: 2026-07-29
+
+PURPOSE:
+  Add a segmented-source schema and project-authored procedural adapter
+  without modifying the imported font catalog.
+
+SOURCE SETS:
+  - PROCEDURAL_14_SEGMENT_EXTENDED_R1
+    - 17 reusable elements
+    - 66 visible dossier mappings
+    - fingerprint 9cba58270b1642bb91ac32f12fa77be13be1e1519da1712f90ff1b618b216e06
+  - PROCEDURAL_7_SEGMENT_EXTENDED_R1
+    - 10 reusable elements
+    - 13 visible mappings
+    - 1 intentional blank mapping
+    - 52 unsupported mappings
+    - fingerprint 59d7b03feec0020b616571bda1bd6d287acfc1a78ed147ca39c920fc8a12f867
+
+SEMANTIC STATES:
+  visible
+  intentional_blank
+  unsupported
+
+ADAPTER CONTRACT:
+  - visible mappings only
+  - active element paths become one disjoint BOSL2 region
+  - actual active-region bounds become portable bounds
+  - each active segment remains one component
+  - procedural design fingerprint becomes source identity
+  - output is the accepted fifteen-field portable-glyph record
+
+PIPELINE PROOF:
+  - exact-height normalization
+  - automatic rectangular sectioning
+  - BOSL2 occupied-cell detection
+
+ADDED:
+  - segmented source schema, lookup, validation, reporting, and adapter
+  - two immutable procedural segment packages
+  - segmented registry
+  - segmented orchestrator and configuration
+  - catalog, pipeline, and contact-sheet workbenches
+  - five tests
+  - docs/SEGMENTED_SOURCE_ADAPTER.md
+
+UNCHANGED:
+  - all glyph_sets files
+  - six imported font-set registry records
+  - normalization mathematics
+  - sectioning mathematics
+  - occupancy calculations
+  - quality calculations
+  - fixed portable_a_* route
+  - connectors and attachment geometry
+
+EXCLUDED:
+  - external segmented font imports
+  - DSEG/LCD/DotMatrix packages
+  - adding procedural sets to PORTABLE_FONT_SETS
+  - automatic cut relocation
+  - deterministic external export packaging

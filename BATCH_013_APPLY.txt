@@ -1,0 +1,4 @@
+BASELINE COMMIT: 369efce
+Copy all included complete files over the repository working tree.
+This delta adds two procedural segmented source adapters.
+Imported glyph packages and accepted pipeline files are unchanged.

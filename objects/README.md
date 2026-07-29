@@ -1,9 +1,10 @@
 # Accepted glyph objects
 
-The repository contains 396 portable profiles with generic
-normalization, sectioning, occupied-cell detection, and quality
-screening.
+The repository contains 396 imported portable profiles and two
+project-authored segmented source adapters.
 
-There are still no physically accepted glyph objects. Quality flags are
-diagnostic records only. Automatic cut relocation, connectors, and
+Visible segmented masks can enter normalization, sectioning, occupancy,
+and later quality screening through the existing portable-glyph record.
+
+There are still no physically accepted glyph objects. Connectors and
 physical acceptance remain deferred.

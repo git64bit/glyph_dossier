@@ -1,0 +1,926 @@
+{
+  "schema": 1,
+  "set_id": "PROCEDURAL_7_SEGMENT_EXTENDED_R1",
+  "family": "Procedural 7 Segment Extended",
+  "style": "Regular",
+  "version": "1",
+  "source_kind": "procedural_segment_adapter",
+  "license": "Project-authored; repository terms",
+  "template": {
+    "id": "SEG7_EXTENDED_TEMPLATE_R1",
+    "width": 100,
+    "height": 188,
+    "advance_width": 110,
+    "elements": [
+      {
+        "id": "A",
+        "path": [
+          [
+            18.0,
+            180.0
+          ],
+          [
+            82.0,
+            180.0
+          ],
+          [
+            82.0,
+            168.0
+          ],
+          [
+            18.0,
+            168.0
+          ]
+        ]
+      },
+      {
+        "id": "B",
+        "path": [
+          [
+            100.0,
+            160.0
+          ],
+          [
+            100.0,
+            104.0
+          ],
+          [
+            88.0,
+            104.0
+          ],
+          [
+            88.0,
+            160.0
+          ]
+        ]
+      },
+      {
+        "id": "C",
+        "path": [
+          [
+            100.0,
+            76.0
+          ],
+          [
+            100.0,
+            20.0
+          ],
+          [
+            88.0,
+            20.0
+          ],
+          [
+            88.0,
+            76.0
+          ]
+        ]
+      },
+      {
+        "id": "D",
+        "path": [
+          [
+            18.0,
+            12.0
+          ],
+          [
+            82.0,
+            12.0
+          ],
+          [
+            82.0,
+            0.0
+          ],
+          [
+            18.0,
+            0.0
+          ]
+        ]
+      },
+      {
+        "id": "E",
+        "path": [
+          [
+            0.0,
+            20.0
+          ],
+          [
+            0.0,
+            76.0
+          ],
+          [
+            12.0,
+            76.0
+          ],
+          [
+            12.0,
+            20.0
+          ]
+        ]
+      },
+      {
+        "id": "F",
+        "path": [
+          [
+            0.0,
+            104.0
+          ],
+          [
+            0.0,
+            160.0
+          ],
+          [
+            12.0,
+            160.0
+          ],
+          [
+            12.0,
+            104.0
+          ]
+        ]
+      },
+      {
+        "id": "G",
+        "path": [
+          [
+            18.0,
+            96.0
+          ],
+          [
+            82.0,
+            96.0
+          ],
+          [
+            82.0,
+            84.0
+          ],
+          [
+            18.0,
+            84.0
+          ]
+        ]
+      },
+      {
+        "id": "DOT_TOP",
+        "path": [
+          [
+            54.0,
+            90.0
+          ],
+          [
+            52.828427,
+            87.171573
+          ],
+          [
+            50.0,
+            86.0
+          ],
+          [
+            47.171573,
+            87.171573
+          ],
+          [
+            46.0,
+            90.0
+          ],
+          [
+            47.171573,
+            92.828427
+          ],
+          [
+            50.0,
+            94.0
+          ],
+          [
+            52.828427,
+            92.828427
+          ]
+        ]
+      },
+      {
+        "id": "DOT_BOTTOM",
+        "path": [
+          [
+            54.0,
+            8.0
+          ],
+          [
+            52.828427,
+            5.171573
+          ],
+          [
+            50.0,
+            4.0
+          ],
+          [
+            47.171573,
+            5.171573
+          ],
+          [
+            46.0,
+            8.0
+          ],
+          [
+            47.171573,
+            10.828427
+          ],
+          [
+            50.0,
+            12.0
+          ],
+          [
+            52.828427,
+            10.828427
+          ]
+        ]
+      },
+      {
+        "id": "COMMA",
+        "path": [
+          [
+            53.788854,
+            3.105573
+          ],
+          [
+            47.788854,
+            -8.894427
+          ],
+          [
+            44.211146,
+            -7.105573
+          ],
+          [
+            50.211146,
+            4.894427
+          ]
+        ]
+      }
+    ]
+  },
+  "mappings": [
+    {
+      "id": "U_A",
+      "character": "A",
+      "codepoint": 65,
+      "group": "uppercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "U_B",
+      "character": "B",
+      "codepoint": 66,
+      "group": "uppercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "U_C",
+      "character": "C",
+      "codepoint": 67,
+      "group": "uppercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "U_D",
+      "character": "D",
+      "codepoint": 68,
+      "group": "uppercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "U_E",
+      "character": "E",
+      "codepoint": 69,
+      "group": "uppercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "U_F",
+      "character": "F",
+      "codepoint": 70,
+      "group": "uppercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "U_G",
+      "character": "G",
+      "codepoint": 71,
+      "group": "uppercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "U_H",
+      "character": "H",
+      "codepoint": 72,
+      "group": "uppercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "U_I",
+      "character": "I",
+      "codepoint": 73,
+      "group": "uppercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "U_J",
+      "character": "J",
+      "codepoint": 74,
+      "group": "uppercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "U_K",
+      "character": "K",
+      "codepoint": 75,
+      "group": "uppercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "U_L",
+      "character": "L",
+      "codepoint": 76,
+      "group": "uppercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "U_M",
+      "character": "M",
+      "codepoint": 77,
+      "group": "uppercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "U_N",
+      "character": "N",
+      "codepoint": 78,
+      "group": "uppercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "U_O",
+      "character": "O",
+      "codepoint": 79,
+      "group": "uppercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "U_P",
+      "character": "P",
+      "codepoint": 80,
+      "group": "uppercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "U_Q",
+      "character": "Q",
+      "codepoint": 81,
+      "group": "uppercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "U_R",
+      "character": "R",
+      "codepoint": 82,
+      "group": "uppercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "U_S",
+      "character": "S",
+      "codepoint": 83,
+      "group": "uppercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "U_T",
+      "character": "T",
+      "codepoint": 84,
+      "group": "uppercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "U_U",
+      "character": "U",
+      "codepoint": 85,
+      "group": "uppercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "U_V",
+      "character": "V",
+      "codepoint": 86,
+      "group": "uppercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "U_W",
+      "character": "W",
+      "codepoint": 87,
+      "group": "uppercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "U_X",
+      "character": "X",
+      "codepoint": 88,
+      "group": "uppercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "U_Y",
+      "character": "Y",
+      "codepoint": 89,
+      "group": "uppercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "U_Z",
+      "character": "Z",
+      "codepoint": 90,
+      "group": "uppercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "L_a",
+      "character": "a",
+      "codepoint": 97,
+      "group": "lowercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "L_b",
+      "character": "b",
+      "codepoint": 98,
+      "group": "lowercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "L_c",
+      "character": "c",
+      "codepoint": 99,
+      "group": "lowercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "L_d",
+      "character": "d",
+      "codepoint": 100,
+      "group": "lowercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "L_e",
+      "character": "e",
+      "codepoint": 101,
+      "group": "lowercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "L_f",
+      "character": "f",
+      "codepoint": 102,
+      "group": "lowercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "L_g",
+      "character": "g",
+      "codepoint": 103,
+      "group": "lowercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "L_h",
+      "character": "h",
+      "codepoint": 104,
+      "group": "lowercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "L_i",
+      "character": "i",
+      "codepoint": 105,
+      "group": "lowercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "L_j",
+      "character": "j",
+      "codepoint": 106,
+      "group": "lowercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "L_k",
+      "character": "k",
+      "codepoint": 107,
+      "group": "lowercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "L_l",
+      "character": "l",
+      "codepoint": 108,
+      "group": "lowercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "L_m",
+      "character": "m",
+      "codepoint": 109,
+      "group": "lowercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "L_n",
+      "character": "n",
+      "codepoint": 110,
+      "group": "lowercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "L_o",
+      "character": "o",
+      "codepoint": 111,
+      "group": "lowercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "L_p",
+      "character": "p",
+      "codepoint": 112,
+      "group": "lowercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "L_q",
+      "character": "q",
+      "codepoint": 113,
+      "group": "lowercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "L_r",
+      "character": "r",
+      "codepoint": 114,
+      "group": "lowercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "L_s",
+      "character": "s",
+      "codepoint": 115,
+      "group": "lowercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "L_t",
+      "character": "t",
+      "codepoint": 116,
+      "group": "lowercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "L_u",
+      "character": "u",
+      "codepoint": 117,
+      "group": "lowercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "L_v",
+      "character": "v",
+      "codepoint": 118,
+      "group": "lowercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "L_w",
+      "character": "w",
+      "codepoint": 119,
+      "group": "lowercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "L_x",
+      "character": "x",
+      "codepoint": 120,
+      "group": "lowercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "L_y",
+      "character": "y",
+      "codepoint": 121,
+      "group": "lowercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "L_z",
+      "character": "z",
+      "codepoint": 122,
+      "group": "lowercase",
+      "status": "unsupported",
+      "active_segments": [],
+      "notes": "Unsupported by the seven-segment source adapter."
+    },
+    {
+      "id": "D_0",
+      "character": "0",
+      "codepoint": 48,
+      "group": "digit",
+      "status": "visible",
+      "active_segments": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "notes": "Project-authored seven-segment digit mask."
+    },
+    {
+      "id": "D_1",
+      "character": "1",
+      "codepoint": 49,
+      "group": "digit",
+      "status": "visible",
+      "active_segments": [
+        "B",
+        "C"
+      ],
+      "notes": "Project-authored seven-segment digit mask."
+    },
+    {
+      "id": "D_2",
+      "character": "2",
+      "codepoint": 50,
+      "group": "digit",
+      "status": "visible",
+      "active_segments": [
+        "A",
+        "B",
+        "D",
+        "E",
+        "G"
+      ],
+      "notes": "Project-authored seven-segment digit mask."
+    },
+    {
+      "id": "D_3",
+      "character": "3",
+      "codepoint": 51,
+      "group": "digit",
+      "status": "visible",
+      "active_segments": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "G"
+      ],
+      "notes": "Project-authored seven-segment digit mask."
+    },
+    {
+      "id": "D_4",
+      "character": "4",
+      "codepoint": 52,
+      "group": "digit",
+      "status": "visible",
+      "active_segments": [
+        "B",
+        "C",
+        "F",
+        "G"
+      ],
+      "notes": "Project-authored seven-segment digit mask."
+    },
+    {
+      "id": "D_5",
+      "character": "5",
+      "codepoint": 53,
+      "group": "digit",
+      "status": "visible",
+      "active_segments": [
+        "A",
+        "C",
+        "D",
+        "F",
+        "G"
+      ],
+      "notes": "Project-authored seven-segment digit mask."
+    },
+    {
+      "id": "D_6",
+      "character": "6",
+      "codepoint": 54,
+      "group": "digit",
+      "status": "visible",
+      "active_segments": [
+        "A",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ],
+      "notes": "Project-authored seven-segment digit mask."
+    },
+    {
+      "id": "D_7",
+      "character": "7",
+      "codepoint": 55,
+      "group": "digit",
+      "status": "visible",
+      "active_segments": [
+        "A",
+        "B",
+        "C"
+      ],
+      "notes": "Project-authored seven-segment digit mask."
+    },
+    {
+      "id": "D_8",
+      "character": "8",
+      "codepoint": 56,
+      "group": "digit",
+      "status": "visible",
+      "active_segments": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ],
+      "notes": "Project-authored seven-segment digit mask."
+    },
+    {
+      "id": "D_9",
+      "character": "9",
+      "codepoint": 57,
+      "group": "digit",
+      "status": "visible",
+      "active_segments": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "F",
+        "G"
+      ],
+      "notes": "Project-authored seven-segment digit mask."
+    },
+    {
+      "id": "P_question",
+      "character": "?",
+      "codepoint": 63,
+      "group": "punctuation",
+      "status": "visible",
+      "active_segments": [
+        "A",
+        "B",
+        "G",
+        "DOT_BOTTOM"
+      ],
+      "notes": "Project-authored seven-segment punctuation extension."
+    },
+    {
+      "id": "P_exclamation",
+      "character": "!",
+      "codepoint": 33,
+      "group": "punctuation",
+      "status": "intentional_blank",
+      "active_segments": [],
+      "notes": "Defined blank display state used to exercise empty-state semantics."
+    },
+    {
+      "id": "P_colon",
+      "character": ":",
+      "codepoint": 58,
+      "group": "punctuation",
+      "status": "visible",
+      "active_segments": [
+        "DOT_TOP",
+        "DOT_BOTTOM"
+      ],
+      "notes": "Project-authored seven-segment punctuation extension."
+    },
+    {
+      "id": "P_semicolon",
+      "character": ";",
+      "codepoint": 59,
+      "group": "punctuation",
+      "status": "visible",
+      "active_segments": [
+        "DOT_TOP",
+        "COMMA"
+      ],
+      "notes": "Project-authored seven-segment punctuation extension."
+    }
+  ],
+  "fingerprint_sha256": "59d7b03feec0020b616571bda1bd6d287acfc1a78ed147ca39c920fc8a12f867"
+}
