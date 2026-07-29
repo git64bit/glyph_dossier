@@ -1,10 +1,10 @@
 # Accepted glyph objects
 
-The catalog contains 66 captured source records but no accepted physical
-glyph objects.
+The source catalog contains 396 portable set-and-glyph profiles.
 
-Portable source completion is not physical acceptance.
+Generic exact-height normalization is available for every profile, but
+there are no accepted physical glyph objects.
 
-The authoritative sectional experiment remains portable `U_A`.
-Connectors, attachment methods, generic sectioning, and printing remain
-outside Batch 007.
+The only sectional laboratory object remains the fixed Liberation Sans
+`U_A` experiment. Generic sectioning, occupied-cell analysis,
+connectors, and physical acceptance remain deferred.

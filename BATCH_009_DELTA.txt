@@ -1,0 +1,54 @@
+BATCH: 009
+VERSION: 0.9.0
+BASELINE COMMIT: dc7c479
+DATE: 2026-07-29
+
+PURPOSE:
+  Generalize exact-height portable normalization across every stored
+  font family and every captured glyph.
+
+AUTHORITY:
+  - Six embedded portable font sets.
+  - Sixty-six glyph identities per set.
+  - 396 selectable set-and-glyph combinations.
+  - Captured BOSL2 region bounds are the normalization authority.
+  - No text(), resize(), textmetrics(), or operating-system font lookup.
+
+ADDED:
+  - workbenches/portable_normalized_profile.scad
+  - generic normalization validation
+  - generic normalization reporting
+  - generic normalized-profile scene
+  - normalized source-baseline reporting
+  - normalized advance-width reporting
+  - generic, descender, punctuation, multi-family, and render tests
+  - docs/GENERIC_PORTABLE_NORMALIZATION.md
+
+NORMALIZATION CONTRACT:
+  - visible geometry height equals requested target height
+  - visible geometry bottom becomes Y 0
+  - visible geometry horizontal center becomes X 0
+  - normalized width is known numerically before rendering
+  - original baseline relationship remains reportable
+
+UNCHANGED:
+  - all glyph_sets files
+  - all six font-set registry identities
+  - portable_a_normalized_profile.scad
+  - portable_a_section_plan.scad
+  - portable_a_section_layout.scad
+  - portable_a_section_export.scad
+  - section grids and section exports
+  - occupied-cell logic
+  - segmented-font adapters
+  - connectors and attachment geometry
+
+TEST:
+  1. Copy the delta over commit dc7c479.
+  2. Run tests/portable_generic_normalization_contract.scad with F5.
+  3. Run tests/portable_descender_normalization_contract.scad with F5.
+  4. Run tests/portable_punctuation_normalization_contract.scad with F5.
+  5. Run tests/portable_multi_family_normalization_contract.scad with F5.
+  6. Run tests/portable_generic_normalized_render_contract.scad with F5.
+  7. Inspect workbenches/portable_normalized_profile.scad.
+  8. Confirm zero errors and zero warnings.

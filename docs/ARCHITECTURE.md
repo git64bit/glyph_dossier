@@ -1,42 +1,68 @@
 # Architecture
 
+Glyph Dossier separates font capture from runtime geometry.
+
 ## Portable source layer
 
-Each font family is an isolated package containing namespaced generated
-records. All packages implement the same 66 dossier IDs.
-
-## Multi-family catalog layer
-
 ```text
-portable_set_id_selected
+retained source identity and license
         ↓
-exact portable font-set lookup
+external extraction
         ↓
-selected set glyph array
+immutable SCAD contour records
         ↓
-portable_glyph_id_selected
+isolated font-set registry
         ↓
-exact glyph lookup
-        ↓
-BOSL2 region rendering
+exact set ID + glyph ID lookup
 ```
 
-`portable_catalog_main.scad` includes the six set manifests and registry.
-The older `portable_main.scad` remains the single-family laboratory and A
-sectioning orchestrator.
+Six embedded sets currently expose 396 portable profiles.
 
-## Collision control
+## Generic normalization layer
 
-Set manifests use namespaced constants. Record-level IDs remain generic so
-shared dossier code can operate on any selected family.
+Batch 009 adds a shared normalization route:
 
-## Stability
+```text
+selected font set
+        ↓
+selected portable glyph
+        ↓
+captured BOSL2 region bounds
+        ↓
+exact scale from requested visible height
+        ↓
+center-bottom normalized region
+        ↓
+profile rendering and numeric report
+```
 
-Every new package has a 66-glyph JSON lock. Extraction is staged and only
-installed after an existing lock passes. Package checksums cover all stored
-files except the checksum list itself.
+The implementation is distributed across:
 
-## Deferred
+```text
+geometry/portable_glyph_region.scad
+lib/portable_normalization_validation.scad
+lib/portable_normalization_reporting.scad
+geometry/portable_normalized_profile_scene.scad
+portable_catalog_main.scad
+workbenches/portable_normalized_profile.scad
+```
 
-Family-selectable sectioning, occupied-cell analysis, cut relocation,
-connectors, and accepted physical objects remain outside Batch 008.
+The generic route does not call `text()`, `resize()`, or
+`textmetrics()`.
+
+## Baseline preservation
+
+Runtime geometry is anchored to its visible bottom, but the source
+baseline remains recoverable from captured bounds. Descenders and
+punctuation therefore normalize consistently without losing their
+original baseline relationship.
+
+## Fixed A sectioning layer
+
+The earlier Liberation Sans `U_A` sectioning experiment remains a
+separate accepted path. Batch 009 does not alter it.
+
+## Next architectural boundary
+
+Generic sectioning should consume the generic normalized region from
+Batch 009. It should not depend on A-specific hazard guides.

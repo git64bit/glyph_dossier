@@ -1,11 +1,11 @@
 # Glyph Dossier
 
-Glyph Dossier develops portable, analyzable character geometry for large
-sectional construction.
+Glyph Dossier develops portable, analyzable character geometry for
+large sectional construction.
 
-## Multi-family portable catalog
+## Stored portable catalog
 
-Batch 008 stores six isolated portable families:
+The repository contains six isolated portable font sets:
 
 ```text
 LIBERATION_SANS_REGULAR_R1
@@ -16,31 +16,59 @@ MIAMA_NUEVA_MEDIUM_R1
 PLAYFAIR_DISPLAY_REGULAR_R1
 ```
 
-Each family contains the same 66 dossier identities. Catalog identity is:
+Each contains the same 66 dossier identities:
+
+```text
+6 sets × 66 glyphs = 396 portable profiles
+```
+
+Catalog identity is:
 
 ```text
 portable set ID + glyph ID
 ```
 
-For example, `U_A` may exist in every set without a registry collision.
-
-## Main catalog
+## Generic exact-height normalization
 
 Open:
+
+```text
+workbenches/portable_normalized_profile.scad
+```
+
+Select any stored family and glyph, then set the requested visible
+height and extrusion depth.
+
+The normalization authority is the captured BOSL2 region bounds:
+
+```text
+visible horizontal center = X 0
+visible bottom = Y 0
+visible height = requested height
+```
+
+The console reports exact source bounds, scale, normalized width,
+normalized bounds, normalized source-baseline position, normalized
+advance width, components, counters, and source checksum.
+
+This route does not call:
+
+```text
+text()
+resize()
+textmetrics()
+```
+
+It does not consult the operating-system font inventory.
+
+## Multi-family catalog
 
 ```text
 workbenches/portable_catalog.scad
 ```
 
-Select:
-
-```text
-portable_set_id_selected
-portable_glyph_id_selected
-```
-
-The normal catalog route does not call `text()` and does not use the
-operating-system font inventory.
+It supports direct set-and-glyph selection, normal 2D or 3D rendering,
+component diagnostics, and contact sheets.
 
 ## Family comparison
 
@@ -48,8 +76,7 @@ operating-system font inventory.
 workbenches/portable_family_comparison.scad
 ```
 
-This renders the same selected glyph from all six stored contour packages.
-The console reports the family order and normalized width.
+This renders one selected glyph from all six stored packages.
 
 ## Family-selectable sheets
 
@@ -61,47 +88,44 @@ workbenches/portable_digit_sheet.scad
 workbenches/portable_punctuation_sheet.scad
 ```
 
-## New package contents
+## Portable A sectioning
 
-Each new package stores:
-
-```text
-66 namespaced SCAD glyph records
-66 diagnostic SVG files
-category SVG contact sheets
-set.json
-manifest.scad
-package_lock.json
-checksums.sha256
-license and provenance
-source filename and expected source SHA-256
-```
-
-Source font binaries are not part of the package. Reproduction uses an
-external source file matching the recorded checksum.
-
-## Extracting again
+The accepted sectioning experiment remains deliberately fixed to the
+captured Liberation Sans `U_A`:
 
 ```text
-python tools/extract_namespaced_font_set.py \
-  --font /path/to/source-font.otf \
-  --font-spec tools/font_specs/montserrat_regular.json \
-  --glyph-spec tools/full_character_set.json \
-  --out glyph_sets/montserrat_regular \
-  --lock glyph_sets/montserrat_regular/package_lock.json
+workbenches/portable_a_normalized_profile.scad
+workbenches/portable_a_section_plan.scad
+workbenches/portable_a_section_layout.scad
+workbenches/portable_a_section_export.scad
 ```
 
-A changed source, contour, bound, point count, SCAD record, or diagnostic
-SVG stops replacement.
+Batch 009 does not change that route.
 
-## Tests
+## Batch 009 tests
 
 ```text
-tests/portable_font_set_registry_contract.scad
-tests/portable_font_set_isolation_contract.scad
-tests/portable_catalog_selection_contract.scad
-tests/portable_multi_family_render_contract.scad
+tests/portable_generic_normalization_contract.scad
+tests/portable_descender_normalization_contract.scad
+tests/portable_punctuation_normalization_contract.scad
+tests/portable_multi_family_normalization_contract.scad
+tests/portable_generic_normalized_render_contract.scad
 ```
 
-The existing Liberation Sans `portable_a_*` workbenches remain A-only and
-unchanged.
+## Deferred priorities
+
+```text
+generic section plan, layout, and export
+BOSL2 occupied-cell detection
+fragment and cut-quality reporting
+segmented-font schema and procedural adapter
+additional segmented and modular families
+deterministic export packages
+attachment geometry
+physical acceptance
+```
+
+## Workflow
+
+Discuss → bounded batch → delta ZIP → user test → user commit → supplied
+commit SHA → reconciliation before the next batch.

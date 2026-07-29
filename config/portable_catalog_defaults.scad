@@ -25,10 +25,16 @@ pc_sheet_glyph_height = is_undef(portable_sheet_glyph_height)
     ? 58 : portable_sheet_glyph_height;
 pc_family_spacing = is_undef(portable_family_spacing)
     ? 170 : portable_family_spacing;
+pc_show_normalized_bounds =
+    is_undef(portable_show_normalized_bounds)
+    ? true : portable_show_normalized_bounds;
+pc_bounds_line_width = is_undef(portable_bounds_line_width)
+    ? 1.5 : portable_bounds_line_width;
 
 VALID_PORTABLE_CATALOG_MODES = [
     "glyph_2d",
     "glyph_3d",
+    "normalized_profile",
     "diagnostics",
     "contact_sheet",
     "family_comparison",
@@ -44,5 +50,9 @@ module validate_portable_catalog_workbench() {
     assert(pc_depth > 0, "Portable catalog depth must be positive.");
     assert(pc_sheet_columns >= 1, "Portable sheet columns must be positive.");
     assert(pc_family_spacing > 0, "Portable family spacing must be positive.");
+    assert(
+        pc_bounds_line_width > 0,
+        "Portable normalized bounds line width must be positive."
+    );
     validate_portable_sheet_group(pc_sheet_group);
 }

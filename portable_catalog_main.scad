@@ -19,11 +19,14 @@ include <lib/portable_font_set_lookup.scad>
 include <lib/portable_font_set_validation.scad>
 include <lib/portable_font_set_reporting.scad>
 include <lib/portable_glyph_reporting.scad>
+include <lib/portable_normalization_validation.scad>
+include <lib/portable_normalization_reporting.scad>
 include <config/portable_catalog_defaults.scad>
 
 include <geometry/portable_glyph_region.scad>
 include <geometry/portable_glyph_scenes.scad>
 include <geometry/portable_font_family_scenes.scad>
+include <geometry/portable_normalized_profile_scene.scad>
 
 module run_portable_catalog() {
     validate_portable_catalog_workbench();
@@ -46,7 +49,27 @@ module run_portable_catalog() {
         portable_glyph_2d(glyph, pc_target_height);
     else if (pc_render_mode == "glyph_3d")
         portable_glyph_3d(glyph, pc_target_height, pc_depth);
-    else if (pc_render_mode == "diagnostics")
+    else if (pc_render_mode == "normalized_profile") {
+        validate_portable_normalization_profile(
+            set_record,
+            glyph,
+            pc_target_height,
+            pc_depth,
+            pc_bounds_line_width
+        );
+        report_generic_portable_normalization(
+            set_record,
+            glyph,
+            pc_target_height
+        );
+        portable_generic_normalized_profile(
+            glyph,
+            pc_target_height,
+            pc_depth,
+            pc_show_normalized_bounds,
+            pc_bounds_line_width
+        );
+    } else if (pc_render_mode == "diagnostics")
         portable_component_diagnostics(
             glyph,
             pc_target_height,

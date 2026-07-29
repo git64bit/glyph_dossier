@@ -54,6 +54,35 @@ function portable_normalized_bounds(glyph, target_height) = [
     portable_normalized_top(glyph, target_height)
 ];
 
+function portable_source_center_x(glyph) =
+    (
+        glyph[PG_REGION_BOUNDS][0]
+        + glyph[PG_REGION_BOUNDS][2]
+    ) / 2;
+
+function portable_source_bottom(glyph) =
+    glyph[PG_REGION_BOUNDS][1];
+
+function portable_source_top(glyph) =
+    glyph[PG_REGION_BOUNDS][3];
+
+function portable_source_baseline_offset(glyph) =
+    -portable_source_bottom(glyph);
+
+function portable_normalized_baseline_y(
+    glyph,
+    target_height
+) =
+    portable_source_baseline_offset(glyph)
+    * portable_target_scale(glyph, target_height);
+
+function portable_normalized_advance_width(
+    glyph,
+    target_height
+) =
+    glyph[PG_ADVANCE_WIDTH]
+    * portable_target_scale(glyph, target_height);
+
 module portable_glyph_2d(glyph, target_height) {
     region(portable_normalized_region(glyph, target_height));
 }
