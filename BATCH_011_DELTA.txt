@@ -1,0 +1,68 @@
+BATCH: 011
+VERSION: 0.11.0
+BASELINE COMMIT: c58e767
+DATE: 2026-07-29
+
+PURPOSE:
+  Add BOSL2 region-based occupied-cell detection to the accepted
+  generic multi-family sectioning route.
+
+AUTHORITY:
+  - exact captured BOSL2 glyph region
+  - exact-height normalized region
+  - resolved automatic or manual rectangular grid
+  - BOSL2 function intersection()
+  - BOSL2 region_area() and region_parts()
+
+OCCUPANCY CONTRACT:
+  - each cell receives one immutable occupancy record
+  - clipped region = glyph region intersected with cell rectangle
+  - occupied area is measured from the clipped BOSL2 region
+  - occupied when area > configured area epsilon
+  - zero-area or boundary-only contact is treated as empty
+  - occupied and empty records remain row-major and deterministic
+  - occupied-only layout and export use recorded clipped regions
+  - no geometry sampling or raster approximation
+
+ADDED:
+  - lib/portable_section_occupancy_schema.scad
+  - lib/portable_section_occupancy.scad
+  - lib/portable_section_occupancy_validation.scad
+  - lib/portable_section_occupancy_reporting.scad
+  - geometry/portable_section_occupancy_scene.scad
+  - workbenches/portable_section_occupancy.scad
+  - workbenches/portable_occupied_section_layout.scad
+  - workbenches/portable_occupied_section_export.scad
+  - api/portable_occupied_sectioning_v1.scad
+  - four occupancy tests
+  - docs/PORTABLE_SECTION_OCCUPANCY.md
+
+EXTENDED:
+  - portable_section_main.scad
+  - generic section configuration
+  - selected-cell reporting
+  - README and architecture documentation
+
+UNCHANGED:
+  - all glyph_sets files
+  - exact-height normalization mathematics
+  - automatic and manual grid resolution
+  - section clipping geometry
+  - deterministic section IDs
+  - fixed portable_a_* route
+  - fragment and cut-quality classification
+  - automatic cut movement
+  - segmented-font adapters
+  - connectors and attachment geometry
+
+TEST:
+  1. Copy the delta over commit c58e767.
+  2. Run tests/portable_occupancy_boolean_contract.scad.
+  3. Run tests/portable_occupancy_manifest_contract.scad.
+  4. Run tests/portable_occupancy_partition_contract.scad.
+  5. Run tests/portable_occupancy_render_contract.scad.
+  6. Inspect workbenches/portable_section_occupancy.scad.
+  7. Inspect workbenches/portable_occupied_section_layout.scad.
+  8. Inspect several occupied ordinals in
+     workbenches/portable_occupied_section_export.scad.
+  9. Confirm zero errors and zero warnings.

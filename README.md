@@ -3,13 +3,14 @@
 Glyph Dossier develops portable, analyzable character geometry for
 large sectional construction.
 
-## Stored portable catalog
+## Portable catalog
 
-The unified repository contains six embedded portable font sets and
-sixty-six glyph identities per set:
+The unified repository contains:
 
 ```text
-6 sets × 66 glyphs = 396 portable profiles
+6 embedded font sets
+66 glyph identities per set
+396 selectable portable profiles
 ```
 
 Catalog identity is:
@@ -25,7 +26,7 @@ workbenches/portable_normalized_profile.scad
 ```
 
 Any stored profile can be normalized to an exact visible height without
-`text()`, `resize()`, `textmetrics()`, or operating-system font lookup.
+live font lookup.
 
 ## Generic sectioning
 
@@ -35,19 +36,24 @@ workbenches/portable_section_layout.scad
 workbenches/portable_section_export.scad
 ```
 
-Generic sectioning supports all 396 profiles.
+Automatic and manual rectangular grids support all 396 profiles.
 
-Grid modes:
+## Occupied-cell detection
 
 ```text
-auto   derive complete centered-bottom grid from target and cell size
-manual use explicit origin, columns, and rows
+workbenches/portable_section_occupancy.scad
+workbenches/portable_occupied_section_layout.scad
+workbenches/portable_occupied_section_export.scad
 ```
 
-Every cell receives a deterministic object ID and local export bounds.
+Each cell is intersected with the exact normalized BOSL2 glyph region.
+The resulting clipped region supplies area, cell-area ratio, connected
+component count, status, and deterministic identity.
 
-Batch 010 does not compute occupied cells. Empty intersections render no
-geometry but remain in the manifest.
+Occupied-only export selects a row-major occupied ordinal, so empty cells
+no longer need to be inspected or exported.
+
+Zero-area or boundary-only contact is treated as empty.
 
 ## Fixed A laboratory route
 
@@ -60,19 +66,18 @@ workbenches/portable_a_section_layout.scad
 workbenches/portable_a_section_export.scad
 ```
 
-## Batch 010 tests
+## Batch 011 tests
 
 ```text
-tests/portable_generic_section_resolution_contract.scad
-tests/portable_generic_section_manifest_contract.scad
-tests/portable_generic_section_render_contract.scad
-tests/portable_generic_section_export_contract.scad
+tests/portable_occupancy_boolean_contract.scad
+tests/portable_occupancy_manifest_contract.scad
+tests/portable_occupancy_partition_contract.scad
+tests/portable_occupancy_render_contract.scad
 ```
 
 ## Remaining priorities
 
 ```text
-BOSL2 occupied-cell detection
 fragment and cut-quality reporting
 segmented-font schema and procedural adapter
 additional segmented and modular families

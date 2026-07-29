@@ -82,10 +82,35 @@ ps_bounds_line_width =
     ? 1.5
     : portable_bounds_line_width;
 
+ps_occupancy_area_epsilon =
+    is_undef(portable_occupancy_area_epsilon)
+    ? 0.000001
+    : portable_occupancy_area_epsilon;
+ps_occupancy_boolean_epsilon =
+    is_undef(portable_occupancy_boolean_epsilon)
+    ? 0.000000001
+    : portable_occupancy_boolean_epsilon;
+ps_occupancy_overlay_depth =
+    is_undef(portable_occupancy_overlay_depth)
+    ? 0.5
+    : portable_occupancy_overlay_depth;
+ps_show_empty_occupancy_cells =
+    is_undef(portable_show_empty_occupancy_cells)
+    ? true
+    : portable_show_empty_occupancy_cells;
+ps_selected_occupied_ordinal =
+    is_undef(portable_selected_occupied_ordinal)
+    ? 0
+    : portable_selected_occupied_ordinal;
+
 VALID_PORTABLE_GENERIC_SECTION_MODES = [
     "section_plan",
     "section_layout",
     "section_export",
+    "occupancy_plan",
+    "occupied_layout",
+    "occupied_export",
+    "occupancy_report",
     "report_only"
 ];
 
@@ -150,5 +175,23 @@ module validate_portable_generic_section_controls() {
     assert(
         ps_bounds_line_width > 0,
         "Portable section bounds line width must be positive."
+    );
+    assert(
+        ps_occupancy_area_epsilon >= 0,
+        "Portable occupancy area epsilon must be nonnegative."
+    );
+    assert(
+        ps_occupancy_boolean_epsilon > 0,
+        "Portable occupancy Boolean epsilon must be positive."
+    );
+    assert(
+        ps_occupancy_overlay_depth > 0,
+        "Portable occupancy overlay depth must be positive."
+    );
+    assert(
+        ps_selected_occupied_ordinal >= 0
+        && floor(ps_selected_occupied_ordinal)
+            == ps_selected_occupied_ordinal,
+        "Portable occupied ordinal must be a nonnegative integer."
     );
 }

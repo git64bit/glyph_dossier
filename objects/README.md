@@ -1,10 +1,9 @@
 # Accepted glyph objects
 
-The source catalog contains 396 portable profiles.
+The repository contains 396 portable source profiles.
 
-Generic exact-height normalization and rectangular sectioning are
-available for every profile. There are still no accepted physical glyph
-objects.
+Generic normalization, rectangular sectioning, and occupied-cell
+detection are available for every profile. No physical glyph object has
+been accepted.
 
-Occupied-cell analysis, cut-quality analysis, connectors, and physical
-acceptance remain deferred.
+Fragment quality, connectors, and physical acceptance remain deferred.

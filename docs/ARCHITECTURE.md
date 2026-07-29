@@ -1,11 +1,12 @@
 # Architecture
 
-Glyph Dossier separates source capture, normalization, and sectioning.
+Glyph Dossier separates source capture, normalization, sectioning, and
+section analysis.
 
 ## Portable source layer
 
 ```text
-embedded source package
+embedded font package
         ↓
 exact set ID + glyph ID lookup
         ↓
@@ -24,40 +25,51 @@ visible-center-bottom normalized region
 
 ## Generic sectioning layer
 
-Batch 010 adds:
-
 ```text
 normalized portable region
         ↓
 automatic or manual rectangular grid
         ↓
-full section manifest
+deterministic section manifest
         ↓
 plan, exploded layout, or local cell export
 ```
 
+## Occupancy layer
+
+Batch 011 adds data-level Boolean analysis:
+
+```text
+normalized portable region
+        +
+one rectangular cell region
+        ↓
+BOSL2 intersection()
+        ↓
+clipped region
+        ↓
+area, ratio, components, occupied status
+```
+
+All cell records are created once for the selected workbench operation.
+Occupied-only layout and export render the recorded clipped region rather
+than repeating CSG clipping.
+
 Implementation:
 
 ```text
-config/portable_generic_section_defaults.scad
-lib/portable_generic_sectioning.scad
-lib/portable_generic_section_validation.scad
-lib/portable_generic_section_reporting.scad
-geometry/portable_generic_section_scene.scad
-portable_section_main.scad
+lib/portable_section_occupancy_schema.scad
+lib/portable_section_occupancy.scad
+lib/portable_section_occupancy_validation.scad
+lib/portable_section_occupancy_reporting.scad
+geometry/portable_section_occupancy_scene.scad
 ```
 
-Automatic mode derives the smallest complete centered-bottom grid from
-normalized visible bounds and configured cell dimensions.
+## Fixed A route
 
-Manual mode preserves direct operator control.
-
-## Fixed A sectioning layer
-
-The earlier `portable_a_*` route remains byte-identical and separate.
-Its A-specific hazard guides are not used by generic sectioning.
+The earlier `portable_a_*` route remains separate and unchanged.
 
 ## Next boundary
 
-BOSL2 occupied-cell detection should classify each resolved grid cell
-without changing the accepted clipping and local-coordinate contract.
+Fragment and cut-quality reporting should consume the accepted occupancy
+records. It must not modify normalization, grid resolution, or clipping.

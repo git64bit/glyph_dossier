@@ -94,7 +94,7 @@ module report_portable_generic_section_plan(
     );
     echo(
         "PORTABLE_SECTION_OCCUPANCY_STATUS",
-        "Not computed in Batch 010; empty intersections render no geometry."
+        "Computed in Batch 011 occupancy modes; base manifest remains complete."
     );
 }
 
